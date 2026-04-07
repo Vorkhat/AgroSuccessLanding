@@ -1,0 +1,697 @@
+/* Модалка заявки — по макету Figma (Frame 2131330234) */
+
+.lead-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(12px, 3vw, 24px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.28s ease, visibility 0.28s ease;
+}
+
+.lead-modal[hidden] {
+  display: none;
+}
+
+.lead-modal.is-open,
+.lead-modal.is-closing {
+  display: flex;
+}
+
+.lead-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.lead-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.28s ease;
+}
+
+.lead-modal__panel {
+  position: relative;
+  z-index: 1;
+  width: min(100%, min(94vw, 1360px));
+  max-height: min(90vh, 640px);
+  display: flex;
+  flex-direction: column;
+  background: #fcfefe;
+  border: 1px solid #c1c3c4;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(18px) scale(0.98);
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
+.lead-modal.is-open .lead-modal__backdrop,
+.lead-modal.is-closing .lead-modal__backdrop {
+  opacity: 1;
+}
+
+.lead-modal.is-open .lead-modal__panel {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.lead-modal.is-closing .lead-modal__panel {
+  opacity: 0;
+  transform: translateY(18px) scale(0.98);
+}
+
+/* Line 18 — горизонтальная линия сверху контента */
+.lead-modal__panel::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 30px;
+  height: 0;
+  border-top: 1px solid #c1c3c4;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.lead-modal__mob-header {
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 18px;
+  background: #fcfefe;
+  border-bottom: 1px solid #c1c3c4;
+  flex: none;
+}
+
+.lead-modal__mob-logo {
+  height: 32px;
+  width: auto;
+}
+
+.lead-modal__close {
+  flex: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+
+.lead-modal__close:hover {
+  opacity: 0.75;
+}
+
+.lead-modal__close svg {
+  display: block;
+  width: 25px;
+  height: 25px;
+  flex: none;
+}
+
+/* Крестик в макете — 25×25 */
+.lead-modal__close--desktop {
+  position: absolute;
+  top: 17px;
+  right: 17px;
+  z-index: 12;
+  width: 25px;
+  height: 25px;
+}
+
+/* Та же иконка, увеличенная зона нажатия */
+.lead-modal__close--mobile {
+  width: 44px;
+  height: 44px;
+}
+
+/* image 48 — затемнение 40% + фон на всю область */
+.lead-modal__body {
+  position: relative;
+  flex: 1;
+  min-height: clamp(20rem, 58vh, 32rem);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.lead-modal__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-color: #2a2418;
+  background-image:
+    linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../../assets/form-bg.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.lead-modal__split {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: minmax(min(16rem, 40vh), 1fr);
+}
+
+/* Line 19 — вертикальный разделитель #C1C3C4 */
+.lead-modal__visual {
+  position: relative;
+  box-sizing: border-box;
+  padding: 48px 24px 32px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  background: transparent;
+  border-right: 1px solid #c1c3c4;
+}
+
+/* Заголовок: Ubuntu 500, 36px / 100% */
+.lead-modal__title {
+  margin: 0;
+  max-width: min(601px, 100%);
+  font-family: "Ubuntu", var(--font), system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: clamp(1.35rem, 3.2vw, 36px);
+  line-height: 1;
+  color: #fcfefe;
+}
+
+/* Правая колонка: Frame 2131330048 */
+.lead-modal__aside {
+  position: relative;
+  box-sizing: border-box;
+  padding: 40px 30px 40px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 24px;
+  background: transparent;
+}
+
+/* Подзаголовок: Roboto 500 24px / 28px */
+.lead-modal__lead {
+  margin: 0;
+  max-width: min(445px, 100%);
+  font-family: "Roboto", var(--font), system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: clamp(1rem, 2vw, 24px);
+  line-height: clamp(1.25rem, 2.5vw, 28px);
+  color: #fcfefe;
+}
+
+.lead-modal__form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(1rem, 4vw, 24px);
+  width: 100%;
+  max-width: min(455px, 100%);
+  margin: 0;
+}
+
+.lead-modal__fields {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  max-width: min(455px, 100%);
+}
+
+.lead-modal__field {
+  display: block;
+  margin: 0;
+  width: 100%;
+  max-width: min(455px, 100%);
+  cursor: pointer;
+}
+
+.lead-modal__field-row {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: clamp(10px, 2.5vw, 14px) clamp(14px, 3.5vw, 20px);
+  gap: clamp(12px, 3vw, 16px);
+  width: 100%;
+  min-height: clamp(50px, 12vw, 58px);
+  height: auto;
+  border: 1px solid #59595b;
+  border-radius: 0;
+  background: rgba(19, 19, 20, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: border-color 0.2s ease, background 0.2s ease;
+  color-scheme: dark;
+}
+
+.lead-modal__field:focus-within .lead-modal__field-row {
+  border-color: #7a7a7c;
+  background: rgba(19, 19, 20, 0.52);
+}
+
+.lead-modal__field-icon {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  color: #eab300;
+}
+
+.lead-modal__field-icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.lead-modal__field input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  font-family: "Roboto", var(--font), system-ui, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 19px;
+  color: #fcfefe;
+  outline: none;
+  box-shadow: none;
+  -webkit-tap-highlight-color: transparent;
+  appearance: none;
+}
+
+.lead-modal__field input:focus,
+.lead-modal__field input:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Chrome / Edge: убираем «ореол» автозаполнения и светлую обводку поля */
+.lead-modal__field input:-webkit-autofill,
+.lead-modal__field input:-webkit-autofill:hover,
+.lead-modal__field input:-webkit-autofill:focus,
+.lead-modal__field input:-webkit-autofill:active {
+  -webkit-text-fill-color: #fcfefe !important;
+  caret-color: #fcfefe;
+  box-shadow: 0 0 0 1000px rgba(19, 19, 20, 0.5) inset !important;
+  -webkit-box-shadow: 0 0 0 1000px rgba(19, 19, 20, 0.5) inset !important;
+  transition: background-color 99999s ease-out;
+}
+
+.lead-modal__field input::placeholder {
+  font-style: italic;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: #fcfefe;
+  opacity: 1;
+}
+
+.lead-modal__consent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  width: 100%;
+  max-width: min(455px, 100%);
+  min-height: 24px;
+  cursor: pointer;
+}
+
+.lead-modal__consent span {
+  flex: 1;
+  min-width: 0;
+  font-family: "Roboto", var(--font), system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 14px;
+  color: #fcfefe;
+}
+
+/* Как в блоке .block-cta__consent — 16×16, нативная галочка */
+.lead-modal__consent input[type="checkbox"] {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: #fcfefe;
+  cursor: pointer;
+}
+
+/* Кнопка — те же классы, что .hero-banner-btn--yellow в герое / CTA */
+.lead-modal__submit.hero-banner-btn {
+  width: 100%;
+  max-width: min(455px, 100%);
+  margin: 0;
+}
+
+#lead-modal-submit-label {
+  position: relative;
+  z-index: 0;
+}
+
+/* Мобильная модалка — без жёстких 280/260px, от вьюпорта */
+@media (max-width: 720px) {
+  .lead-modal {
+    align-items: center;
+    justify-content: center;
+    padding: clamp(16px, 5vw, 28px) clamp(12px, 4vw, 24px);
+  }
+
+  .lead-modal__panel {
+    width: calc(100vw - clamp(20px, 5vw, 40px));
+    max-width: 36rem;
+    max-height: min(92dvh, calc(100dvh - clamp(5rem, 18vw, 8rem)));
+    min-height: 0;
+  }
+
+  .lead-modal__panel::before {
+    display: none;
+  }
+
+  .lead-modal__mob-header {
+    display: none;
+  }
+
+  .lead-modal__close--desktop {
+    display: flex;
+    top: clamp(6px, 2.2vw, 12px);
+    right: clamp(6px, 2.2vw, 12px);
+  }
+
+  .lead-modal__body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    min-height: min(50vh, 28rem);
+    max-height: min(85dvh, calc(100dvh - clamp(6rem, 22vw, 10rem)));
+    overflow: hidden;
+  }
+
+  /* Фон шире панели, отражение; пропорции от ширины модалки */
+  .lead-modal__bg {
+    inset: auto;
+    top: 0;
+    bottom: 0;
+    left: -85%;
+    width: 270%;
+    height: 100%;
+    max-width: none;
+    transform: scaleX(-1);
+    transform-origin: center center;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .lead-modal__split {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 clamp(8px, 3.5vw, 14px);
+    gap: clamp(2rem, 9vw, 3.75rem);
+    flex: 0 1 auto;
+    max-height: 100%;
+    min-height: 0;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+    margin-block: auto;
+  }
+
+  .lead-modal__visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(12px, 4vw, 18px);
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: clamp(1.5rem, 6vw, 2.25rem) 0 0;
+    border: none;
+    box-sizing: border-box;
+    text-align: center;
+  }
+
+  .lead-modal__visual::before {
+    content: "";
+    display: block;
+    flex: none;
+    width: min(100%, 16.25rem);
+    height: 0;
+    border: none;
+    border-top: 1px solid #c1c3c4;
+  }
+
+  .lead-modal__title {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    font-size: clamp(1.125rem, 5vw, 1.5rem);
+    line-height: 1;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .lead-modal__aside {
+    width: 100%;
+    max-width: min(28rem, 100%);
+    padding: 0 0 clamp(1.25rem, 5vw, 1.75rem);
+    margin: 0;
+    align-items: center;
+    justify-content: flex-start;
+    gap: clamp(1rem, 4vw, 24px);
+    box-sizing: border-box;
+  }
+
+  .lead-modal__lead {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    font-size: clamp(1rem, 3.8vw, 1.125rem);
+    line-height: clamp(1.25rem, 4.2vw, 1.35rem);
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .lead-modal__form {
+    width: 100%;
+    max-width: 100%;
+    align-items: center;
+    gap: clamp(1rem, 4vw, 24px);
+  }
+
+  .lead-modal__fields {
+    max-width: 100%;
+    width: 100%;
+    align-self: stretch;
+    gap: 10px;
+  }
+
+  .lead-modal__field {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .lead-modal__field-row {
+    width: 100%;
+    max-width: 100%;
+    min-height: clamp(48px, 12vw, 54px);
+    height: auto;
+    padding: clamp(8px, 2.5vw, 12px) clamp(10px, 3vw, 14px);
+    gap: clamp(12px, 3vw, 16px);
+    box-sizing: border-box;
+  }
+
+  .lead-modal__consent {
+    max-width: 100%;
+    width: 100%;
+    min-height: auto;
+    align-self: stretch;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .lead-modal__consent span {
+    flex: 1;
+    flex-grow: 1;
+    order: 1;
+    min-width: 0;
+    max-width: none;
+    font-size: clamp(11px, 3.2vw, 12px);
+    line-height: clamp(13px, 3.6vw, 14px);
+  }
+
+  /* Как на ПК: 16×16, нативная галочка */
+  .lead-modal__consent input[type="checkbox"] {
+    order: 0;
+    flex: none;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    accent-color: #fcfefe;
+    cursor: pointer;
+  }
+
+  .lead-modal__submit.hero-banner-btn {
+    max-width: 100%;
+    width: 100%;
+    align-self: stretch;
+  }
+}
+
+/* Модалка «Заявка отправлена» */
+.lead-thanks-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(16px, 4vw, 28px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.24s ease, visibility 0.24s ease;
+}
+
+.lead-thanks-modal[hidden] {
+  display: none;
+}
+
+.lead-thanks-modal.is-open,
+.lead-thanks-modal.is-closing {
+  display: flex;
+}
+
+.lead-thanks-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.lead-thanks-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.24s ease;
+}
+
+.lead-thanks-modal__panel {
+  position: relative;
+  z-index: 1;
+  width: min(calc(100vw - 2rem), 26rem);
+  box-sizing: border-box;
+  padding: clamp(1.75rem, 5vw, 2.25rem) clamp(1.25rem, 4vw, 1.75rem);
+  background: #fcfefe;
+  border: 1px solid #c1c3c4;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(16px) scale(0.98);
+  transition: opacity 0.24s ease, transform 0.24s ease;
+}
+
+.lead-thanks-modal.is-open .lead-thanks-modal__backdrop,
+.lead-thanks-modal.is-closing .lead-thanks-modal__backdrop {
+  opacity: 1;
+}
+
+.lead-thanks-modal.is-open .lead-thanks-modal__panel {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.lead-thanks-modal.is-closing .lead-thanks-modal__panel {
+  opacity: 0;
+  transform: translateY(16px) scale(0.98);
+}
+
+.lead-thanks-modal__close {
+  position: absolute;
+  top: clamp(8px, 2vw, 12px);
+  right: clamp(8px, 2vw, 12px);
+  width: 25px;
+  height: 25px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+
+.lead-thanks-modal__close:hover {
+  opacity: 0.75;
+}
+
+.lead-thanks-modal__close svg {
+  display: block;
+  width: 25px;
+  height: 25px;
+}
+
+.lead-thanks-modal__title {
+  margin: 0 0 0.75rem;
+  padding-right: 28px;
+  font-family: "Ubuntu", var(--font), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.25rem, 4.5vw, 1.5rem);
+  line-height: 1.2;
+  color: #252529;
+}
+
+.lead-thanks-modal__text {
+  margin: 0 0 1.5rem;
+  font-family: "Roboto", var(--font), system-ui, sans-serif;
+  font-weight: 400;
+  font-size: clamp(0.9375rem, 3vw, 1rem);
+  line-height: 1.45;
+  color: #3a3a40;
+}
+
+.lead-thanks-modal__ok.hero-banner-btn {
+  width: 100%;
+  max-width: 16rem;
+  margin: 0 auto;
+}

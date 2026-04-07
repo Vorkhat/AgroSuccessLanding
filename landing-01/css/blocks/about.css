@@ -1,0 +1,153 @@
+
+.block-about {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #fff;
+  background-image: url("../../assets/about-section-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: clamp(48px, 8vh, 100px) 0 clamp(52px, 9vh, 104px);
+  overflow: hidden;
+}
+
+.block-about__inner {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 920px;
+  margin-inline: auto;
+  padding-inline: var(--layout-inline);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.block-about__logo {
+  margin: 0 0 clamp(20px, 3.5vw, 32px);
+  flex-shrink: 0;
+}
+
+.block-about__logo-svg {
+  display: block;
+  width: clamp(72px, 14vw, 88px);
+  height: clamp(72px, 14vw, 88px);
+}
+
+/* Frame: заголовок блока «О заводе» — Ubuntu 500, 36/41, центр, max 835px */
+.block-about__title {
+  margin: 0 0 clamp(32px, 5vw, 48px);
+  width: 100%;
+  max-width: 835px;
+  box-sizing: border-box;
+  font-family: "Ubuntu", var(--font), system-ui, sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.125rem, 2.5vw + 0.35rem, 36px);
+  line-height: 1.1389;
+  text-align: center;
+  color: #252529;
+}
+
+.block-about__cards {
+  list-style: none;
+  margin: 0 0 clamp(36px, 5vw, 52px);
+  padding: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(10px, 2vw, 16px);
+  align-items: stretch;
+}
+
+.block-about__card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: clamp(168px, 24vw, 204px);
+  padding: clamp(14px, 2.2vw, 20px);
+  background: #ede7f6;
+  border: 1px solid rgba(81, 49, 114, 0.14);
+  text-align: left;
+}
+
+.block-about__icon {
+  position: relative;
+  flex-shrink: 0;
+  width: clamp(64px, 11vw, 80px);
+  height: clamp(64px, 11vw, 80px);
+  margin-bottom: auto;
+  color: #513172;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%23513172' stroke-width='0.75' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 25L7 7L25 7'/%3E%3Cpath d='M75 7L93 7L93 25'/%3E%3Cpath d='M7 75L7 93L25 93'/%3E%3Cpath d='M93 75L93 93L75 93'/%3E%3C/svg%3E")
+    center / 100% 100% no-repeat;
+}
+
+.block-about__icon > svg {
+  flex-shrink: 0;
+  display: block;
+  width: 60%;
+  height: 60%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* 26×26 иконки с плотным глифом визуально крупнее грузовика 32×32 — чуть уменьшаем */
+.block-about__icon > svg.block-about__icon-svg--dense {
+  width: 48%;
+  height: 48%;
+}
+
+.block-about__icon-num {
+  font-family: var(--font);
+  font-weight: 800;
+  font-size: clamp(1.35rem, 2.8vw, 1.85rem);
+  line-height: 1;
+  color: #513172;
+}
+
+.block-about__card-text {
+  margin: clamp(16px, 2.5vw, 24px) 0 0;
+  font-family: "Roboto", var(--font), system-ui, sans-serif;
+  font-size: clamp(13px, 1.35vw, 15px);
+  line-height: 1.35;
+  font-weight: 500;
+  color: #3a3a40;
+}
+
+.block-about__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(12px, 2vw, 20px);
+  justify-content: center;
+  width: 100%;
+  max-width: 840px;
+}
+
+.block-about__actions .hero-banner-btn {
+  flex: 1 1 220px;
+  max-width: none;
+  min-height: clamp(48px, 9vw, 60px);
+}
+
+@media (max-width: 900px) {
+  .block-about__cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .block-about__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .block-about__actions .hero-banner-btn {
+    flex: 1 1 100%;
+  }
+}

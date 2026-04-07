@@ -1,0 +1,344 @@
+
+.block-works {
+  background: #fff;
+  padding: clamp(40px, 7vh, 88px) 0 clamp(48px, 9vh, 96px);
+}
+
+.block-works__inner {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  padding-inline: var(--layout-inline);
+}
+
+.block-works__head {
+  margin-bottom: clamp(28px, 4vw, 40px);
+}
+
+.block-works__head-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: clamp(16px, 3vw, 32px);
+}
+
+.block-works__head-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.block-works__title {
+  margin: 0;
+  max-width: 42rem;
+  font-family: "Roboto", var(--font);
+  font-size: clamp(1.1rem, 2.2vw, 1.65rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #1a1a1a;
+}
+
+/* Две строки слева (шаги → фото), справа видео на всю высоту — верх/низ ряда фото совпадают с блоком видео */
+.block-works__split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  column-gap: clamp(24px, 4vw, 40px);
+  row-gap: clamp(24px, 4vw, 36px);
+  align-items: end;
+}
+
+.block-works__col--content {
+  display: contents;
+}
+
+.block-works__steps {
+  grid-column: 1;
+  grid-row: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(12px, 2vw, 20px);
+  align-items: stretch;
+}
+
+/* Frame 2131330014 — карточка шага */
+.block-works__step {
+  box-sizing: border-box;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 14px 14px 20px;
+  gap: 20px;
+  min-width: 0;
+  min-height: 151px;
+  height: 100%;
+  background: #f0f2f2;
+}
+
+.block-works__step-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: clamp(52px, 10vw, 64px);
+  height: clamp(52px, 10vw, 64px);
+  box-sizing: border-box;
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+  line-height: 1;
+  color: #513172;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%23513172' stroke-width='0.75' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 25L7 7L25 7'/%3E%3Cpath d='M75 7L93 7L93 25'/%3E%3Cpath d='M7 75L7 93L25 93'/%3E%3Cpath d='M93 75L93 93L75 93'/%3E%3C/svg%3E")
+    center / 100% 100% no-repeat;
+}
+
+.block-works__step-text {
+  margin: 0;
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: 100%;
+  font-family: "Roboto", var(--font), system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  color: #252529;
+}
+
+.block-works__photos {
+  --works-photo-h: clamp(168px, 24vw, 268px);
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: clamp(10px, 2vw, 16px);
+  margin: 0;
+  padding: 0;
+}
+
+/* Равная ширина колонок + одна высота кадра (без display:contents на figure — стабильнее в браузерах) */
+.block-works__photo-cell {
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.block-works__shot {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: var(--works-photo-h);
+  min-height: var(--works-photo-h);
+  max-height: var(--works-photo-h);
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 2px;
+  overflow: hidden;
+  background-color: #e8e8ea;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.block-works__col--media {
+  grid-column: 2;
+  grid-row: 1 / -1;
+  align-self: stretch;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.block-works__shot--1 {
+  background-image: url("../../assets/solution-photo.webp");
+}
+
+.block-works__shot--2 {
+  background-image: url("../../assets/specs-thumb-01.webp");
+  background-position: center 40%;
+}
+
+.block-works__video {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: clamp(320px, 48vw, 520px);
+  height: 100%;
+  border-radius: 2px;
+  overflow: hidden;
+  background-color: #1a1520;
+  background-image: url("../../assets/what-is-work-bg.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.block-works__video-brand {
+  position: absolute;
+  top: clamp(14px, 2.5vw, 22px);
+  right: clamp(14px, 2.5vw, 22px);
+  z-index: 4;
+  max-width: 9rem;
+  font-family: var(--font);
+  font-size: clamp(0.62rem, 1.1vw, 0.72rem);
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: right;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #fff;
+}
+
+.block-works__video-brand em {
+  font-style: normal;
+  color: #ffdc2e;
+}
+
+.block-works__video-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(30, 20, 45, 0.35) 0%,
+    rgba(30, 20, 45, 0.25) 45%,
+    rgba(92, 55, 136, 0.55) 100%
+  );
+}
+
+.block-works__video-corners {
+  position: absolute;
+  inset: clamp(16px, 2.8vw, 28px);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.block-works__video-corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: rgba(255, 255, 255, 0.92);
+  border-style: solid;
+}
+
+.block-works__video-corner--tl {
+  top: 0;
+  left: 0;
+  border-width: 2px 0 0 2px;
+}
+
+.block-works__video-corner--tr {
+  top: 0;
+  right: 0;
+  border-width: 2px 2px 0 0;
+}
+
+.block-works__video-corner--bl {
+  bottom: 0;
+  left: 0;
+  border-width: 0 0 2px 2px;
+}
+
+.block-works__video-corner--br {
+  bottom: 0;
+  right: 0;
+  border-width: 0 2px 2px 0;
+}
+
+.block-works__video-content {
+  position: relative;
+  z-index: 3;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(24px, 4vw, 40px);
+  min-height: inherit;
+}
+
+.block-works__video-plaque {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-rows: auto auto;
+  justify-items: center;
+  row-gap: 10px;
+  margin: 0;
+  padding: 22px 24px;
+  border: 1px solid #ebb200;
+  background: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font: inherit;
+  color: #fff;
+  transition: filter 0.2s, background 0.2s;
+}
+
+.block-works__video-plaque:hover {
+  filter: brightness(1.06);
+}
+
+.block-works__video-plaque:focus-visible {
+  outline: 2px solid #ffdc2e;
+  outline-offset: 3px;
+}
+
+.block-works__video-plaque__label {
+  font-family: "Roboto", var(--font);
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .block-works__split {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    row-gap: clamp(20px, 4vw, 32px);
+  }
+
+  .block-works__steps {
+    grid-column: 1;
+    grid-row: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .block-works__photos {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .block-works__col--media {
+    grid-column: 1;
+    grid-row: auto;
+    order: -1;
+  }
+
+  .block-works__video {
+    min-height: clamp(280px, 55vw, 400px);
+    height: auto;
+    flex: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .block-works__head-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .block-works__index {
+    align-self: flex-end;
+  }
+
+  .block-works__steps {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,206 @@
+
+
+.block-advantages {
+  background: #fff;
+  padding: clamp(40px, 7vh, 88px) 0 clamp(48px, 9vh, 96px);
+}
+
+.block-advantages__inner {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  padding-inline: var(--layout-inline);
+}
+
+.block-advantages__head {
+  margin-bottom: clamp(24px, 3.5vw, 36px);
+}
+
+.block-advantages__head-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: clamp(16px, 3vw, 32px);
+}
+
+.block-advantages__head-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.block-advantages__title {
+  margin: 0;
+  max-width: 42rem;
+  font-size: clamp(1.1rem, 2.2vw, 1.65rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #1a1a1a;
+}
+
+.block-advantages__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: auto auto;
+  gap: 10px;
+  grid-template-areas:
+    "c1 c2 . c3"
+    "c4 . c5 c6";
+  width: 100%;
+  align-items: stretch;
+}
+
+
+.block-advantages__card {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  aspect-ratio: 333 / 336;
+  border: 16px solid #f0f2f2;
+  background: #f0f2f2;
+  overflow: hidden;
+}
+
+.block-advantages__card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: 118% auto;
+  background-position: center;
+}
+
+.block-advantages__card-main {
+  box-sizing: border-box;
+  position: absolute;
+  left: 20px;
+  top: 65.13%;
+  width: calc(100% - 40px);
+  max-width: 302px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 8px;
+  z-index: 1;
+}
+
+.block-advantages__card-title {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 28px;
+  color: #513172;
+  align-self: stretch;
+}
+
+.block-advantages__card-text {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(14px, 1.5vw, 16px);
+  line-height: 19px;
+  color: #252529;
+  align-self: stretch;
+}
+
+.block-advantages__card--1 {
+  grid-area: c1;
+}
+
+.block-advantages__card--1::before {
+  background-image: url("../../assets/advantage-pattern-01.png");
+  background-position: 88% 12%;
+}
+
+.block-advantages__card--2 {
+  grid-area: c2;
+}
+
+.block-advantages__card--2::before {
+  background-image: url("../../assets/advantage-pattern-02.png");
+  background-position: 8% 35%;
+  background-size: 132% auto;
+}
+
+.block-advantages__card--3 {
+  grid-area: c3;
+}
+
+.block-advantages__card--3::before {
+  background-image: url("../../assets/advantage-pattern-03.png");
+  background-position: 50% 8%;
+  background-size: 105% auto;
+}
+
+.block-advantages__card--4 {
+  grid-area: c4;
+}
+
+.block-advantages__card--4::before {
+  background-image: url("../../assets/advantage-pattern-04.png");
+  background-position: 12% 78%;
+  background-size: 125% auto;
+}
+
+.block-advantages__card--5 {
+  grid-area: c5;
+}
+
+.block-advantages__card--5::before {
+  background-image: url("../../assets/advantage-pattern-05.png");
+  background-position: 92% 55%;
+  background-size: 112% auto;
+}
+
+.block-advantages__card--6 {
+  grid-area: c6;
+}
+
+.block-advantages__card--6::before {
+  background-image: url("../../assets/advantage-pattern-06.png");
+  background-position: 42% 42%;
+  background-size: 140% auto;
+}
+
+@media (max-width: 1100px) {
+  .block-advantages__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "c1 c2"
+      "c3 c4"
+      "c5 c6";
+  }
+}
+
+@media (max-width: 520px) {
+  .block-advantages__head-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .block-advantages__index {
+    align-self: flex-end;
+  }
+
+  .block-advantages__grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "c1"
+      "c2"
+      "c3"
+      "c4"
+      "c5"
+      "c6";
+  }
+}

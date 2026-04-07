@@ -1,0 +1,237 @@
+
+
+.block-solution {
+  background: #fff;
+  padding: clamp(40px, 7vh, 88px) 0 clamp(48px, 9vh, 96px);
+}
+
+.block-solution__inner {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  padding-inline: var(--layout-inline);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: clamp(28px, 4vw, 48px);
+  align-items: stretch;
+}
+
+.block-solution__left {
+  grid-column: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.block-solution__intro {
+  margin: 0 0 clamp(16px, 2.2vw, 24px);
+  min-width: 0;
+}
+
+.block-solution__intro .block-solution__label {
+  margin: 0 0 clamp(10px, 1.4vw, 14px);
+}
+
+.block-solution__right {
+  grid-column: 2;
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+}
+
+.block-solution__index {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.block-solution__title {
+  margin: 0;
+  font-size: clamp(1.15rem, 2.4vw, 1.75rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #1a1a1a;
+}
+
+.block-solution__lead {
+  margin: 0 0 clamp(18px, 2.5vw, 24px);
+  max-width: 36rem;
+  font-size: clamp(0.88rem, 1.35vw, 1rem);
+  font-weight: 500;
+  line-height: 1.55;
+  color: #444;
+}
+
+.block-solution__sub {
+  margin: 0 0 clamp(14px, 2vw, 22px);
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  font-weight: 700;
+  color: #5c3788;
+}
+
+
+.block-solution__features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 28px) clamp(16px, 2.5vw, 24px);
+}
+
+.block-solution__feature {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+}
+
+
+.block-solution__icon {
+  position: relative;
+  flex-shrink: 0;
+  width: clamp(46px, 7.8vw, 62px);
+  height: clamp(46px, 7.8vw, 62px);
+  color: #5c3788;
+  box-sizing: border-box;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%235c3788' stroke-width='1.15' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 25L7 7L25 7'/%3E%3Cpath d='M75 7L93 7L93 25'/%3E%3Cpath d='M7 75L7 93L25 93'/%3E%3Cpath d='M93 75L93 93L75 93'/%3E%3C/svg%3E")
+    center / 100% 100% no-repeat;
+}
+
+.block-solution__icon-corners {
+  display: none;
+}
+
+/* Размер только из CSS: атрибуты width/height на SVG убраны, иначе браузер держит 26×26 */
+.block-solution__icon-svg,
+.block-solution__icon > svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  display: block;
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  max-width: min(42px, 90%);
+  max-height: min(42px, 90%);
+}
+
+.block-solution__feature-title {
+  margin: 0;
+  font-size: clamp(0.82rem, 1.25vw, 0.95rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #1a1a1a;
+}
+
+.block-solution__feature-lead {
+  margin: 0;
+  font-size: clamp(0.72rem, 1.1vw, 0.82rem);
+  font-weight: 500;
+  line-height: 1.45;
+  color: #555;
+}
+
+
+/* Бейдж 02 остаётся вверху справа; фото сдвинуто вниз (высота бейджа в base.css — 40px) */
+.block-solution__figure {
+  margin: calc(40px + clamp(10px, 1.5vw, 16px)) 0 0;
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.block-solution__photo {
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  flex: 1 1 auto;
+  min-height: 0;
+  aspect-ratio: unset;
+  height: 100%;
+  background-color: #131314;
+  background-image:
+    linear-gradient(0deg, rgba(19, 19, 20, 0.2), rgba(19, 19, 20, 0.2)),
+    var(--solution-image, url("../../assets/solution-photo.webp"));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.block-solution__photo-corners {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.block-solution__photo-corner {
+  position: absolute;
+  width: clamp(22px, 3.5vw, 32px);
+  height: clamp(22px, 3.5vw, 32px);
+  border-style: solid;
+  border-color: #fcfefe;
+  --photo-corner-r: clamp(2px, 0.35vw, 3px);
+}
+
+.block-solution__photo-corner--tr {
+  top: 12px;
+  right: 12px;
+  border-width: 1px 1px 0 0;
+  border-top-right-radius: var(--photo-corner-r);
+  border-top-left-radius: var(--photo-corner-r);
+  border-bottom-right-radius: var(--photo-corner-r);
+}
+
+.block-solution__photo-corner--bl {
+  bottom: 12px;
+  left: 12px;
+  border-width: 0 0 1px 1px;
+  border-bottom-left-radius: var(--photo-corner-r);
+  border-bottom-right-radius: var(--photo-corner-r);
+  border-top-left-radius: var(--photo-corner-r);
+}
+
+@media (max-width: 900px) {
+  .block-solution__inner {
+    grid-template-columns: 1fr;
+    row-gap: clamp(24px, 3vw, 32px);
+  }
+
+  .block-solution__left {
+    grid-column: 1;
+  }
+
+  .block-solution__right {
+    grid-column: 1;
+    min-height: auto;
+  }
+
+  .block-solution__photo {
+    aspect-ratio: 675 / 582;
+    min-height: 0;
+    height: auto;
+    flex: none;
+  }
+
+  .block-solution__figure {
+    flex: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .block-solution__features {
+    grid-template-columns: 1fr;
+  }
+}

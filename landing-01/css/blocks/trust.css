@@ -1,0 +1,106 @@
+.block-trust {
+  background: #fff;
+  padding: 0 0 clamp(48px, 9vh, 96px);
+}
+
+.block-trust__inner {
+  width: 100%;
+  padding-inline: var(--layout-inline);
+}
+
+.block-trust__head {
+  margin-bottom: clamp(24px, 4vw, 36px);
+}
+
+.block-trust__head-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: clamp(16px, 3vw, 32px);
+}
+
+.block-trust__head-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.block-trust__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.block-trust__card {
+  min-width: 0;
+  padding: 22px 20px 18px;
+  background: #ede7f6;
+  border-radius: 2px;
+  border: 1px solid rgba(81, 49, 114, 0.06);
+}
+
+.block-trust__icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  width: clamp(38px, 5.8vw, 46px);
+  height: clamp(38px, 5.8vw, 46px);
+  margin: 0 0 14px;
+  padding: 0;
+  font-family: "Roboto", var(--font);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #513172;
+  border: 0;
+  border-radius: 0;
+  position: relative;
+  box-sizing: border-box;
+  
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40' fill='none' stroke='%23513172' stroke-width='0.65' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 11L5 5L11 5'/%3E%3Cpath d='M29 5L35 5L35 11'/%3E%3Cpath d='M5 29L5 35L11 35'/%3E%3Cpath d='M35 29L35 35L29 35'/%3E%3C/svg%3E")
+    center / 100% 100% no-repeat;
+}
+
+.block-trust__icon-svg {
+  width: clamp(20px, 3.2vw, 24px);
+  height: clamp(20px, 3.2vw, 24px);
+  flex: none;
+}
+
+.block-trust__card-title {
+  margin: 0 0 10px;
+  font-family: "Roboto", var(--font);
+  font-size: clamp(0.98rem, 1.8vw, 1.12rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #232323;
+}
+
+.block-trust__card-text {
+  margin: 0;
+  max-width: 34rem;
+  font-family: "Roboto", var(--font);
+  color: #575757;
+}
+
+@media (max-width: 520px) {
+  .block-trust__head-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .block-trust__index {
+    align-self: flex-end;
+  }
+
+  .block-trust__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .block-trust__card {
+    padding: 18px 16px 16px;
+  }
+
+  .block-trust__icon-wrap {
+    margin-bottom: 12px;
+  }
+}
