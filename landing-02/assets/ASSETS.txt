@@ -12,4 +12,4 @@ specs-video-bg.webp    — фон большой карточки с видео 
 cta-bg.webp            — фон блока заявки «Получить расчёт»
 advantage-pattern-01 … 06.png — белый узор на прозрачном фоне для карточек «Преимущества» (свой файл на каждую карточку; сейчас можно положить один мотив и подправить кадр в CSS через background-position / background-size)
 
-В index.html для постера видео: assets/hero.webp (при необходимости заведите отдельный файл и поменяйте путь в data-asset-poster и preload).
+В index.html для постера видео: assets/hero.webp (при неяобходимости заведите отдельный файл и поменяйте путь в data-asset-poster и preload).

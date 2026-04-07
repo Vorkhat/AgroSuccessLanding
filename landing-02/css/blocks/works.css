@@ -78,42 +78,26 @@
 }
 
 .block-works__step-num {
-  --works-corner: #513172;
-  --works-corner-len: 12px;
-  --works-corner-thick: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: var(--section-index-size);
+  height: var(--section-index-size);
+  min-width: var(--section-index-size);
+  min-height: var(--section-index-size);
+  padding: var(--section-index-pad);
   flex-shrink: 0;
   box-sizing: border-box;
   border: none;
+  margin: 0;
   font-family: "Roboto", var(--font), system-ui, sans-serif;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 23px;
+  font-size: var(--section-index-font-size);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  font-variant-numeric: tabular-nums;
   color: #513172;
-  background:
-    linear-gradient(var(--works-corner), var(--works-corner)) 0 0 /
-      var(--works-corner-len) var(--works-corner-thick) no-repeat,
-    linear-gradient(var(--works-corner), var(--works-corner)) 0 0 /
-      var(--works-corner-thick) var(--works-corner-len) no-repeat,
-    linear-gradient(var(--works-corner), var(--works-corner)) 100% 0 /
-      var(--works-corner-len) var(--works-corner-thick) no-repeat,
-    linear-gradient(var(--works-corner), var(--works-corner)) 100% 0 /
-      var(--works-corner-thick) var(--works-corner-len) no-repeat,
-    linear-gradient(var(--works-corner), var(--works-corner)) 0 100% /
-      var(--works-corner-len) var(--works-corner-thick) no-repeat,
-    linear-gradient(var(--works-corner), var(--works-corner)) 0 100% /
-      var(--works-corner-thick) var(--works-corner-len) no-repeat,
-    linear-gradient(var(--works-corner), var(--works-corner)) 100% 100% /
-      var(--works-corner-len) var(--works-corner-thick) no-repeat,
-    linear-gradient(var(--works-corner), var(--works-corner)) 100% 100% /
-      var(--works-corner-thick) var(--works-corner-len) no-repeat;
-  text-shadow:
-    0.5px 0 0 rgba(255, 130, 55, 0.42),
-    -0.5px 0 0 rgba(75, 190, 255, 0.38);
+  background: var(--section-framed-bg) var(--section-framed-corners) center / 100% 100% no-repeat;
 }
 
 .block-works__step-text {

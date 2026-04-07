@@ -97,16 +97,12 @@
   gap: clamp(28px, 6vw, 64px);
   width: 100%;
   min-width: 0;
-  margin-bottom: clamp(20px, 4vw, 32px);
 }
 
 .site-footer__lead-top .site-footer__logo {
   flex-shrink: 0;
 }
 
-.site-footer__col--lead .site-footer__lead-top {
-  margin-bottom: clamp(18px, 3vw, 28px);
-}
 
 .site-footer__actions {
   display: flex;

@@ -53,14 +53,15 @@
 }
 
 .block-kit__card {
-  
   --kit-card-head-min: calc(3 * 21px + 4px + 2 * 16px);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   min-width: 0;
+  min-height: 0;
   width: 100%;
+  height: 100%;
   padding: 20px;
   gap: 20px;
   background: #f0f2f2;
@@ -167,13 +168,13 @@
 }
 
 .block-kit__media {
-  flex: 1 1 auto;
+  flex: 1 1 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 0;
-  background: #fff;
+  background: #f0f2f2;
   overflow: hidden;
 }
 
@@ -186,79 +187,98 @@
   display: block;
 }
 
-
+/* карточка «под ключ» — та же высота строки, что у соседних карточек */
 .block-kit__card--feature {
   min-height: 0;
   align-items: stretch;
-  padding: 20px 20px 0;
+  padding: 0;
   gap: 10px;
+  width: 100%;
+  max-width: 447px;
+  margin-inline: auto;
   background: #f0f2f2;
+  border: none;
 }
 
 .block-kit__feature-stage {
   position: relative;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: clamp(20px, 6vw, 47px);
+  display: block;
   width: 100%;
   max-width: 447px;
-  margin-inline: auto;
-  padding: 20px;
+  min-height: 369px;
+  margin: 0;
+  padding: 0;
   min-width: 0;
+  flex: 1 1 0;
+  align-self: stretch;
 }
 
-
+/* Rectangle 45 — сплошной фон вместо rgba */
 .block-kit__feature-bg {
   position: absolute;
-  left: 0;
-  top: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
+  background: #e8dbe9;
+  pointer-events: none;
+}
+
+/* Внутренний слой 10px — без заливки, только под будущие эффекты при необходимости */
+.block-kit__feature-inset {
+  position: absolute;
+  inset: 10px;
   background: transparent;
   pointer-events: none;
 }
 
-
-.block-kit__feature-inset {
-  position: absolute;
-  inset: 10px;
-  width: auto;
-  height: auto;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  pointer-events: none;
-}
-
+/* Декоративный узор поверх inset */
 .block-kit__feature-pattern {
   position: absolute;
   inset: 10px;
-  width: auto;
-  height: auto;
   box-sizing: border-box;
-  background-image: url("../../assets/advantage-pattern-04.png");
+  background-image: url("../../assets/advantage-pattern-07.png");
   background-repeat: no-repeat;
   background-position: 12% 78%;
   background-size: 125% auto;
-  transform: matrix(-1, 0, 0, 1, 0, 0);
   pointer-events: none;
 }
 
+/* Frame 2131330136: left 20 top 20, 324×40 */
 .block-kit__feature-header {
-  position: relative;
+  position: absolute;
   z-index: 2;
+  left: 20px;
+  top: 20px;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  align-self: stretch;
+  align-items: center;
   padding: 0;
   gap: 20px;
-  width: 100%;
-  max-width: 324px;
-  min-height: var(--kit-card-head-min);
+  width: min(324px, calc(100% - 40px));
+  height: 40px;
+  min-height: 40px;
   box-sizing: border-box;
   min-width: 0;
+}
+
+/* Номер: 40×40, border 1px #513172 (макет Rectangle 26) */
+.block-kit__card--feature .block-kit__num {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  box-sizing: border-box;
+  border: 1px solid #513172;
+}
+
+.block-kit__card--feature .block-kit__num-corners {
+  display: none;
+}
+
+.block-kit__card--feature .block-kit__num-text {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
 }
 
 .block-kit__feature-header .block-kit__card-intro {
@@ -268,25 +288,31 @@
 }
 
 .block-kit__feature-header .block-kit__card-title {
+  margin: 0;
   white-space: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
 }
 
+/* Frame 2131330138: absolute left 20 top 107, 407×242 */
 .block-kit__feature-glass {
-  position: relative;
+  position: absolute;
   z-index: 2;
+  left: 20px;
+  top: 107px;
   box-sizing: border-box;
-  align-self: stretch;
-  width: 100%;
-  max-width: 407px;
+  width: min(407px, calc(100% - 40px));
+  min-height: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 10px 10px 8px;
-  background: rgba(252, 254, 254, 0.1);
+  gap: 0;
+  background: transparent;
   border: 1px solid #f0f2f2;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  min-width: 0;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .block-kit__card--feature .block-kit__list-title {
@@ -341,32 +367,71 @@
   width: 32px;
   height: 32px;
   margin: 0;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23513172' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E")
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z' fill='%23513172'/%3E%3C/svg%3E")
     center / 18px 18px no-repeat;
 }
 
+/* Frame 2131330009: 447×60, padding 20×30, #EAB300, чёрный текст */
 .block-kit__card--feature .block-kit__btn.hero-banner-btn {
-  flex-shrink: 0;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
   width: 100%;
+  max-width: 447px;
+  min-height: 60px;
+  height: 60px;
+  padding: 20px 30px;
+  background: #eab300;
+  color: #000000;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.block-kit__card--feature .hero-banner-btn--yellow .hero-banner-btn__corners {
+  inset: 6px;
+}
+
+.block-kit__card--feature .hero-banner-btn--yellow .hero-banner-btn__corner {
+  border-color: #fcfefe;
 }
 
 @media (max-width: 520px) {
   .block-kit__feature-stage {
-    padding: 12px;
-    gap: 20px;
+    min-height: 0;
+    padding-bottom: 12px;
   }
 
   .block-kit__feature-header {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: calc(100% - 24px);
+    height: auto;
+    min-height: 40px;
+    margin: 16px 12px 0;
     gap: 12px;
-    max-width: none;
   }
 
   .block-kit__feature-glass {
-    max-width: none;
+    position: relative;
+    left: auto;
+    top: auto;
+    width: calc(100% - 24px);
+    margin: 16px 12px 0;
   }
 
   .block-kit__feature-inset,
   .block-kit__feature-pattern {
     inset: 8px;
+  }
+
+  .block-kit__card--feature .block-kit__btn.hero-banner-btn {
+    min-height: 52px;
+    height: auto;
+    padding: 16px 24px;
   }
 }

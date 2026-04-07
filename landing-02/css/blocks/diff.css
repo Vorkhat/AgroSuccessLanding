@@ -12,6 +12,8 @@
   padding-inline: var(--layout-inline);
   --diff-card-min: clamp(140px, 22vw, 168px);
   --diff-features-gap: clamp(14px, 2vw, 20px);
+  --diff-icon-frame: var(--section-index-size);
+  --diff-icon-glyph: clamp(20px, 4.2vw, 24px);
   position: relative;
 }
 
@@ -32,21 +34,48 @@
 .block-diff__lead {
   grid-area: lead;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.block-diff__index-cell {
+.block-diff__head-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(12px, 2.5vw, 24px);
+  width: 100%;
+  margin-bottom: var(--section-label-to-title);
+  flex-shrink: 0;
+}
+
+.block-diff__head-top .block-diff__label {
+  margin: 0;
+}
+
+.block-diff__head-top .block-diff__index {
+  flex-shrink: 0;
+}
+
+.block-diff__lead .block-diff__intro {
+  margin-top: 0;
+}
+
+.block-diff__content {
+  grid-area: feats;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  align-self: start;
+  gap: var(--diff-features-gap);
+  width: 100%;
   min-width: 0;
 }
 
-.block-diff__figure .block-diff__index-cell {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 4;
-}
-
 .block-diff__intro {
-  margin: 0 0 clamp(18px, 2.5vw, 26px);
+  margin: 0;
+  width: 100%;
 }
 
 .block-diff__title {
@@ -55,19 +84,26 @@
 }
 
 .block-diff__sub {
-  margin: 0 0 clamp(20px, 2.8vw, 28px);
-  font-size: clamp(0.95rem, 1.45vw, 1.08rem);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 12px 0;
+  width: 100%;
+  max-width: none;
+  flex: none;
+  align-self: stretch;
+  font-family: "Roboto", var(--font), system-ui, sans-serif;
+  font-style: normal;
+  font-size: clamp(17px, 2.35vw, 22px);
   font-weight: 700;
   line-height: 1.35;
-  color: #59595b;
-  max-width: 34rem;
+  color: #252529;
 }
 
 .block-diff__features {
-  grid-area: feats;
   list-style: none;
   margin: 0;
   padding: 0;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--diff-features-gap);
@@ -84,7 +120,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 12px;
+  gap: 0;
   min-width: 0;
   min-height: clamp(140px, 22vw, 168px);
   padding: clamp(16px, 2.2vw, 22px);
@@ -95,12 +131,13 @@
 .block-diff__icon {
   position: relative;
   flex-shrink: 0;
-  width: clamp(46px, 7.8vw, 58px);
-  height: clamp(46px, 7.8vw, 58px);
+  width: var(--diff-icon-frame);
+  height: var(--diff-icon-frame);
+  margin-bottom: clamp(18px, 2.6vw, 26px);
   color: #513172;
   box-sizing: border-box;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%23513172' stroke-width='1.15' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 25L7 7L25 7'/%3E%3Cpath d='M75 7L93 7L93 25'/%3E%3Cpath d='M7 75L7 93L25 93'/%3E%3Cpath d='M93 75L93 93L75 93'/%3E%3C/svg%3E")
-    center / 100% 100% no-repeat;
+  border: none;
+  background: var(--section-framed-bg) var(--section-framed-corners) center / 100% 100% no-repeat;
 }
 
 .block-diff__icon-svg {
@@ -109,14 +146,14 @@
   top: 50%;
   transform: translate(-50%, -50%);
   display: block;
-  width: calc(100% - 10px);
-  height: calc(100% - 10px);
-  max-width: 36px;
-  max-height: 36px;
+  width: var(--diff-icon-glyph);
+  height: var(--diff-icon-glyph);
+  flex-shrink: 0;
+  box-sizing: border-box;
 }
 
 .block-diff__feature-title {
-  margin: 0;
+  margin: 0 0 clamp(4px, 0.65vw, 7px);
   font-size: clamp(0.82rem, 1.2vw, 0.95rem);
   font-weight: 700;
   line-height: 1.25;
@@ -216,15 +253,19 @@
     order: 1;
   }
 
-  .block-diff__features {
-    order: 2;
-  }
-
   .block-diff__figure {
-    order: 3;
+    order: 2;
     align-self: stretch;
     min-height: clamp(240px, 62vw, 400px);
     padding-top: clamp(44px, 10vw, 52px);
+  }
+
+  .block-diff__content {
+    order: 3;
+  }
+
+  .block-diff__features {
+    grid-template-columns: 1fr;
   }
 
   .block-diff__apparatus {
@@ -236,14 +277,22 @@
   .block-diff__patent {
     top: clamp(44px, 10vw, 52px);
     right: clamp(8px, 2vw, 16px);
-    width: min(34%, 140px);
-    max-width: 140px;
-    min-width: 96px;
+    width: min(26%, 108px);
+    max-width: 108px;
+    min-width: 72px;
+    padding: clamp(4px, 1vw, 8px);
   }
 }
 
 @media (max-width: 520px) {
-  .block-diff__features {
-    grid-template-columns: 1fr;
+  .block-diff__patent {
+    width: min(24%, 96px);
+    max-width: 96px;
+    min-width: 64px;
+  }
+
+  .block-diff__sub {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
