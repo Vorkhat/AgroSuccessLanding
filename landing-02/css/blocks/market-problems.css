@@ -121,7 +121,6 @@
   white-space: nowrap;
   max-width: calc(100% - clamp(28px, 3.2vw, 36px));
   box-sizing: border-box;
-  border: 1px solid rgba(255, 255, 255, 0.5);
   background: linear-gradient(
     90deg,
     rgba(222, 210, 192, 0.78) 0%,
