@@ -254,10 +254,10 @@ button.hero-banner-btn {
     bottom: auto;
     z-index: 1;
     min-height: 0;
-    background: #f0f0f0;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    border-top: 1px solid #d8d8d8;
+    background: rgba(217, 217, 217, 0.2);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-top: 1px solid rgba(255, 255, 255, 0.22);
   }
 
   .block-hero__banner-inner {
@@ -298,21 +298,23 @@ button.hero-banner-btn {
   }
 
   .banner-list li {
-    padding: clamp(12px, 3vw, 14px) 0;
-    padding-right: 0;
-    border-bottom-color: #b8b8b8;
-    color: #252529;
-    font-size: clamp(0.9375rem, 3.8vw, 1.125rem);
-    line-height: 1.35;
-    font-weight: 500;
+    padding: 10px 20px 10px 0;
+    border-bottom: 1px solid #fcfefe;
+    color: #fcfefe;
+    font-size: clamp(17px, 2.1vw, 24px);
+    line-height: clamp(22px, 2.4vw, 28px);
+  }
+
+  .banner-list li:first-child {
+    font-weight: 400;
+  }
+
+  .banner-list li:not(:first-child) {
+    font-weight: 700;
   }
 
   .banner-list strong {
     font-weight: 700;
-  }
-
-  .banner-list li:last-child {
-    border-bottom: none;
   }
 
   .hero-banner-btn {

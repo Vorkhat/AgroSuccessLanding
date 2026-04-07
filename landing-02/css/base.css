@@ -28,6 +28,18 @@
   --section-chip-gap: var(--section-eyebrow-gap);
 }
 
+@media (max-width: 767px) {
+  :root {
+    --section-eyebrow-pad-y: clamp(9px, 2.4vw, 12px);
+    --section-eyebrow-pad-x: clamp(14px, 4vw, 20px);
+    --section-eyebrow-gap: clamp(8px, 2vw, 10px);
+    --section-index-width: clamp(44px, 15vw, 56px);
+    --section-index-height: clamp(40px, 11.5vw, 40px);
+    --section-eyebrow-font-size: clamp(13px, 3.8vw, 14px);
+    --section-eyebrow-line-height: clamp(16px, 4.2vw, 17px);
+  }
+}
+
 *,
 *::before,
 *::after {

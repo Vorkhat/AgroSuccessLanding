@@ -274,10 +274,24 @@
 }
 
 .lead-modal__consent input[type="checkbox"] {
-  width: 16px;
-  height: 16px;
+  flex: none;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  min-height: 20px;
   margin: 0;
-  accent-color: #fcfefe;
+  padding: 0;
+  border: none;
+  background: transparent;
+  box-shadow: none;
+  accent-color: #eab300;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  pointer-events: auto;
+  appearance: auto;
+  -webkit-appearance: checkbox;
 }
 
 .lead-modal__submit.hero-banner-btn {

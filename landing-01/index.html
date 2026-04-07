@@ -1639,8 +1639,16 @@
           setTimeout(function () {
             if (nameEl) nameEl.setCustomValidity("");
             if (phoneEl) phoneEl.setCustomValidity("");
+            var consentEl = form.querySelector('input[name="consent"][type="checkbox"]');
+            if (consentEl) consentEl.checked = true;
           }, 0);
         });
+      }
+
+      function ensureConsentChecked(form) {
+        if (!form) return;
+        var consentEl = form.querySelector('input[name="consent"][type="checkbox"]');
+        if (consentEl) consentEl.checked = true;
       }
 
       var leadModal = document.getElementById("lead-modal");
@@ -1662,6 +1670,8 @@
 
       setupFormValidation(ctaForm);
       setupFormValidation(leadForm);
+      ensureConsentChecked(ctaForm);
+      ensureConsentChecked(leadForm);
 
       if (!leadModal || !titleEl || !leadEl || !submitLabel || !thanksModal) return;
 
