@@ -153,19 +153,21 @@
 }
 
 .block-diff__feature-title {
-  margin: 0 0 clamp(4px, 0.65vw, 7px);
-  font-size: clamp(0.82rem, 1.2vw, 0.95rem);
+  margin: 0 0 4px;
+  font-family: "Roboto", var(--font), system-ui, sans-serif;
+  font-size: 18px;
+  line-height: 21px;
   font-weight: 700;
-  line-height: 1.25;
   color: #513172;
 }
 
 .block-diff__feature-text {
   margin: 0;
-  font-size: clamp(0.72rem, 1.08vw, 0.82rem);
-  font-weight: 500;
-  line-height: 1.45;
-  color: #555;
+  font-family: "Roboto", var(--font), system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #252529;
 }
 
 .block-diff__index {

@@ -27,13 +27,17 @@
   }
 
   .block-diff__feature-title {
-    font-size: clamp(0.92rem, 3.5vw, 1.05rem);
-    line-height: 1.28;
+    font-size: 19px;
+    line-height: 23px;
+    font-weight: 700;
+    color: #513172;
   }
 
   .block-diff__feature-text {
-    font-size: clamp(0.85rem, 3.2vw, 0.95rem);
-    line-height: 1.4;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 400;
+    color: #252529;
   }
 
   .block-diff__patent-cap {
@@ -47,22 +51,28 @@
   }
 
   .block-market-problems__image-label {
-    font-size: clamp(1.05rem, 3.4vw, 1.38rem);
-    line-height: 1.25;
+    font-size: 22px;
+    line-height: 26px;
+    font-weight: 700;
+    white-space: nowrap;
   }
 
   .block-market-problems__num {
-    font-size: clamp(1.12rem, 3.6vw, 1.55rem);
+    font-size: clamp(19px, 4.2vw, 21px);
   }
 
   .block-market-problems__item-title {
-    font-size: clamp(1.12rem, 3.8vw, 1.5rem);
-    line-height: 1.22;
+    font-size: 19px;
+    line-height: 23px;
+    font-weight: 700;
+    color: #513172;
   }
 
   .block-market-problems__item-text {
-    font-size: clamp(1rem, 3.3vw, 1.12rem);
-    line-height: 1.35;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 400;
+    color: #252529;
   }
 
   .block-advantages__card-title {
@@ -150,9 +160,21 @@
     line-height: 1.32;
   }
 
-  .block-kit__card-intro,
-  .block-kit__card-title,
-  .block-kit__card-text,
+  .block-kit__card-title {
+    font-size: 19px;
+    line-height: 23px;
+    font-weight: 700;
+    color: #513172;
+    white-space: normal;
+  }
+
+  .block-kit__card-text {
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 400;
+    color: #252529;
+  }
+
   .block-kit__card--feature .block-kit__list li {
     font-size: clamp(1.02rem, 3.6vw, 1.12rem);
     line-height: 1.38;
@@ -170,11 +192,14 @@
     line-height: 1.38;
   }
 
-  .block-stages__card-title,
-  .block-stages__card-text,
-  .block-stages__card-copy {
-    font-size: clamp(1rem, 3.5vw, 1.12rem);
-    line-height: 1.38;
+  .block-stages__card-title {
+    font-size: clamp(24px, 3vw, 30px);
+    line-height: 1.32;
+  }
+
+  .block-stages__card-text {
+    font-size: clamp(16px, 4vw, 17px);
+    line-height: 1.45;
   }
 
   .block-guarantees__text {

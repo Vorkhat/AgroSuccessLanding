@@ -158,10 +158,10 @@
   margin: 0;
   flex: none;
   align-self: stretch;
-  font-family: "Roboto", var(--font), system-ui, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 24px;
+  font-size: clamp(24px, 3vw, 30px);
   line-height: 28px;
   color: #513172;
 }
@@ -170,10 +170,10 @@
   margin: 0;
   flex: none;
   align-self: stretch;
-  font-family: "Roboto", var(--font), system-ui, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: clamp(18px, 1.8vw, 20px);
   line-height: 19px;
   color: #252529;
 }

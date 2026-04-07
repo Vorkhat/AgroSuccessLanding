@@ -87,6 +87,9 @@
   gap: 4px;
   min-width: 0;
   flex: 1 1 auto;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
 }
 
 .block-kit__num {
@@ -154,9 +157,10 @@
 .block-kit__card-title {
   margin: 0;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 21px;
   color: #513172;
+  white-space: nowrap;
 }
 
 .block-kit__card-text {
@@ -164,7 +168,7 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 16px;
-  color: #59595b;
+  color: #252529;
 }
 
 .block-kit__media {
@@ -270,10 +274,11 @@
 
 .block-kit__feature-header .block-kit__card-title {
   margin: 0;
-  white-space: normal;
-  font-weight: 500;
+  white-space: nowrap;
+  font-weight: 700;
   font-size: 18px;
   line-height: 21px;
+  color: #513172;
 }
 
 /* Frame 2131330138: absolute left 20 top 107, 407×242 */
@@ -304,7 +309,7 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 16px;
-  color: #59595b;
+  color: #252529;
 }
 
 .block-kit__card--feature .block-kit__list {
@@ -380,9 +385,26 @@
   border-color: #fcfefe;
 }
 
-@media (max-width: 520px) {
+/* До десктопа: колонка и потоковая вёрстка «под ключ», без абсолютов и переполнения на кнопку */
+@media (max-width: 767px) {
+  .block-kit__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .block-kit__card-intro {
+    overflow-x: visible;
+  }
+
+  .block-kit__card--feature {
+    max-width: none;
+    width: 100%;
+  }
+
   .block-kit__feature-stage {
-    min-height: 0;
+    flex: none;
+    max-width: none;
+    min-height: unset;
+    align-self: stretch;
     padding-bottom: 12px;
   }
 
@@ -392,9 +414,14 @@
     top: auto;
     width: calc(100% - 24px);
     height: auto;
-    min-height: 40px;
+    min-height: 0;
     margin: 16px 12px 0;
     gap: 12px;
+    align-items: flex-start;
+  }
+
+  .block-kit__feature-header .block-kit__card-title {
+    white-space: normal;
   }
 
   .block-kit__feature-glass {
