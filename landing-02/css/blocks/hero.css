@@ -305,10 +305,18 @@ header.block-hero,
   min-width: 0;
   min-height: clamp(280px, 42vw, 560px);
   background-color: #1e1e21;
-  background-image: url("../../assets/hero.webp");
-  background-size: contain;
-  background-position: center top;
-  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.block-hero__media-hero {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center top;
+  pointer-events: none;
 }
 
 .block-hero__media-top {
@@ -564,10 +572,14 @@ header.block-hero,
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    min-height: clamp(240px, 44vh, 368px);
+    min-height: clamp(300px, 56vh, 480px);
     order: -1;
-    background-position: center top;
-    background-size: cover;
+    background-color: #fff;
+  }
+
+  .block-hero__media-hero {
+    object-fit: cover;
+    object-position: center 42%;
   }
 
   .block-hero__media-top {
@@ -714,7 +726,7 @@ header.block-hero,
   }
 
   .block-hero__col--media {
-    min-height: 238px;
+    min-height: clamp(288px, 52vh, 460px);
   }
 
   .block-hero__video-widget {

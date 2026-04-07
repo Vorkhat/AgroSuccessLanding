@@ -72,8 +72,8 @@
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  max-width: 504px;
-  min-height: 144px;
+  max-width: none;
+  min-height: 0;
 }
 
 
@@ -82,31 +82,33 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 10px 20px 10px 0;
+  padding: 12px 20px 12px 0;
   gap: 10px;
   width: 100%;
-  max-width: 504px;
-  min-height: 48px;
+  max-width: none;
+  min-height: 44px;
+  height: auto;
   margin: 0;
   flex: none;
+  flex-grow: 0;
   align-self: stretch;
-  border-bottom: 2px solid rgba(37, 37, 41, 0.14);
+  border-bottom: 1px solid #59595b;
   font-family: "Roboto", sans-serif;
   font-style: normal;
-  font-size: clamp(17px, 2.1vw, 24px);
-  line-height: clamp(22px, 2.4vw, 28px);
+  font-size: clamp(17px, 2.35vw, 22px);
+  line-height: 1.35;
   color: #252529;
 }
 
-.banner-list li:first-child {
-  font-weight: 400;
-}
-
-.banner-list li:not(:first-child) {
+.banner-list li:nth-child(1) {
   font-weight: 700;
 }
 
-.banner-list strong {
+.banner-list li:nth-child(2) {
+  font-weight: 400;
+}
+
+.banner-list li:nth-child(3) {
   font-weight: 700;
 }
 
@@ -268,6 +270,9 @@
     min-height: 0;
   }
 
+  .block-hero__banner::before {
+    content: none;
+  }
 
   .block-hero__banner-inner {
     display: flex;
@@ -303,26 +308,6 @@
 
   .banner-list {
     min-height: 0;
-  }
-
-  .banner-list li {
-    color: #252529;
-    font-size: clamp(17px, 2.1vw, 24px);
-    line-height: clamp(22px, 2.4vw, 28px);
-    border-bottom: 2px solid rgba(37, 37, 41, 0.14);
-    padding: 10px 20px 10px 0;
-  }
-
-  .banner-list li:first-child {
-    font-weight: 400;
-  }
-
-  .banner-list li:not(:first-child) {
-    font-weight: 700;
-  }
-
-  .banner-list strong {
-    font-weight: 700;
   }
 
   .hero-banner-btn {

@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="css/blocks/diff.css" />
   <link rel="stylesheet" href="css/blocks/market-problems.css" />
   <link rel="stylesheet" href="css/blocks/advantages.css" />
+  <link rel="stylesheet" href="css/blocks/advantage-image-modal.css" />
   <link rel="stylesheet" href="css/blocks/benefit.css" />
   <link rel="stylesheet" href="css/blocks/overseeding.css" />
   <link rel="stylesheet" href="css/blocks/about.css" />
@@ -81,6 +82,15 @@
       </div>
 
       <div class="block-hero__col block-hero__col--media" role="presentation">
+        <img
+          class="block-hero__media-hero"
+          src="assets/hero.webp"
+          width="1440"
+          height="900"
+          alt=""
+          decoding="async"
+          fetchpriority="high"
+        />
         <div class="block-hero__media-top">
           <a class="block-hero__brand" href="#block-hero">
             <img
@@ -134,9 +144,9 @@
         <div class="block-hero__banner-inner">
           <div class="banner-col banner-col--text">
             <ul class="banner-list">
-              <li><strong>Не поврежает</strong> семена</li>
-              <li>Равномерно <strong>наносит</strong> препарат</li>
-              <li><strong>Окупаемость</strong> уже в первый сезон</li>
+              <li>Не повреждает семена</li>
+              <li>Равномерно наносит препарат</li>
+              <li>Окупаемость уже в первый сезон</li>
             </ul>
           </div>
           <div class="banner-col banner-col--cta">
@@ -525,6 +535,15 @@
         </li>
       </ol>
       <div class="block-works__scheme">
+        <button
+          type="button"
+          class="block-works__scheme-zoom"
+          data-advantage-image-open
+          data-advantage-src="assets/schema.webp"
+          aria-label="Открыть иллюстрацию крупнее: схема протравливателя семян с обозначением узлов"
+        >
+          <img class="block-works__scheme-zoom-img" src="assets/advantage-zoom-icon.svg" width="36" height="36" alt="" decoding="async" />
+        </button>
         <img
           class="block-works__scheme-image"
           src="assets/schema.webp"
@@ -1652,6 +1671,29 @@
     </div>
   </div>
 
+  <div
+    class="advantage-image-modal"
+    id="advantage-image-modal"
+    hidden
+    role="dialog"
+    aria-modal="true"
+    aria-label="Просмотр иллюстрации"
+  >
+    <div class="advantage-image-modal__backdrop" data-advantage-image-close tabindex="-1"></div>
+    <div class="advantage-image-modal__panel">
+      <button type="button" class="advantage-image-modal__close" data-advantage-image-close aria-label="Закрыть">&times;</button>
+      <div class="advantage-image-modal__toolbar">
+        <button type="button" class="advantage-image-modal__zoom-out" data-advantage-zoom-out aria-label="Уменьшить">−</button>
+        <button type="button" class="advantage-image-modal__zoom-in" data-advantage-zoom-in aria-label="Увеличить">+</button>
+        <button type="button" class="advantage-image-modal__zoom-reset" data-advantage-zoom-reset aria-label="Сбросить масштаб">100%</button>
+      </div>
+      <div class="advantage-image-modal__viewport" id="advantage-image-viewport" tabindex="0">
+        <img class="advantage-image-modal__img" id="advantage-image-img" src="" alt="" />
+      </div>
+      <p class="advantage-image-modal__hint">Колёсико мыши — масштаб. Перетаскивание — сдвиг (при увеличении).</p>
+    </div>
+  </div>
+
   <script>
     (function () {
       var isLocked = false;
@@ -1672,7 +1714,8 @@
           b.classList.contains("lead-modal-open") ||
           b.classList.contains("lead-thanks-modal-open") ||
           b.classList.contains("video-modal-open") ||
-          b.classList.contains("policy-modal-open")
+          b.classList.contains("policy-modal-open") ||
+          b.classList.contains("advantage-image-modal-open")
         );
       }
 
@@ -1826,6 +1869,198 @@
       });
       if (closeBtn) closeBtn.addEventListener("click", closeModal);
       if (backdrop) backdrop.addEventListener("click", closeModal);
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && !modal.hasAttribute("hidden")) closeModal();
+      });
+    })();
+
+    (function () {
+      var modal = document.getElementById("advantage-image-modal");
+      var img = document.getElementById("advantage-image-img");
+      var viewport = document.getElementById("advantage-image-viewport");
+      var triggers = document.querySelectorAll("[data-advantage-image-open]");
+      var closeEls = document.querySelectorAll("[data-advantage-image-close]");
+      var btnIn = document.querySelector("[data-advantage-zoom-in]");
+      var btnOut = document.querySelector("[data-advantage-zoom-out]");
+      var btnReset = document.querySelector("[data-advantage-zoom-reset]");
+      if (!modal || !img || !viewport || !triggers.length) return;
+
+      var lastFocus = null;
+      var scale = 1;
+      var tx = 0;
+      var ty = 0;
+      var dragging = false;
+      var dragStartX = 0;
+      var dragStartY = 0;
+      var dragOrigTx = 0;
+      var dragOrigTy = 0;
+
+      var MIN_SCALE = 1;
+      var MAX_SCALE = 4;
+
+      function clampScale(s) {
+        return Math.min(MAX_SCALE, Math.max(MIN_SCALE, s));
+      }
+
+      function applyTransform() {
+        if (scale <= MIN_SCALE + 0.001) {
+          tx = 0;
+          ty = 0;
+        }
+        scale = clampScale(scale);
+        img.style.transform =
+          "translate(calc(-50% + " + tx + "px), calc(-50% + " + ty + "px)) scale(" + scale + ")";
+      }
+
+      function resetView() {
+        scale = 1;
+        tx = 0;
+        ty = 0;
+        applyTransform();
+      }
+
+      function openFromTrigger(trigger) {
+        var src = (trigger.getAttribute("data-advantage-src") || "").trim();
+        if (!src) return;
+        var label = trigger.getAttribute("aria-label") || "";
+        lastFocus = document.activeElement;
+        img.setAttribute("alt", label.replace(/^Открыть иллюстрацию крупнее:\s*/i, "") || "Иллюстрация преимущества");
+        function afterLoad() {
+          img.onload = null;
+          img.onerror = null;
+          resetView();
+        }
+        img.onload = afterLoad;
+        img.onerror = afterLoad;
+        img.src = src;
+        if (img.complete) afterLoad();
+        modal.removeAttribute("hidden");
+        if (window.__setBodyScrollLock) window.__setBodyScrollLock(true);
+        document.body.classList.add("advantage-image-modal-open");
+        viewport.focus({ preventScroll: true });
+      }
+
+      function closeModal() {
+        modal.setAttribute("hidden", "");
+        document.body.classList.remove("advantage-image-modal-open");
+        if (window.__setBodyScrollLock) window.__setBodyScrollLock(false);
+        img.removeAttribute("src");
+        resetView();
+        if (lastFocus && typeof lastFocus.focus === "function") {
+          try {
+            lastFocus.focus({ preventScroll: true });
+          } catch (err) {
+            try {
+              lastFocus.focus();
+            } catch (e2) {}
+          }
+        }
+      }
+
+      triggers.forEach(function (trigger) {
+        trigger.addEventListener("click", function () {
+          openFromTrigger(trigger);
+        });
+      });
+
+      closeEls.forEach(function (el) {
+        el.addEventListener("click", closeModal);
+      });
+
+      if (btnIn) {
+        btnIn.addEventListener("click", function () {
+          scale = clampScale(scale * 1.2);
+          applyTransform();
+        });
+      }
+      if (btnOut) {
+        btnOut.addEventListener("click", function () {
+          scale = clampScale(scale / 1.2);
+          applyTransform();
+        });
+      }
+      if (btnReset) {
+        btnReset.addEventListener("click", resetView);
+      }
+
+      viewport.addEventListener(
+        "wheel",
+        function (e) {
+          if (modal.hasAttribute("hidden")) return;
+          e.preventDefault();
+          var delta = e.deltaY;
+          var factor = delta > 0 ? 0.92 : 1.08;
+          scale = clampScale(scale * factor);
+          applyTransform();
+        },
+        { passive: false }
+      );
+
+      viewport.addEventListener("dblclick", function () {
+        if (modal.hasAttribute("hidden")) return;
+        resetView();
+      });
+
+      viewport.addEventListener("mousedown", function (e) {
+        if (modal.hasAttribute("hidden") || scale <= MIN_SCALE + 0.02) return;
+        if (e.button !== 0) return;
+        dragging = true;
+        dragStartX = e.clientX;
+        dragStartY = e.clientY;
+        dragOrigTx = tx;
+        dragOrigTy = ty;
+        viewport.classList.add("is-dragging");
+      });
+
+      document.addEventListener("mousemove", function (e) {
+        if (!dragging) return;
+        tx = dragOrigTx + (e.clientX - dragStartX);
+        ty = dragOrigTy + (e.clientY - dragStartY);
+        applyTransform();
+      });
+
+      document.addEventListener("mouseup", function () {
+        if (!dragging) return;
+        dragging = false;
+        viewport.classList.remove("is-dragging");
+      });
+
+      viewport.addEventListener(
+        "touchstart",
+        function (e) {
+          if (modal.hasAttribute("hidden") || scale <= MIN_SCALE + 0.02) return;
+          if (e.touches.length !== 1) return;
+          dragging = true;
+          dragStartX = e.touches[0].clientX;
+          dragStartY = e.touches[0].clientY;
+          dragOrigTx = tx;
+          dragOrigTy = ty;
+          viewport.classList.add("is-dragging");
+        },
+        { passive: true }
+      );
+
+      viewport.addEventListener(
+        "touchmove",
+        function (e) {
+          if (!dragging || e.touches.length !== 1) return;
+          e.preventDefault();
+          tx = dragOrigTx + (e.touches[0].clientX - dragStartX);
+          ty = dragOrigTy + (e.touches[0].clientY - dragStartY);
+          applyTransform();
+        },
+        { passive: false }
+      );
+
+      function endTouchDrag() {
+        if (!dragging) return;
+        dragging = false;
+        viewport.classList.remove("is-dragging");
+      }
+
+      viewport.addEventListener("touchend", endTouchDrag);
+      viewport.addEventListener("touchcancel", endTouchDrag);
 
       document.addEventListener("keydown", function (e) {
         if (e.key === "Escape" && !modal.hasAttribute("hidden")) closeModal();
