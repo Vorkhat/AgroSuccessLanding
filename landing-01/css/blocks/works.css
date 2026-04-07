@@ -31,11 +31,6 @@
 .block-works__title {
   margin: 0;
   max-width: 42rem;
-  font-family: "Roboto", var(--font);
-  font-size: clamp(1.1rem, 2.2vw, 1.65rem);
-  font-weight: 800;
-  line-height: 1.2;
-  color: #1a1a1a;
 }
 
 
@@ -210,12 +205,7 @@
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: linear-gradient(
-    90deg,
-    rgba(30, 20, 45, 0.35) 0%,
-    rgba(30, 20, 45, 0.25) 45%,
-    rgba(92, 55, 136, 0.55) 100%
-  );
+  background: transparent;
 }
 
 .block-works__video-corners {

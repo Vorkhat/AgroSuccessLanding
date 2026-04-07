@@ -3,6 +3,7 @@
 :root {
   --hero-banner-h: clamp(148px, 22vw, 212px);
   --banner-line: rgba(255, 255, 255, 0.88);
+  --hero-banner-bg-image: url("../../assets/hero-scene.webp");
 }
 
 .block-hero__banner {
@@ -12,13 +13,26 @@
   bottom: 0;
   z-index: 5;
   min-height: var(--hero-banner-h);
-  background: rgba(217, 217, 217, 0.2);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  overflow: hidden;
+  isolation: isolate;
+  background: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.block-hero__banner::before {
+  content: "";
+  position: absolute;
+  inset: -28px;
+  z-index: 0;
+  background: var(--hero-banner-bg-image) center / cover no-repeat;
+  filter: blur(14px);
+  -webkit-filter: blur(14px);
+  pointer-events: none;
 }
 
 .block-hero__banner-inner {
+  position: relative;
+  z-index: 1;
   box-sizing: border-box;
   width: 100%;
   max-width: none;
@@ -76,12 +90,12 @@
   margin: 0;
   flex: none;
   align-self: stretch;
-  border-bottom: 2px solid #fcfefe;
+  border-bottom: 2px solid rgba(37, 37, 41, 0.14);
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-size: clamp(17px, 2.1vw, 24px);
   line-height: clamp(22px, 2.4vw, 28px);
-  color: #fcfefe;
+  color: #252529;
 }
 
 .banner-list li:first-child {
@@ -115,6 +129,7 @@
   font-weight: 700;
   font-size: clamp(0.65rem, 1.05vw, 0.78rem);
   line-height: 1.25;
+  text-transform: uppercase;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
@@ -251,11 +266,8 @@
     bottom: auto;
     z-index: 1;
     min-height: 0;
-    background: rgba(217, 217, 217, 0.2);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border-top: 1px solid rgba(255, 255, 255, 0.22);
   }
+
 
   .block-hero__banner-inner {
     display: flex;
@@ -294,10 +306,10 @@
   }
 
   .banner-list li {
-    color: #fcfefe;
+    color: #252529;
     font-size: clamp(17px, 2.1vw, 24px);
     line-height: clamp(22px, 2.4vw, 28px);
-    border-bottom: 2px solid #fcfefe;
+    border-bottom: 2px solid rgba(37, 37, 41, 0.14);
     padding: 10px 20px 10px 0;
   }
 

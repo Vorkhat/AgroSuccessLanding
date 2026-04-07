@@ -112,6 +112,12 @@ a {
   outline-offset: 2px;
 }
 
+button.form-policy-link {
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+  text-decoration-skip-ink: auto;
+}
+
 html:has(body.lead-modal-open),
 html:has(body.lead-thanks-modal-open),
 html:has(body.video-modal-open),
@@ -272,7 +278,8 @@ body.policy-modal-open {
 .block-crops__head-top .block-crops__label,
 .block-kit__head-top .block-kit__label,
 .block-placement__head-top .block-placement__label,
-.block-cta__form-head-top .block-cta__eyebrow {
+.block-cta__form-head-top .block-cta__eyebrow,
+.block-cta__form-head-top .block-cta__lead {
   margin: 0;
 }
 
@@ -284,9 +291,3 @@ body.policy-modal-open {
   width: 100%;
 }
 
-/* Секции с подписью в обычном регистре */
-.block-specs__label,
-.block-guarantees__label,
-.block-trust__label {
-  text-transform: none;
-}

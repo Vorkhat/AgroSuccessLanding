@@ -49,16 +49,10 @@
 .block-trust__title {
   margin: 0;
   max-width: 42rem;
-  font-family: "Roboto", var(--font);
-  font-size: clamp(1.1rem, 2.2vw, 1.65rem);
-  font-weight: 800;
-  line-height: 1.2;
-  color: #1a1a1a;
 }
 
 .block-specs__title {
   max-width: 100%;
-  line-height: 1.32;
 }
 
 
@@ -68,7 +62,7 @@
   align-items: flex-start;
   box-sizing: border-box;
   width: 100%;
-  max-width: 675px;
+  max-width: none;
   margin: 0;
   padding: 0;
   border: 0;
@@ -149,28 +143,24 @@
 .block-specs__thumb {
   aspect-ratio: 1.1 / 1;
   background:
-    linear-gradient(180deg, rgba(13, 13, 13, 0.08), rgba(13, 13, 13, 0.28)),
     var(--specs-thumb-image, url("../../assets/specs-thumb-01.webp")) center / cover no-repeat,
     #d8d8d8;
 }
 
 .block-specs__thumbs .block-specs__thumb:nth-child(2) {
   background:
-    linear-gradient(180deg, rgba(13, 13, 13, 0.08), rgba(13, 13, 13, 0.28)),
     var(--specs-thumb-image, url("../../assets/specs-thumb-02.webp")) center / cover no-repeat,
     #d8d8d8;
 }
 
 .block-specs__thumbs .block-specs__thumb:nth-child(3) {
   background:
-    linear-gradient(180deg, rgba(13, 13, 13, 0.08), rgba(13, 13, 13, 0.28)),
     var(--specs-thumb-image, url("../../assets/specs-thumb-03.webp")) center / cover no-repeat,
     #d8d8d8;
 }
 
 .block-specs__thumbs .block-specs__thumb:nth-child(4) {
   background:
-    linear-gradient(180deg, rgba(13, 13, 13, 0.08), rgba(13, 13, 13, 0.28)),
     var(--specs-thumb-image, url("../../assets/specs-thumb-04.webp")) center / cover no-repeat,
     #d8d8d8;
 }
@@ -192,7 +182,6 @@
 .block-specs__thumb-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(0, 0, 0, 0.18));
 }
 
 .block-specs__video-card::before {
@@ -200,7 +189,6 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: rgba(6, 6, 8, 0.58);
   pointer-events: none;
 }
 
@@ -210,13 +198,6 @@
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background: repeating-linear-gradient(
-    90deg,
-    transparent 0,
-    transparent 52px,
-    rgba(255, 255, 255, 0.04) 52px,
-    rgba(255, 255, 255, 0.04) 53px
-  );
 }
 
 .block-specs__video-corners {

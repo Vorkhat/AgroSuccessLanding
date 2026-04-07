@@ -80,6 +80,35 @@ a {
   border: 0;
 }
 
+.form-policy-link {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+  cursor: pointer;
+}
+
+.form-policy-link:hover {
+  text-decoration-thickness: 1.5px;
+}
+
+.form-policy-link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+button.form-policy-link {
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+  text-decoration-skip-ink: auto;
+}
+
 html:has(body.lead-modal-open),
 html:has(body.lead-thanks-modal-open),
 html:has(body.video-modal-open),
@@ -227,8 +256,3 @@ body.policy-modal-open {
   width: 100%;
 }
 
-/* Секции с подписью в обычном регистре */
-.block-specs__label,
-.block-trust__label {
-  text-transform: none;
-}

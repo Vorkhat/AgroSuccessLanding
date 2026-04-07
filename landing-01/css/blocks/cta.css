@@ -12,7 +12,6 @@
 }
 
 .block-cta__panel {
-  --cta-overlay: rgba(19, 19, 20, 0.4);
   --cta-pad-y: clamp(36px, 4.5vw, 52px);
   --cta-pad-x: clamp(24px, 3vw, 40px);
   --cta-chip-bg: #c1c3c4;
@@ -33,9 +32,7 @@
   column-gap: clamp(24px, 3vw, 48px);
   row-gap: clamp(24px, 3vw, 32px);
   background-color: #131314;
-  background-image:
-    linear-gradient(0deg, var(--cta-overlay), var(--cta-overlay)),
-    var(--cta-image, url("../../assets/cta-bg.webp"));
+  background-image: var(--cta-image, url("../../assets/cta-bg.webp"));
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -99,7 +96,7 @@
   font-style: normal;
   line-height: var(--section-eyebrow-line-height);
   letter-spacing: normal;
-  text-transform: none;
+  text-transform: uppercase;
   color: #59595b;
   background: #c1c3c4;
   border-radius: 0;
@@ -110,12 +107,6 @@
 .block-cta__media .block-cta__title {
   margin: 0;
   max-width: none;
-  font-family: "Roboto", var(--font);
-  font-size: clamp(1.35rem, 2.75vw, 2.05rem);
-  font-weight: 800;
-  line-height: 1.18;
-  letter-spacing: -0.02em;
-  color: #fff;
 }
 
 .block-cta__form-card {
@@ -342,20 +333,19 @@
 .block-cta__consent {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   padding: 0;
   margin: 0;
   width: 100%;
   max-width: 455px;
   min-height: 24px;
-  cursor: pointer;
   flex: none;
   align-self: stretch;
   box-sizing: border-box;
 }
 
-.block-cta__consent span {
+.block-cta__consent-text {
   flex: 1;
   min-width: 0;
   font-family: "Roboto", var(--font);
@@ -364,6 +354,13 @@
   font-style: normal;
   line-height: 14px;
   color: #fcfefe;
+}
+
+.block-cta__consent-label {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
 }
 
 .block-cta__consent input[type="checkbox"] {
@@ -375,16 +372,34 @@
   margin: 0;
   padding: 0;
   border: none;
-  background: transparent;
+  border-radius: 0;
+  box-sizing: border-box;
+  background: #f0f2f2;
   box-shadow: none;
-  accent-color: #eab300;
   cursor: pointer;
   position: relative;
   z-index: 2;
   flex-shrink: 0;
   pointer-events: auto;
-  appearance: auto;
-  -webkit-appearance: checkbox;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.block-cta__consent input[type="checkbox"]:checked {
+  background-color: #f0f2f2;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='10' viewBox='0 0 12 10'%3E%3Cpath fill='none' stroke='%234a4a4a' stroke-width='2.2' stroke-linecap='butt' stroke-linejoin='miter' d='M1 5.2 4.6 8.8 11 1.2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px 10px;
+}
+
+.block-cta__consent input[type="checkbox"]:focus {
+  outline: none;
+}
+
+.block-cta__consent input[type="checkbox"]:focus-visible {
+  outline: 2px solid #fcfefe;
+  outline-offset: 2px;
 }
 
 .block-cta__submit {
@@ -410,6 +425,7 @@
   font-weight: 500;
   font-style: normal;
   line-height: calc(19 / 16);
+  text-transform: uppercase;
   color: #252529;
   cursor: pointer;
   box-sizing: border-box;

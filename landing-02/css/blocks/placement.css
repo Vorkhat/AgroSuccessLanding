@@ -34,19 +34,9 @@
   margin-bottom: 0;
 }
 
-.block-placement__head-top .block-placement__label {
-  text-transform: none;
-}
-
 .block-placement__title {
   margin: 0;
   max-width: 100%;
-  font-family: "Ubuntu", var(--font), system-ui, sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: clamp(28px, 3.6vw, 36px);
-  line-height: 1;
-  color: #252529;
 }
 
 .block-placement__grid {

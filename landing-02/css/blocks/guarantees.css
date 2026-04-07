@@ -30,19 +30,9 @@
   margin-bottom: 0;
 }
 
-.block-guarantees__head .block-guarantees__label {
-  text-transform: none;
-}
-
 .block-guarantees__title {
   margin: 0;
   max-width: 38rem;
-  font-family: "Ubuntu", var(--font), system-ui, sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: clamp(1.5rem, 4vw, 36px);
-  line-height: 1;
-  color: #252529;
 }
 
 

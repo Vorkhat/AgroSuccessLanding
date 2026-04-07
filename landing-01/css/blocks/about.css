@@ -43,12 +43,7 @@
   width: 100%;
   max-width: 835px;
   box-sizing: border-box;
-  font-family: "Ubuntu", var(--font), system-ui, sans-serif;
-  font-weight: 600;
-  font-size: clamp(1.125rem, 2.5vw + 0.35rem, 36px);
-  line-height: 1.1389;
   text-align: center;
-  color: #252529;
 }
 
 .block-about__cards {

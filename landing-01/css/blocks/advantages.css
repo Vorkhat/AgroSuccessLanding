@@ -32,10 +32,6 @@
 .block-advantages__title {
   margin: 0;
   max-width: 42rem;
-  font-size: clamp(1.1rem, 2.2vw, 1.65rem);
-  font-weight: 800;
-  line-height: 1.2;
-  color: #1a1a1a;
 }
 
 .block-advantages__grid {
@@ -81,14 +77,16 @@
   box-sizing: border-box;
   position: absolute;
   left: 20px;
-  top: 65.13%;
-  width: calc(100% - 40px);
-  max-width: 302px;
+  right: 20px;
+  bottom: 20px;
+  top: auto;
+  width: auto;
+  max-width: min(302px, 100%);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 0;
-  gap: 20px;
+  gap: 10px;
   z-index: 1;
 }
 
@@ -96,9 +94,9 @@
   margin: 0;
   font-family: "Roboto", sans-serif;
   font-style: normal;
-  font-weight: 700;
-  font-size: clamp(24px, 3vw, 30px);
-  line-height: 28px;
+  font-weight: 500;
+  font-size: clamp(17px, 2vw, 22px);
+  line-height: 1.25;
   color: #513172;
   align-self: stretch;
 }
@@ -108,8 +106,8 @@
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: clamp(14px, 1.5vw, 16px);
-  line-height: 19px;
+  font-size: clamp(12px, 1.1vw, 14px);
+  line-height: 1.35;
   color: #252529;
   align-self: stretch;
 }
@@ -141,10 +139,6 @@
   background-image: url("../../assets/advantage-pattern-03.png");
   background-position: 50% 8%;
   background-size: 105% auto;
-}
-
-.block-advantages__card--3 .block-advantages__card-main {
-  display: none;
 }
 
 .block-advantages__card--4 {
@@ -224,13 +218,12 @@
     inset: auto;
     left: auto;
     top: auto;
+    right: auto;
+    bottom: auto;
     width: 100%;
     max-width: none;
     grid-row: 2;
-    padding: 12px 4px 0;
-  }
-
-  .block-advantages__card--3 .block-advantages__card-main {
-    display: flex;
+    padding: 12px 4px 16px;
+    gap: 8px;
   }
 }

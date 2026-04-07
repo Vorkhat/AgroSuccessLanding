@@ -23,26 +23,18 @@
 .block-overseeding__title {
   margin: 0;
   max-width: 675px;
-  font-family: "Ubuntu", var(--font), system-ui, sans-serif;
-  font-size: 36px;
-  font-weight: 500;
-  line-height: 1;
-  color: #252529;
 }
 
 .block-overseeding__panel {
   position: relative;
   overflow: hidden;
   min-height: 476px;
-  background:
-    linear-gradient(0deg, rgba(37, 37, 41, 0.34), rgba(37, 37, 41, 0.34)),
-    url("../../assets/hero-normal.webp") center/cover no-repeat;
+  background: url("../../assets/hero-normal.webp") center/cover no-repeat;
 }
 
 .block-overseeding__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(37, 37, 41, 0.18) 0%, rgba(37, 37, 41, 0.08) 35%, rgba(37, 37, 41, 0.3) 100%);
   pointer-events: none;
 }
 
@@ -168,19 +160,29 @@
   }
 
   .block-overseeding__metrics {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
     margin-top: 24px;
   }
 
-  .block-overseeding__connector {
-    display: none;
-  }
-
   .block-overseeding__metric {
+    position: relative;
+    z-index: 1;
     min-height: 124px;
     padding-right: 28px;
+  }
+
+  .block-overseeding__connector {
+    align-self: center;
+    margin-block: -12px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .block-overseeding__connector svg {
+    transform: rotate(90deg);
   }
 
   .block-overseeding__metric-value {
@@ -189,8 +191,4 @@
     word-break: break-word;
   }
 
-  .block-overseeding__title {
-    font-size: clamp(1.5rem, 5vw, 2.25rem);
-    line-height: 1.1;
-  }
 }

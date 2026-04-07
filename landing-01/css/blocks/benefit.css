@@ -35,11 +35,6 @@
 .block-benefit__title {
   margin: 0;
   max-width: none;
-  font-family: "Roboto", var(--font);
-  font-size: clamp(1.1rem, 2.2vw, 1.65rem);
-  font-weight: 800;
-  line-height: 1.2;
-  color: #1a1a1a;
 }
 
 .block-benefit__strip {

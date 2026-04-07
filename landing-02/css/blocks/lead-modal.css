@@ -113,9 +113,7 @@
 .lead-modal__bg {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(0deg, rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)),
-    url("../../assets/cta-bg.webp") center / cover no-repeat;
+  background: url("../../assets/cta-bg.webp") center / cover no-repeat;
 }
 
 .lead-modal__split {
@@ -136,10 +134,6 @@
 .lead-modal__title {
   margin: 0;
   max-width: min(601px, 100%);
-  font-family: "Ubuntu", var(--font), system-ui, sans-serif;
-  font-weight: 500;
-  font-size: clamp(1.35rem, 3.2vw, 36px);
-  line-height: 1;
   color: #fcfefe;
 }
 
@@ -282,16 +276,34 @@
   margin: 0;
   padding: 0;
   border: none;
-  background: transparent;
+  border-radius: 0;
+  box-sizing: border-box;
+  background: #f0f2f2;
   box-shadow: none;
-  accent-color: #eab300;
   cursor: pointer;
   position: relative;
   z-index: 2;
   flex-shrink: 0;
   pointer-events: auto;
-  appearance: auto;
-  -webkit-appearance: checkbox;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.lead-modal__consent input[type="checkbox"]:checked {
+  background-color: #f0f2f2;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='10' viewBox='0 0 12 10'%3E%3Cpath fill='none' stroke='%234a4a4a' stroke-width='2.2' stroke-linecap='butt' stroke-linejoin='miter' d='M1 5.2 4.6 8.8 11 1.2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px 10px;
+}
+
+.lead-modal__consent input[type="checkbox"]:focus {
+  outline: none;
+}
+
+.lead-modal__consent input[type="checkbox"]:focus-visible {
+  outline: 2px solid #fcfefe;
+  outline-offset: 2px;
 }
 
 .lead-modal__submit.hero-banner-btn {
@@ -384,10 +396,6 @@
 .lead-thanks-modal__title {
   margin: 0 0 12px;
   padding-right: 28px;
-  font-family: "Ubuntu", var(--font), system-ui, sans-serif;
-  font-weight: 500;
-  font-size: clamp(1.25rem, 4.5vw, 1.5rem);
-  line-height: 1.2;
   color: #252529;
 }
 
@@ -456,7 +464,6 @@
   }
 
   .lead-modal__title {
-    line-height: 1.2;
     width: 100%;
   }
 

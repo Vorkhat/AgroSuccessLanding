@@ -49,16 +49,8 @@
   margin: 0 0 clamp(18px, 2.5vw, 26px);
 }
 
-.block-diff__intro .block-diff__label {
-  text-transform: none;
-}
-
 .block-diff__title {
   margin: 0 0 clamp(10px, 1.5vw, 14px);
-  font-size: clamp(1.15rem, 2.4vw, 1.75rem);
-  font-weight: 800;
-  line-height: 1.2;
-  color: #1a1a1a;
   max-width: 36rem;
 }
 
@@ -83,6 +75,10 @@
   min-width: 0;
 }
 
+.block-diff__feature:last-child {
+  grid-column: 1 / -1;
+}
+
 .block-diff__feature {
   box-sizing: border-box;
   display: flex;
@@ -94,13 +90,6 @@
   padding: clamp(16px, 2.2vw, 22px);
   background: #f0f2f2;
   border: 1px solid rgba(0, 0, 0, 0.06);
-}
-
-.block-diff__feature--empty {
-  padding: 0;
-  min-height: clamp(140px, 22vw, 168px);
-  background: #f0f2f2;
-  border: 1px dashed rgba(0, 0, 0, 0.08);
 }
 
 .block-diff__icon {
@@ -256,9 +245,5 @@
 @media (max-width: 520px) {
   .block-diff__features {
     grid-template-columns: 1fr;
-  }
-
-  .block-diff__feature--empty {
-    display: none;
   }
 }

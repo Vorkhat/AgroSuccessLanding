@@ -34,11 +34,6 @@
 .block-benefit__title {
   margin: 0;
   max-width: none;
-  font-family: "Roboto", var(--font);
-  font-size: clamp(1.1rem, 2.2vw, 1.65rem);
-  font-weight: 800;
-  line-height: 1.2;
-  color: #1a1a1a;
 }
 
 .block-benefit__example {
@@ -211,9 +206,7 @@
   padding: 0;
   font-family: "Roboto", var(--font);
   background-color: #c1c3c4;
-  background-image:
-    linear-gradient(0deg, rgba(240, 242, 242, 0.3), rgba(240, 242, 242, 0.3)),
-    url("../../assets/bg-result.webp");
+  background-image: url("../../assets/bg-result.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
