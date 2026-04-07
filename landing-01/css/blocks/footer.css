@@ -103,7 +103,6 @@
   flex-shrink: 0;
 }
 
-
 .site-footer__actions {
   display: flex;
   flex-direction: column;
@@ -123,10 +122,13 @@
   max-width: 100%;
   min-height: 52px;
   padding: 14px 18px;
-  font-family: "Montserrat", var(--font);
-  font-size: clamp(12px, 1vw, 13px);
-  font-weight: 700;
-  line-height: 1.25;
+  font-family: "Roboto", var(--font), system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: calc(19 / 16);
+  letter-spacing: normal;
+  text-transform: none;
+  border-radius: 0;
 }
 
 button.site-footer__action-btn {
@@ -145,7 +147,7 @@ button.site-footer__action-btn {
   padding: clamp(14px, 2.2vw, 20px) clamp(16px, 2.4vw, 30px);
   font-family: "Roboto", var(--font), system-ui, sans-serif;
   font-weight: 500;
-  font-size: clamp(0.8125rem, 1.15vw, 1rem);
+  font-size: 16px;
   line-height: calc(19 / 16);
 }
 
@@ -165,6 +167,10 @@ button.site-footer__action-btn {
 
 .site-footer__info-cell--requisites .site-footer__social-block {
   margin-bottom: clamp(10px, 1.8vw, 18px);
+}
+
+.site-footer__social--mobile-only {
+  display: none;
 }
 
 .site-footer__social-title {
@@ -446,6 +452,7 @@ button.site-footer__action-btn {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    min-height: 0;
   }
 
   .site-footer__col--nav {
@@ -512,7 +519,6 @@ button.site-footer__action-btn {
 @media (max-width: 640px) {
   .site-footer__inner {
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto minmax(0, 1fr) auto;
     row-gap: clamp(20px, 4vw, 28px);
     grid-template-areas:
       "ft-lead"

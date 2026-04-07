@@ -194,9 +194,13 @@
 
   .block-cta__form input:not([type="checkbox"]),
   .block-cta__consent-text,
-  .block-cta__consent-label,
-  .block-cta__submit {
+  .block-cta__consent-label {
     font-size: 17px;
+  }
+
+  .block-cta__submit {
+    font-size: 16px;
+    line-height: calc(19 / 16);
   }
 
   .block-cta__consent-text {
@@ -204,7 +208,8 @@
   }
 
   .hero-banner-btn {
-    font-size: clamp(15px, 3.6vw, 17px);
+    font-size: 16px;
+    line-height: calc(19 / 16);
   }
 
   .site-footer,
@@ -226,10 +231,14 @@
 
   .lead-modal__lead,
   .lead-modal__field input,
-  .lead-modal__consent-text,
-  .lead-modal__submit {
+  .lead-modal__consent-text {
     font-size: clamp(1rem, 3.5vw, 1.08rem);
     line-height: 1.4;
+  }
+
+  .lead-modal__submit {
+    font-size: 16px;
+    line-height: calc(19 / 16);
   }
 
   .lead-thanks-modal__text,

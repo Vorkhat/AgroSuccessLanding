@@ -78,12 +78,12 @@
   flex: none;
   flex-grow: 0;
   align-self: stretch;
-  border-bottom: 1px solid #59595b;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.38);
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-size: clamp(17px, 2.35vw, 22px);
   line-height: 1.35;
-  color: #252529;
+  color: #fcfefe;
 }
 
 .banner-list li:first-child {
@@ -113,16 +113,19 @@
   width: 100%;
   max-width: 100%;
   padding: clamp(12px, 2vw, 16px) clamp(10px, 1.5vw, 16px);
-  font-family: inherit;
-  font-weight: 700;
-  font-size: clamp(0.65rem, 1.05vw, 0.78rem);
-  line-height: 1.25;
-  text-transform: uppercase;
+  font-family: "Roboto", var(--font), system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: calc(19 / 16);
+  letter-spacing: normal;
+  text-transform: none;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
   transition: filter 0.2s, background 0.2s, border-color 0.2s;
   box-sizing: border-box;
+  border-radius: 0;
 }
 
 .hero-banner-btn:hover {
@@ -134,11 +137,6 @@
   background: #eab300;
   color: #252529;
   border: none;
-  font-family: "Roboto", var(--font), system-ui, sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: clamp(0.8125rem, 1.15vw, 1rem);
-  line-height: calc(19 / 16);
   padding: clamp(14px, 2.2vw, 20px) clamp(18px, 2.8vw, 30px);
   min-height: clamp(48px, 9vw, 60px);
 }
@@ -175,11 +173,6 @@
   background: #c1c3c4;
   color: #252529;
   border: none;
-  font-family: "Roboto", var(--font), system-ui, sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: clamp(0.8125rem, 1.15vw, 1rem);
-  line-height: calc(19 / 16);
   padding: clamp(14px, 2.2vw, 20px) clamp(16px, 2.4vw, 24px);
   min-height: clamp(48px, 9vw, 60px);
 }
@@ -242,8 +235,14 @@
 button.hero-banner-btn {
   margin: 0;
   font: inherit;
+  font-family: "Roboto", var(--font), system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: calc(19 / 16);
+  text-transform: none;
   text-align: center;
   border: none;
+  border-radius: 0;
   appearance: none;
   -webkit-appearance: none;
 }

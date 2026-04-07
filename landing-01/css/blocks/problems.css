@@ -177,22 +177,24 @@
 
 .block-problems__card-lead {
   margin: 0;
-  margin-inline: auto;
   flex: none;
   flex-grow: 0;
   align-self: center;
   order: 1;
   box-sizing: border-box;
-  width: min(197px, 100%);
-  max-width: 197px;
+  width: min(280px, 100%);
+  max-width: 280px;
   font-family: "Roboto", var(--font), system-ui, sans-serif;
   font-style: italic;
   font-weight: 300;
-  font-size: 14px;
-  line-height: 16px;
+  font-synthesis: none;
+  font-size: 16px;
+  line-height: 1.19;
   letter-spacing: 0;
   text-align: center;
   color: #fcfefe;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @media (max-width: 1024px) {

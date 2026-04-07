@@ -364,10 +364,10 @@
   height: 60px;
   padding: 20px 30px;
   background: #eab300;
-  color: #000000;
+  color: #252529;
   font-weight: 500;
   font-size: 16px;
-  line-height: 19px;
+  line-height: calc(19 / 16);
   letter-spacing: normal;
   text-transform: none;
 }

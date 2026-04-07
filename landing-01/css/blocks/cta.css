@@ -420,12 +420,14 @@
   margin: 0;
   background: #eab300;
   border: none;
+  border-radius: 0;
   font-family: "Roboto", var(--font), system-ui, sans-serif;
-  font-size: clamp(0.8125rem, 1.15vw, 1rem);
+  font-size: 16px;
   font-weight: 500;
   font-style: normal;
   line-height: calc(19 / 16);
-  text-transform: uppercase;
+  letter-spacing: normal;
+  text-transform: none;
   color: #252529;
   cursor: pointer;
   box-sizing: border-box;

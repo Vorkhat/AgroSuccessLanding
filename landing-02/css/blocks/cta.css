@@ -482,13 +482,15 @@
   margin: 0;
   background: #eab300;
   border: none;
-  font-family: "Roboto", var(--font);
+  border-radius: 0;
+  font-family: "Roboto", var(--font), system-ui, sans-serif;
   font-size: 16px;
   font-weight: 500;
   font-style: normal;
-  line-height: normal;
-  text-transform: uppercase;
-  color: #000000;
+  line-height: calc(19 / 16);
+  letter-spacing: normal;
+  text-transform: none;
+  color: #252529;
   cursor: pointer;
   box-sizing: border-box;
 }
