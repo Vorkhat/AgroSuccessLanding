@@ -97,8 +97,8 @@
   line-height: var(--section-eyebrow-line-height);
   letter-spacing: normal;
   text-transform: uppercase;
-  color: #59595b;
-  background: #c1c3c4;
+  color: var(--cta-chip-text);
+  background: var(--cta-chip-bg);
   border-radius: 0;
   flex: none;
   flex-grow: 0;
@@ -201,8 +201,8 @@
 .block-cta__index {
   position: static;
   z-index: auto;
-  color: #59595b;
-  background: #c1c3c4;
+  color: var(--cta-chip-text);
+  background: var(--cta-chip-bg);
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
   flex: none;
@@ -485,6 +485,41 @@
 
   .block-cta__media {
     min-height: auto;
+  }
+
+  .block-cta__label-row {
+    flex-wrap: wrap;
+  }
+
+  /* как на landing-02: размеры из --section-*, читаемость на тёмном фоне */
+  .block-cta__media .block-cta__label {
+    padding: var(--section-eyebrow-pad-y) var(--section-eyebrow-pad-x);
+    gap: var(--section-eyebrow-gap);
+    min-height: var(--section-chip-height);
+    height: auto;
+    width: fit-content;
+    max-width: 100%;
+    font-size: var(--section-eyebrow-font-size);
+    line-height: var(--section-eyebrow-line-height);
+    font-weight: 500;
+    color: var(--cta-chip-text);
+    background: var(--cta-chip-bg);
+  }
+
+  .block-cta__label-row .block-cta__index--top {
+    padding: var(--section-eyebrow-pad-y) var(--section-eyebrow-pad-x);
+    gap: var(--section-eyebrow-gap);
+    width: var(--section-index-width);
+    min-width: var(--section-index-width);
+    max-width: var(--section-index-width);
+    height: var(--section-index-height);
+    min-height: var(--section-index-height);
+    max-height: var(--section-index-height);
+    font-size: var(--section-eyebrow-font-size);
+    line-height: var(--section-eyebrow-line-height);
+    font-weight: 500;
+    color: var(--cta-chip-text);
+    background: var(--cta-chip-bg);
   }
 
   .block-cta__index {

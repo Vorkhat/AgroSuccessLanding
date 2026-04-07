@@ -262,25 +262,6 @@
   min-width: 0;
 }
 
-/* Номер: 40×40, border 1px #513172 (макет Rectangle 26) */
-.block-kit__card--feature .block-kit__num {
-  width: 40px;
-  height: 40px;
-  min-width: 40px;
-  box-sizing: border-box;
-  border: 1px solid #513172;
-}
-
-.block-kit__card--feature .block-kit__num-corners {
-  display: none;
-}
-
-.block-kit__card--feature .block-kit__num-text {
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 23px;
-}
-
 .block-kit__feature-header .block-kit__card-intro {
   flex: 1 1 auto;
   min-width: 0;
