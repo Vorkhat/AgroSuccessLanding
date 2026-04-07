@@ -77,13 +77,14 @@
   box-sizing: border-box;
   position: absolute;
   left: 20px;
-  top: 65.13%;
+  /* ~35% высоты мало для многострочных заголовков + текст */
+  top: 52%;
   width: calc(100% - 40px);
   max-width: 302px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0;
+  padding: 0 0 4px;
   gap: 20px;
   z-index: 1;
 }
@@ -177,27 +178,11 @@
       "c3 c4"
       "c5 c6";
   }
-}
 
-@media (max-width: 520px) {
-  .block-advantages__head-top {
-    gap: clamp(8px, 2vw, 16px);
-  }
-
-  .block-advantages__grid {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "c1"
-      "c2"
-      "c3"
-      "c4"
-      "c5"
-      "c6";
-  }
-
+  /* Узкие колонки: убираем фиксированную «квадратную» высоту и абсолют — текст не клипится */
   .block-advantages__card {
     display: grid;
-    grid-template-rows: minmax(160px, 48vw) auto;
+    grid-template-rows: minmax(160px, 42vw) auto;
     aspect-ratio: unset;
     align-items: stretch;
     overflow: visible;
@@ -219,6 +204,32 @@
     width: 100%;
     max-width: none;
     grid-row: 2;
+    padding: 16px 6px 0;
+    gap: clamp(12px, 2.5vw, 20px);
+  }
+}
+
+@media (max-width: 520px) {
+  .block-advantages__head-top {
+    gap: clamp(8px, 2vw, 16px);
+  }
+
+  .block-advantages__grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "c1"
+      "c2"
+      "c3"
+      "c4"
+      "c5"
+      "c6";
+  }
+
+  .block-advantages__card {
+    grid-template-rows: minmax(160px, 48vw) auto;
+  }
+
+  .block-advantages__card-main {
     padding: 12px 4px 0;
   }
 }
