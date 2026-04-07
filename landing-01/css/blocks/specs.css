@@ -72,7 +72,7 @@
   margin: 0;
   padding: 0;
   border: 0;
-  background: rgba(193, 195, 196, 0.2);
+  background: transparent;
   margin-bottom: 0;
 }
 
@@ -82,18 +82,19 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: clamp(20px, 5vw, 65px);
-  padding: 20px 4px;
+  gap: 0;
+  padding: 20px;
   width: 100%;
   min-height: 63px;
   flex: none;
   align-self: stretch;
-  background: transparent;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  flex-grow: 0;
+  background: #f0f2f2;
+  border-bottom: 1px solid #c1c3c4;
 }
 
 .block-specs__row:first-child {
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: none;
 }
 
 .block-specs__term {
@@ -101,14 +102,14 @@
   flex: 0 1 auto;
   min-width: 0;
   max-width: 55%;
-  padding-right: 8px;
+  padding-right: 0;
   font-family: "Roboto", var(--font);
   font-style: normal;
   font-weight: 700;
-  font-size: clamp(14px, 2.4vw, 20px);
+  font-size: 20px;
   line-height: 23px;
   text-transform: uppercase;
-  color: #59595b;
+  color: #513172;
   text-align: left;
 }
 
@@ -119,7 +120,7 @@
   font-family: "Roboto", var(--font);
   font-style: normal;
   font-weight: 700;
-  font-size: clamp(14px, 2.4vw, 20px);
+  font-size: 20px;
   line-height: 23px;
   text-transform: uppercase;
   color: #252529;
@@ -379,22 +380,68 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 767px) {
+  .block-specs__spec-col {
+    align-items: stretch;
+  }
+
+  .block-specs__table {
+    background: transparent;
+    padding: 0;
+    max-width: none;
+    width: 100%;
+    margin-inline: 0;
+  }
+
   .block-specs__row {
+    box-sizing: border-box;
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: flex-start;
     gap: 10px;
-    min-height: 0;
+    padding: 20px;
+    min-height: 87px;
+    width: 100%;
+    flex: none;
+    align-self: stretch;
+    flex-grow: 0;
+    background: #f0f2f2;
+    border-bottom: 1px solid #c1c3c4;
+  }
+
+  .block-specs__row:first-child {
+    border-top: none;
   }
 
   .block-specs__term {
+    margin: 0;
+    flex: none;
+    flex-grow: 0;
+    align-self: flex-start;
     max-width: 100%;
     padding-right: 0;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #513172;
+    text-align: left;
   }
 
   .block-specs__value {
-    align-self: flex-end;
+    margin: 0;
+    flex: none;
+    flex-grow: 0;
+    order: 1;
+    align-self: flex-start;
     max-width: 100%;
-    text-align: right;
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #252529;
+    text-align: left;
+    white-space: normal;
   }
 }

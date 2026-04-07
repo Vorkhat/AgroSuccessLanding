@@ -88,7 +88,7 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 0;
-  gap: 8px;
+  gap: 20px;
   z-index: 1;
 }
 
@@ -97,7 +97,7 @@
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: clamp(18px, 2vw, 24px);
+  font-size: clamp(24px, 3vw, 30px);
   line-height: 28px;
   color: #513172;
   align-self: stretch;
@@ -108,7 +108,7 @@
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: clamp(14px, 1.5vw, 16px);
+  font-size: clamp(18px, 1.8vw, 20px);
   line-height: 19px;
   color: #252529;
   align-self: stretch;
