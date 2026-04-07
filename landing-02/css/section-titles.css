@@ -1,0 +1,43 @@
+.block-hero__title,
+.block-diff__title,
+.block-market-problems__title,
+.block-advantages__title,
+.block-benefit__title,
+.block-overseeding__title,
+.block-about__title,
+.block-works__title,
+.block-crops__title,
+.block-kit__title,
+.block-specs__title,
+.block-trust__title,
+.block-placement__title,
+.block-stages__title,
+.block-guarantees__title,
+.block-cta__media .block-cta__title {
+  font-family: "Ubuntu", "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 1;
+  color: #252529;
+}
+
+.block-about__title span {
+  color: #6a4d95;
+}
+
+.block-cta__media .block-cta__title {
+  color: #fcfefe;
+  line-height: 36px;
+  max-width: 601px;
+}
+
+.lead-modal__title,
+.lead-thanks-modal__title,
+.policy-modal__title {
+  font-family: "Ubuntu", "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 1;
+}

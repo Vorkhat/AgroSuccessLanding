@@ -1,0 +1,32 @@
+/* Единая типографика заголовков секций; размер подстраивается под ширину экрана (max 36px) */
+.block-hero__title,
+.block-problems__title,
+.block-solution__title,
+.block-about__title,
+.block-advantages__title,
+.block-benefit__title,
+.block-works__title,
+.block-specs__title,
+.block-trust__title,
+.block-cta__media .block-cta__title {
+  font-family: "Ubuntu", "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: clamp(1.3125rem, 2.8vw + 0.75rem, 2.25rem);
+  line-height: 1;
+  color: #252529;
+}
+
+.block-cta__media .block-cta__title {
+  color: #fff;
+}
+
+.lead-modal__title,
+.lead-thanks-modal__title,
+.policy-modal__title {
+  font-family: "Ubuntu", "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: clamp(1.3125rem, 2.8vw + 0.75rem, 2.25rem);
+  line-height: 1;
+}
