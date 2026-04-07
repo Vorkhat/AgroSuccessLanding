@@ -1,4 +1,4 @@
-/* 12. Этапы работы — сетка как у преимуществ (block 07) */
+
 
 .block-stages {
   background: #fff;
@@ -20,13 +20,14 @@
 .block-stages__head-row {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: clamp(16px, 3vw, 32px);
 }
 
 .block-stages__head-main {
   flex: 1;
   min-width: 0;
+  width: 100%;
 }
 
 .block-stages__head .block-stages__label {
@@ -255,13 +256,8 @@
 }
 
 @media (max-width: 520px) {
-  .block-stages__head-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .block-stages__index {
-    align-self: flex-end;
+  .block-stages__head-top {
+    gap: clamp(8px, 2vw, 16px);
   }
 
   .block-stages__grid {

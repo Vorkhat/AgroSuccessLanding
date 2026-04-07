@@ -209,7 +209,7 @@
   border-style: solid;
 }
 
-/* Rectangle 22: 1px #FCFEFE, отступ ~6px как в макете 302×48 внутри 314×60 */
+
 .hero-banner-btn--yellow .hero-banner-btn__corners {
   inset: clamp(5px, 1.1vw, 6px);
 }
@@ -243,7 +243,7 @@
 }
 
 @media (max-width: 900px) {
-  /* Баннер в потоке под текстом первого экрана (не оверлей на фото) */
+  
   .block-hero__banner {
     position: static;
     left: auto;

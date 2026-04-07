@@ -11,10 +11,25 @@
 .block-specs__intro {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr);
+  grid-template-areas:
+    "specs-eyebrow specs-eyebrow"
+    "specs-head specs-table";
   align-items: start;
   column-gap: clamp(24px, 5vw, 64px);
   row-gap: clamp(20px, 3vw, 28px);
   margin-bottom: clamp(26px, 4vw, 38px);
+}
+
+.block-specs__intro > .block-specs__head-top {
+  grid-area: specs-eyebrow;
+}
+
+.block-specs__intro > .block-specs__head {
+  grid-area: specs-head;
+}
+
+.block-specs__intro > .block-specs__spec-col {
+  grid-area: specs-table;
 }
 
 .block-specs__head {
@@ -26,14 +41,8 @@
 .block-specs__spec-col {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: stretch;
   min-width: 0;
-}
-
-.block-specs__spec-col-top {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: clamp(10px, 1.5vw, 14px);
 }
 
 .block-specs__title,
@@ -52,7 +61,7 @@
   line-height: 1.32;
 }
 
-/* Таблица характеристик — макет Frame 2131330035 */
+
 .block-specs__table {
   display: flex;
   flex-direction: column;
@@ -63,6 +72,7 @@
   margin: 0;
   padding: 0;
   border: 0;
+  background: rgba(193, 195, 196, 0.2);
   margin-bottom: 0;
 }
 
@@ -73,13 +83,17 @@
   justify-content: space-between;
   align-items: center;
   gap: clamp(20px, 5vw, 65px);
-  padding: 20px;
+  padding: 20px 4px;
   width: 100%;
   min-height: 63px;
   flex: none;
   align-self: stretch;
-  background: #f0f2f2;
-  border-bottom: 1px solid #c1c3c4;
+  background: transparent;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.block-specs__row:first-child {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .block-specs__term {
@@ -94,7 +108,7 @@
   font-size: clamp(14px, 2.4vw, 20px);
   line-height: 23px;
   text-transform: uppercase;
-  color: #513172;
+  color: #59595b;
   text-align: left;
 }
 
@@ -343,6 +357,10 @@
 @media (max-width: 900px) {
   .block-specs__intro {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "specs-eyebrow"
+      "specs-head"
+      "specs-table";
   }
 
   .block-specs__spec-col {
@@ -352,10 +370,6 @@
   .block-specs__table {
     max-width: none;
     align-self: stretch;
-  }
-
-  .block-specs__spec-col-top {
-    margin-bottom: 8px;
   }
 }
 

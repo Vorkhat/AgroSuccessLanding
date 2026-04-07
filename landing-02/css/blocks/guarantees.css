@@ -1,4 +1,4 @@
-/* 14. Гарантии — по макету Figma (Frame 2131330140 / 2131330152) */
+
 
 .block-guarantees {
   box-sizing: border-box;
@@ -26,17 +26,11 @@
   margin-bottom: var(--section-head-gap);
 }
 
-.block-guarantees__head-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: clamp(16px, 3vw, 32px);
-  width: 100%;
+.block-guarantees__head-top {
+  margin-bottom: 0;
 }
 
 .block-guarantees__head .block-guarantees__label {
-  margin: 0;
   text-transform: none;
 }
 
@@ -51,7 +45,7 @@
   color: #252529;
 }
 
-/* Сетка карточек: row, wrap, gap 10px */
+
 .block-guarantees__grid {
   list-style: none;
   margin: 0 auto;
@@ -181,12 +175,8 @@
 }
 
 @media (max-width: 520px) {
-  .block-guarantees__head-row {
+  .block-guarantees__head-top {
     flex-wrap: wrap;
-  }
-
-  .block-guarantees__index {
-    margin-left: auto;
   }
 
   .block-guarantees__text {

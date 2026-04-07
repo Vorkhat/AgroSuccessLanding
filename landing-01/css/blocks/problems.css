@@ -21,7 +21,7 @@
 .block-problems__head-row {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: clamp(16px, 3vw, 32px);
 }
 
@@ -193,13 +193,8 @@
 }
 
 @media (max-width: 520px) {
-  .block-problems__head-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .block-problems__index {
-    align-self: flex-end;
+  .block-problems__head-top {
+    gap: clamp(8px, 2vw, 16px);
   }
 
   .block-problems__grid {

@@ -32,9 +32,10 @@
   <link rel="stylesheet" href="css/blocks/cta.css" />
   <link rel="stylesheet" href="css/blocks/footer.css" />
   <link rel="stylesheet" href="css/blocks/lead-modal.css" />
+  <link rel="stylesheet" href="css/section-titles.css" />
 </head>
 <body>
-  
+
   <header class="block-hero" id="block-hero">
     <div class="block-hero__topbar">
       <a class="block-hero__topbar-brand" href="#block-hero">
@@ -244,7 +245,10 @@
     <div class="block-market-problems__inner">
       <header class="block-market-problems__head">
         <div class="block-market-problems__head-main">
-          <p class="block-diff__label">Проблемы рынка</p>
+          <div class="block-market-problems__head-top">
+            <p class="block-diff__label">Проблемы рынка</p>
+            <span class="block-diff__index block-market-problems__index" aria-hidden="true">02</span>
+          </div>
           <h2 class="block-market-problems__title" id="market-problems-heading">
             Почему шнековые протравливатели приводят к потерям
           </h2>
@@ -252,7 +256,6 @@
             <strong>До 20% семян повреждаются</strong> при обработке шнеком
           </p>
         </div>
-        <span class="block-diff__index block-market-problems__index" aria-hidden="true">02</span>
       </header>
 
       <div class="block-market-problems__gallery" aria-label="Сравнение состояния семян">
@@ -302,13 +305,15 @@
       <header class="block-benefit__head">
         <div class="block-benefit__head-row">
           <div class="block-benefit__head-main">
-            <p class="block-diff__label">Потери</p>
+            <div class="block-benefit__head-top">
+              <p class="block-diff__label">Потери</p>
+              <span class="block-diff__index" aria-hidden="true">03</span>
+            </div>
             <h2 class="block-benefit__title" id="benefit-heading">
               Сколько денег можно потерять из-за повреждения семян
             </h2>
             <p class="block-benefit__example">На примере сои</p>
           </div>
-          <span class="block-diff__index" aria-hidden="true">03</span>
         </div>
       </header>
     </div>
@@ -360,12 +365,14 @@
     <div class="block-overseeding__inner">
       <header class="block-overseeding__head">
         <div class="block-overseeding__head-main">
-          <p class="block-diff__label">Дополнительные потери</p>
+          <div class="block-overseeding__head-top">
+            <p class="block-diff__label">Дополнительные потери</p>
+            <span class="block-diff__index" aria-hidden="true">04</span>
+          </div>
           <h2 class="block-overseeding__title" id="overseeding-heading">
             Почему приходится увеличивать норму высева
           </h2>
         </div>
-        <span class="block-diff__index" aria-hidden="true">04</span>
       </header>
 
       <div class="block-overseeding__panel">
@@ -490,53 +497,49 @@
 
   <section class="block-works" id="how-seed-treater-works" aria-labelledby="works-heading">
     <div class="block-works__inner">
-      <div class="block-works__split">
-        <div class="block-works__col block-works__col--content">
-          <header class="block-works__head">
-            <div class="block-works__head-row">
-              <div class="block-works__head-main">
-                <p class="block-works__label">Принцип работы</p>
-                <h2 class="block-works__title" id="works-heading">Как работает протравливатель семян от компании Агроуспех</h2>
-              </div>
+      <header class="block-works__head">
+        <div class="block-works__head-row">
+          <div class="block-works__head-main">
+            <div class="block-works__head-top">
+              <p class="block-works__label">Принцип работы</p>
+              <span class="block-works__index" aria-hidden="true">06</span>
             </div>
-          </header>
-          <ol class="block-works__steps">
-            <li class="block-works__step">
-              <span class="block-works__step-num" aria-hidden="true">01</span>
-              <p class="block-works__step-text">Семена подаются в барабан.</p>
-            </li>
-            <li class="block-works__step">
-              <span class="block-works__step-num" aria-hidden="true">02</span>
-              <p class="block-works__step-text">В барабан подается раствор протравителя.</p>
-            </li>
-            <li class="block-works__step">
-              <span class="block-works__step-num" aria-hidden="true">03</span>
-              <p class="block-works__step-text">Барабан вращается и перемешивает семена.</p>
-            </li>
-            <li class="block-works__step">
-              <span class="block-works__step-num" aria-hidden="true">04</span>
-              <p class="block-works__step-text">Препарат равномерно покрывает каждое семя.</p>
-            </li>
-            <li class="block-works__step">
-              <span class="block-works__step-num" aria-hidden="true">05</span>
-              <p class="block-works__step-text">Готовые семена выгружаются.</p>
-            </li>
-          </ol>
-        </div>
-
-        <div class="block-works__col block-works__col--media">
-          <span class="block-works__index" aria-hidden="true">06</span>
-          <div class="block-works__scheme">
-            <img
-              class="block-works__scheme-image"
-              src="assets/schema.webp"
-              width="780"
-              height="760"
-              alt="Схема протравливателя семян с обозначением узлов"
-              decoding="async"
-            />
+            <h2 class="block-works__title" id="works-heading">Как работает протравливатель семян от компании Агроуспех</h2>
           </div>
         </div>
+      </header>
+      <ol class="block-works__steps">
+        <li class="block-works__step">
+          <span class="block-works__step-num" aria-hidden="true">01</span>
+          <p class="block-works__step-text">Семена подаются в барабан.</p>
+        </li>
+        <li class="block-works__step">
+          <span class="block-works__step-num" aria-hidden="true">02</span>
+          <p class="block-works__step-text">В барабан подается раствор протравителя.</p>
+        </li>
+        <li class="block-works__step">
+          <span class="block-works__step-num" aria-hidden="true">03</span>
+          <p class="block-works__step-text">Барабан вращается и перемешивает семена.</p>
+        </li>
+        <li class="block-works__step">
+          <span class="block-works__step-num" aria-hidden="true">04</span>
+          <p class="block-works__step-text">Препарат равномерно покрывает каждое семя.</p>
+        </li>
+        <li class="block-works__step">
+          <span class="block-works__step-num" aria-hidden="true">05</span>
+          <p class="block-works__step-text">Готовые семена выгружаются.</p>
+        </li>
+        <li class="block-works__step block-works__step--spacer" aria-hidden="true"></li>
+      </ol>
+      <div class="block-works__scheme">
+        <img
+          class="block-works__scheme-image"
+          src="assets/schema.webp"
+          width="780"
+          height="760"
+          alt="Схема протравливателя семян с обозначением узлов"
+          decoding="async"
+        />
       </div>
     </div>
   </section>
@@ -546,12 +549,14 @@
       <header class="block-advantages__head">
         <div class="block-advantages__head-row">
           <div class="block-advantages__head-main">
-            <p class="block-advantages__label">Преимущества</p>
+            <div class="block-advantages__head-top">
+              <p class="block-advantages__label">Преимущества</p>
+              <span class="block-advantages__index" aria-hidden="true">07</span>
+            </div>
             <h2 class="block-advantages__title" id="advantages-heading">
               Ключевые преимущества барабанного протравливателя
             </h2>
           </div>
-          <span class="block-advantages__index" aria-hidden="true">07</span>
         </div>
       </header>
 
@@ -599,7 +604,7 @@
     <div class="block-crops__inner">
       <div class="block-crops__intro">
         <header class="block-crops__head">
-          <div class="block-crops__head-row">
+          <div class="block-crops__head-top">
             <p class="block-crops__label">Культуры</p>
             <span class="block-crops__index" aria-hidden="true">08</span>
           </div>
@@ -703,7 +708,7 @@
     <div class="block-kit__inner">
       <header class="block-kit__head">
         <div class="block-kit__head-block">
-          <div class="block-kit__head-line">
+          <div class="block-kit__head-top">
             <p class="block-kit__label">Комплектация</p>
             <span class="block-kit__index" aria-hidden="true">09</span>
           </div>
@@ -804,16 +809,16 @@
   <section class="block-specs" id="specs" aria-labelledby="specs-heading">
     <div class="block-specs__inner">
       <div class="block-specs__intro">
-        <header class="block-specs__head">
+        <div class="block-specs__head-top">
           <p class="block-specs__label">Характеристики</p>
+          <span class="block-specs__index" aria-hidden="true">10</span>
+        </div>
+        <header class="block-specs__head">
           <h2 class="block-specs__title" id="specs-heading">
             Ключевые характеристики, которые ускоряют процессы и снижают затраты
           </h2>
         </header>
         <div class="block-specs__spec-col">
-          <div class="block-specs__spec-col-top">
-            <span class="block-specs__index" aria-hidden="true">10</span>
-          </div>
           <div class="block-specs__table">
             <div class="block-specs__row">
               <span class="block-specs__term">Производительность</span>
@@ -887,7 +892,7 @@
     <div class="block-placement__inner">
       <header class="block-placement__head">
         <div class="block-placement__head-block">
-          <div class="block-placement__head-line">
+          <div class="block-placement__head-top">
             <p class="block-placement__label">Размещение</p>
             <span class="block-placement__index" aria-hidden="true">11</span>
           </div>
@@ -961,12 +966,14 @@
       <header class="block-stages__head">
         <div class="block-stages__head-row">
           <div class="block-stages__head-main">
-            <p class="block-stages__label">Этапы работы</p>
+            <div class="block-stages__head-top">
+              <p class="block-stages__label">Этапы работы</p>
+              <span class="block-stages__index" aria-hidden="true">12</span>
+            </div>
             <h2 class="block-stages__title" id="implementation-stages-heading">
               Как проходит внедрение оборудования от консультации до запуска
             </h2>
           </div>
-          <span class="block-stages__index" aria-hidden="true">12</span>
         </div>
       </header>
 
@@ -1068,7 +1075,7 @@
   <section class="block-guarantees" id="guarantees" aria-labelledby="guarantees-heading">
     <div class="block-guarantees__inner">
       <header class="block-guarantees__head">
-        <div class="block-guarantees__head-row">
+        <div class="block-guarantees__head-top">
           <p class="block-guarantees__label">Гарантии</p>
           <span class="block-guarantees__index" aria-hidden="true">13</span>
         </div>
@@ -1173,7 +1180,10 @@
       <div class="block-cta__panel">
         <div class="block-cta__media">
           <div class="block-cta__media-stack">
-            <p class="block-cta__label">Получить расчёт</p>
+            <div class="block-cta__label-row">
+              <p class="block-cta__label">Получить расчёт</p>
+              <span class="block-cta__index block-cta__index--top" aria-hidden="true">14</span>
+            </div>
             <h2 class="block-cta__title" id="cta-heading">
               Получите расчет окупаемости оборудования за 3 минуты
             </h2>
@@ -1182,9 +1192,11 @@
 
         <div class="block-cta__form-card">
           <div class="block-cta__form-head">
-            <p class="block-cta__eyebrow">Оставьте заявку и получите расчет для вашего предприятия</p>
-            <span class="block-cta__index" aria-hidden="true">14</span>
+            <div class="block-cta__form-head-top">
+              <p class="block-cta__eyebrow">Оставьте заявку и получите расчет для вашего предприятия</p>
+            </div>
           </div>
+          <span class="block-cta__index block-cta__index--inline" aria-hidden="true">14</span>
           <form class="block-cta__form" id="cta-form" action="#" method="post">
             <div class="block-cta__fields">
               <label class="block-cta__field">
@@ -1240,43 +1252,6 @@
             decoding="async"
           />
         </a>
-        <div class="site-footer__actions">
-          <button
-            type="button"
-            class="hero-banner-btn hero-banner-btn--yellow site-footer__action-btn"
-            data-lead-modal
-            data-lead-variant="callback"
-            aria-haspopup="dialog"
-            aria-controls="lead-modal"
-          >
-            <span class="hero-banner-btn__corners" aria-hidden="true">
-              <span class="hero-banner-btn__corner hero-banner-btn__corner--tl"></span>
-              <span class="hero-banner-btn__corner hero-banner-btn__corner--tr"></span>
-              <span class="hero-banner-btn__corner hero-banner-btn__corner--bl"></span>
-              <span class="hero-banner-btn__corner hero-banner-btn__corner--br"></span>
-            </span>
-            Заказать звонок
-          </button>
-          <button
-            type="button"
-            class="hero-banner-btn hero-banner-btn--muted site-footer__action-btn"
-            data-lead-modal
-            data-lead-variant="commercial"
-            aria-haspopup="dialog"
-            aria-controls="lead-modal"
-          >
-            <span class="hero-banner-btn__corners" aria-hidden="true">
-              <span class="hero-banner-btn__corner hero-banner-btn__corner--tl"></span>
-              <span class="hero-banner-btn__corner hero-banner-btn__corner--tr"></span>
-              <span class="hero-banner-btn__corner hero-banner-btn__corner--bl"></span>
-              <span class="hero-banner-btn__corner hero-banner-btn__corner--br"></span>
-            </span>
-            Коммерческое предложение
-          </button>
-        </div>
-      </div>
-
-      <div class="site-footer__col site-footer__col--meta">
         <div class="site-footer__social-block">
           <p class="site-footer__social-title">Мы в социальных сетях:</p>
           <div class="site-footer__social-row">
@@ -1321,30 +1296,69 @@
             </a>
           </div>
         </div>
-        <div class="site-footer__info-grid">
-          <div class="site-footer__info-cell">
-            <h3>Реквизиты</h3>
-            <p>ООО Завод «АгроУспех»<br />ОГРН 1234567890123<br />ИНН 1234567890</p>
-          </div>
-          <div class="site-footer__info-cell">
-            <h3>Адрес</h3>
-            <p>656000, г.&nbsp;Барнаул,<br />ул.&nbsp;Рубцовская, д.&nbsp;—</p>
-          </div>
-          <div class="site-footer__info-cell site-footer__info-cell--contact">
-            <h3>Телефон</h3>
-            <p>
-              <a href="tel:+78000000000">8&nbsp;800&nbsp;000-00-00</a><br />
-              <a href="tel:+73852500000">+7&nbsp;(3852)&nbsp;50-00-00</a>
-            </p>
-          </div>
-          <div class="site-footer__info-cell site-footer__info-cell--contact">
-            <h3>Почта</h3>
-            <p><a href="mailto:sales@agrouspeh.ru">sales@agrouspeh.ru</a></p>
-          </div>
+        <div class="site-footer__actions">
+          <button
+            type="button"
+            class="hero-banner-btn hero-banner-btn--yellow site-footer__action-btn"
+            data-lead-modal
+            data-lead-variant="callback"
+            aria-haspopup="dialog"
+            aria-controls="lead-modal"
+          >
+            <span class="hero-banner-btn__corners" aria-hidden="true">
+              <span class="hero-banner-btn__corner hero-banner-btn__corner--tl"></span>
+              <span class="hero-banner-btn__corner hero-banner-btn__corner--tr"></span>
+              <span class="hero-banner-btn__corner hero-banner-btn__corner--bl"></span>
+              <span class="hero-banner-btn__corner hero-banner-btn__corner--br"></span>
+            </span>
+            Заказать звонок
+          </button>
+          <button
+            type="button"
+            class="hero-banner-btn hero-banner-btn--muted site-footer__action-btn"
+            data-lead-modal
+            data-lead-variant="commercial"
+            aria-haspopup="dialog"
+            aria-controls="lead-modal"
+          >
+            <span class="hero-banner-btn__corners" aria-hidden="true">
+              <span class="hero-banner-btn__corner hero-banner-btn__corner--tl"></span>
+              <span class="hero-banner-btn__corner hero-banner-btn__corner--tr"></span>
+              <span class="hero-banner-btn__corner hero-banner-btn__corner--bl"></span>
+              <span class="hero-banner-btn__corner hero-banner-btn__corner--br"></span>
+            </span>
+            Коммерческое предложение
+          </button>
         </div>
-        <p class="site-footer__credit">
-          <a href="https://one-sol.ru/" target="_blank" rel="noopener noreferrer">Разработка и продвижение - OneSolution</a>
-        </p>
+      </div>
+
+      <div class="site-footer__col site-footer__col--meta">
+        <div class="site-footer__meta-tail">
+          <div class="site-footer__info-grid">
+            <div class="site-footer__info-cell">
+              <h3>Реквизиты</h3>
+              <p>ООО Завод «АгроУспех»<br />ОГРН 1234567890123<br />ИНН 1234567890</p>
+            </div>
+            <div class="site-footer__info-cell">
+              <h3>Адрес</h3>
+              <p>656000, г.&nbsp;Барнаул,<br />ул.&nbsp;Рубцовская, д.&nbsp;—</p>
+            </div>
+            <div class="site-footer__info-cell site-footer__info-cell--contact">
+              <h3>Телефон</h3>
+              <p>
+                <a href="tel:+78000000000">8&nbsp;800&nbsp;000-00-00</a><br />
+                <a href="tel:+73852500000">+7&nbsp;(3852)&nbsp;50-00-00</a>
+              </p>
+            </div>
+            <div class="site-footer__info-cell site-footer__info-cell--contact">
+              <h3>Почта</h3>
+              <p><a href="mailto:sales@agrouspeh.ru">sales@agrouspeh.ru</a></p>
+            </div>
+          </div>
+          <p class="site-footer__credit">
+            <a href="https://one-sol.ru/" target="_blank" rel="noopener noreferrer">Разработка и продвижение - OneSolution</a>
+          </p>
+        </div>
       </div>
 
       <div class="site-footer__col site-footer__col--nav">
@@ -1356,10 +1370,12 @@
             <li><a href="https://agrouspeh.ru/delivery/">Доставка <span class="site-footer__menu-chevron" aria-hidden="true">›</span></a></li>
           </ul>
         </nav>
-        <p class="site-footer__fineprint">© 2026, все права защищены</p>
-        <button type="button" class="site-footer__policy-link" data-policy-modal aria-haspopup="dialog" aria-controls="policy-modal">
-          Политика конфиденциальности
-        </button>
+        <div class="site-footer__col-bottom site-footer__col-bottom--nav">
+          <p class="site-footer__fineprint">© 2026, все права защищены</p>
+          <button type="button" class="site-footer__policy-link" data-policy-modal aria-haspopup="dialog" aria-controls="policy-modal">
+            Политика конфиденциальности
+          </button>
+        </div>
       </div>
 
       <div class="site-footer__col site-footer__col--catalog">
@@ -1375,6 +1391,16 @@
             <li><a href="https://agrouspeh.ru/catalog/other/">Прочая техника <span class="site-footer__menu-chevron" aria-hidden="true">›</span></a></li>
           </ul>
         </nav>
+        <div class="site-footer__col-bottom site-footer__col-bottom--catalog">
+          <p class="site-footer__fineprint">ООО Завод «АгроУспех»</p>
+        </div>
+      </div>
+
+      <div class="site-footer__legal site-footer__legal--mobile-only">
+        <p class="site-footer__fineprint">© 2026, все права защищены</p>
+        <button type="button" class="site-footer__policy-link" data-policy-modal aria-haspopup="dialog" aria-controls="policy-modal">
+          Политика конфиденциальности
+        </button>
         <p class="site-footer__fineprint">ООО Завод «АгроУспех»</p>
       </div>
     </div>
@@ -1558,6 +1584,8 @@
             prevScrollBehavior = htmlEl.style.scrollBehavior;
             htmlEl.style.scrollBehavior = "auto";
             bodyEl.style.setProperty("--scroll-lock-top", "-" + scrollTop + "px");
+            var sbw = window.innerWidth - htmlEl.clientWidth;
+            if (sbw > 0) bodyEl.style.paddingRight = sbw + "px";
           }
           return;
         }
@@ -1567,6 +1595,7 @@
         if (!isLocked) return;
         isLocked = false;
         bodyEl.style.removeProperty("--scroll-lock-top");
+        bodyEl.style.removeProperty("padding-right");
         var y = scrollTop;
         window.scrollTo(0, y);
         var se = document.scrollingElement;

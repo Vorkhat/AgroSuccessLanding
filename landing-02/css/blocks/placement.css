@@ -1,4 +1,4 @@
-/* 11. Размещение — три карточки, как комплектация */
+
 
 .block-placement {
   box-sizing: border-box;
@@ -30,17 +30,11 @@
   width: 100%;
 }
 
-.block-placement__head-line {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  width: 100%;
+.block-placement__head-top {
+  margin-bottom: 0;
 }
 
-.block-placement__head-line .block-placement__label {
-  margin: 0;
+.block-placement__head-top .block-placement__label {
   text-transform: none;
 }
 

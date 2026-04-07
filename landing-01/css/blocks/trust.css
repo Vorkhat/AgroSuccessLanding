@@ -15,7 +15,7 @@
 .block-trust__head-row {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: clamp(16px, 3vw, 32px);
 }
 
@@ -36,6 +36,9 @@
   background: #ede7f6;
   border-radius: 2px;
   border: 1px solid rgba(81, 49, 114, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 .block-trust__icon-wrap {
@@ -47,6 +50,9 @@
   height: clamp(38px, 5.8vw, 46px);
   margin: 0 0 14px;
   padding: 0;
+  flex: none;
+  order: 0;
+  align-self: flex-start;
   font-family: "Roboto", var(--font);
   font-size: 0.75rem;
   font-weight: 700;
@@ -67,12 +73,21 @@
 }
 
 .block-trust__card-title {
-  margin: 0 0 10px;
+  box-sizing: border-box;
+  margin: 0;
+  width: 240px;
+  max-width: 100%;
+  min-height: 38px;
   font-family: "Roboto", var(--font);
-  font-size: clamp(0.98rem, 1.8vw, 1.12rem);
+  font-style: normal;
   font-weight: 700;
-  line-height: 1.2;
-  color: #232323;
+  font-size: 16px;
+  line-height: 19px;
+  color: #252529;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
 }
 
 .block-trust__card-text {
@@ -83,13 +98,8 @@
 }
 
 @media (max-width: 520px) {
-  .block-trust__head-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .block-trust__index {
-    align-self: flex-end;
+  .block-trust__head-top {
+    gap: clamp(8px, 2vw, 16px);
   }
 
   .block-trust__grid {

@@ -1,4 +1,4 @@
-/* 10. Комплектация — макет Figma (без фона секции) */
+
 
 .block-kit {
   box-sizing: border-box;
@@ -16,7 +16,7 @@
   padding-inline: var(--layout-inline);
 }
 
-/* Заголовок: отступ до сетки карточек */
+
 .block-kit__head {
   box-sizing: border-box;
   width: 100%;
@@ -31,17 +31,11 @@
   width: 100%;
 }
 
-.block-kit__head-line {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  width: 100%;
+.block-kit__head-top {
+  margin-bottom: 0;
 }
 
-.block-kit__head-line .block-kit__label {
-  margin: 0;
+.block-kit__head-top .block-kit__label {
   text-transform: none;
 }
 
@@ -56,7 +50,7 @@
   color: #252529;
 }
 
-/* Карточки: адаптивная сетка (колонки по мере места, мин. ширина полосы ~280px) */
+
 .block-kit__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
@@ -69,7 +63,7 @@
 }
 
 .block-kit__card {
-  /* до 3 строк заголовка + подзаголовок — чтобы блок с фото начинался на одной высоте */
+  
   --kit-card-head-min: calc(3 * 21px + 4px + 2 * 16px);
   box-sizing: border-box;
   display: flex;
@@ -85,7 +79,7 @@
   font-family: "Roboto", var(--font), system-ui, sans-serif;
 }
 
-/* Одинаковая высота «шапки» при 1–2 строках текста; номер и текст прижаты кверху */
+
 .block-kit__card-top {
   display: flex;
   flex-direction: row;
@@ -202,7 +196,7 @@
   display: block;
 }
 
-/* Карточка 03 — те же 20px сверху/по бокам, что у 01/02; снизу 0 и gap 10px до кнопки (как у колонок сетки) */
+
 .block-kit__card--feature {
   min-height: 0;
   align-items: stretch;
@@ -225,7 +219,7 @@
   min-width: 0;
 }
 
-/* Rectangle 45 */
+
 .block-kit__feature-bg {
   position: absolute;
   left: 0;
@@ -236,7 +230,7 @@
   pointer-events: none;
 }
 
-/* Subtract + внутренний кадр под узор */
+
 .block-kit__feature-inset {
   position: absolute;
   inset: 10px;

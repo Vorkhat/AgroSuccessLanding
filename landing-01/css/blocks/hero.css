@@ -289,7 +289,7 @@
 }
 
 .block-hero__title {
-  /* зазор до лида ≈ одна строка подзаголовка (макет) */
+  
   margin: 0 0 clamp(0.65rem, 1.1vw + 0.35rem, 1.75rem);
   font-size: clamp(1.35rem, 3.8vw, 2.4rem);
   font-weight: 800;
@@ -370,7 +370,7 @@
   border-radius: 0;
 }
 
-/* Telegram / VK: только белый глиф на фото, без «таблетки» */
+
 .block-hero__social-btn--glyph {
   width: auto;
   min-width: clamp(28px, 4.5vw, 36px);
@@ -520,7 +520,7 @@
     padding-top: 76px;
   }
 
-  /* Фото на всю ширину, без «карточки» видео справа */
+  
   .block-hero__col--media {
     display: flex;
     flex-direction: column;

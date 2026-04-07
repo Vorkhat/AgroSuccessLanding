@@ -1,4 +1,4 @@
-/* Первый экран с нуля вьюпорта — без зазора сверху */
+
 header.block-hero,
 .block-hero {
   display: block;
@@ -151,7 +151,7 @@ header.block-hero,
   min-height: 0;
   padding-bottom: 0;
   overflow: hidden;
-  /* нейтральный тёмный фон вместо фиолетового — полосы при contain не «синеют» */
+  
   background-color: #1e1e21;
 }
 
@@ -286,7 +286,7 @@ header.block-hero,
 }
 
 .block-hero__title {
-  /* зазор до лида ≈ одна строка подзаголовка (макет) */
+  
   margin: 0 0 clamp(0.65rem, 1.1vw + 0.35rem, 1.75rem);
   font-size: clamp(1.35rem, 3.8vw, 2.4rem);
   font-weight: 800;
@@ -371,7 +371,7 @@ header.block-hero,
   border-radius: 0;
 }
 
-/* Telegram / телефон / VK — глиф #252529 (макет Frame 2131329993) */
+
 .block-hero__social-btn--glyph {
   display: flex;
   flex-direction: row;
@@ -391,7 +391,7 @@ header.block-hero,
   flex-shrink: 0;
 }
 
-/* Размеры иконок как в макете */
+
 .block-hero__social-btn--glyph:nth-child(1) .block-hero__social-icon {
   width: 31px;
   height: 26px;

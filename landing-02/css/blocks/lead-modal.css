@@ -1,4 +1,4 @@
-/* Модальные формы и окно "Спасибо" */
+
 
 .lead-modal {
   position: fixed;
@@ -429,7 +429,7 @@
     text-align: center;
   }
 
-  /* Линия — отдельная строка над заголовком (не в одном ряду с текстом) */
+  
   .lead-modal__visual::before {
     content: "";
     flex-shrink: 0;

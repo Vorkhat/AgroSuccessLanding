@@ -203,7 +203,7 @@
   border-style: solid;
 }
 
-/* Rectangle 22: 1px #FCFEFE, отступ ~6px как в макете 302×48 внутри 314×60 */
+
 .hero-banner-btn--yellow .hero-banner-btn__corners {
   inset: clamp(5px, 1.1vw, 6px);
 }
@@ -246,7 +246,7 @@ button.hero-banner-btn {
 }
 
 @media (max-width: 900px) {
-  /* Панель в потоке документа: под текстом, светлый фон, не стекло поверх фото */
+  
   .block-hero__banner {
     position: static;
     left: auto;
@@ -269,7 +269,7 @@ button.hero-banner-btn {
     padding: clamp(16px, 4vw, 22px) var(--layout-inline) clamp(20px, 5vw, 28px);
   }
 
-  /* Сначала кнопки, затем список характеристик — как в макете */
+  
   .banner-col--cta {
     order: -1;
     display: flex;
@@ -320,7 +320,7 @@ button.hero-banner-btn {
     width: 100%;
   }
 
-  /* Вторичная кнопка: полупрозрачная подложка и светлая обводка, как в макете */
+  
   .block-hero__banner .hero-banner-btn--muted {
     background: #c1c3c4;
     border: none;

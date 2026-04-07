@@ -1,4 +1,4 @@
-/* Модалка заявки — по макету Figma (Frame 2131330234) */
+
 
 .lead-modal {
   position: fixed;
@@ -69,7 +69,7 @@
   transform: translateY(18px) scale(0.98);
 }
 
-/* Line 18 — горизонтальная линия сверху контента */
+
 .lead-modal__panel::before {
   content: "";
   position: absolute;
@@ -124,7 +124,7 @@
   flex: none;
 }
 
-/* Крестик в макете — 25×25 */
+
 .lead-modal__close--desktop {
   position: absolute;
   top: 17px;
@@ -134,13 +134,13 @@
   height: 25px;
 }
 
-/* Та же иконка, увеличенная зона нажатия */
+
 .lead-modal__close--mobile {
   width: 44px;
   height: 44px;
 }
 
-/* image 48 — затемнение 40% + фон на всю область */
+
 .lead-modal__body {
   position: relative;
   flex: 1;
@@ -174,7 +174,7 @@
   grid-template-rows: minmax(min(16rem, 40vh), 1fr);
 }
 
-/* Line 19 — вертикальный разделитель #C1C3C4 */
+
 .lead-modal__visual {
   position: relative;
   box-sizing: border-box;
@@ -187,7 +187,7 @@
   border-right: 1px solid #c1c3c4;
 }
 
-/* Заголовок: Ubuntu 500, 36px / 100% */
+
 .lead-modal__title {
   margin: 0;
   max-width: min(601px, 100%);
@@ -199,7 +199,7 @@
   color: #fcfefe;
 }
 
-/* Правая колонка: Frame 2131330048 */
+
 .lead-modal__aside {
   position: relative;
   box-sizing: border-box;
@@ -212,7 +212,7 @@
   background: transparent;
 }
 
-/* Подзаголовок: Roboto 500 24px / 28px */
+
 .lead-modal__lead {
   margin: 0;
   max-width: min(445px, 100%);
@@ -316,7 +316,7 @@
   box-shadow: none;
 }
 
-/* Chrome / Edge: убираем «ореол» автозаполнения и светлую обводку поля */
+
 .lead-modal__field input:-webkit-autofill,
 .lead-modal__field input:-webkit-autofill:hover,
 .lead-modal__field input:-webkit-autofill:focus,
@@ -360,7 +360,7 @@
   color: #fcfefe;
 }
 
-/* Как в блоке .block-cta__consent — 16×16, нативная галочка */
+
 .lead-modal__consent input[type="checkbox"] {
   flex: none;
   width: 16px;
@@ -370,7 +370,7 @@
   cursor: pointer;
 }
 
-/* Кнопка — те же классы, что .hero-banner-btn--yellow в герое / CTA */
+
 .lead-modal__submit.hero-banner-btn {
   width: 100%;
   max-width: min(455px, 100%);
@@ -382,7 +382,7 @@
   z-index: 0;
 }
 
-/* Мобильная модалка — без жёстких 280/260px, от вьюпорта */
+
 @media (max-width: 720px) {
   .lead-modal {
     align-items: center;
@@ -422,7 +422,7 @@
     overflow: hidden;
   }
 
-  /* Фон шире панели, отражение; пропорции от ширины модалки */
+  
   .lead-modal__bg {
     inset: auto;
     top: 0;
@@ -557,7 +557,7 @@
     line-height: clamp(13px, 3.6vw, 14px);
   }
 
-  /* Как на ПК: 16×16, нативная галочка */
+  
   .lead-modal__consent input[type="checkbox"] {
     order: 0;
     flex: none;
@@ -575,7 +575,7 @@
   }
 }
 
-/* Модалка «Заявка отправлена» */
+
 .lead-thanks-modal {
   position: fixed;
   inset: 0;

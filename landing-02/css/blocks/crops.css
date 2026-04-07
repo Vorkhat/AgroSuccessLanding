@@ -1,5 +1,5 @@
 
-/* 9. Культуры — макет 1440×871, позиции в процентах артборда */
+
 
 .block-crops {
   position: relative;
@@ -33,7 +33,7 @@
   min-height: 520px;
 }
 
-/* Пятна #F0F2F2 — упрощённо по макету (Group 9 / Vector) */
+
 .block-crops__deco {
   position: absolute;
   inset: 0;
@@ -54,16 +54,6 @@
   padding: 0;
 }
 
-.block-crops__head-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  width: 100%;
-}
-
-/* По центру кольца карточек (десктоп); на мобильных — над сеткой */
 .block-crops__title {
   position: absolute;
   left: 50%;
@@ -220,7 +210,7 @@
     flex-shrink: 0;
   }
 
-  /* Оставшееся место под фото — подпись по центру по вертикали */
+  
   .block-crops__name {
     flex: 1 1 auto;
     display: flex;
@@ -235,11 +225,7 @@
 }
 
 @media (max-width: 520px) {
-  .block-crops__head-row {
+  .block-crops__head-top {
     flex-wrap: wrap;
-  }
-
-  .block-crops__index {
-    margin-left: auto;
   }
 }
