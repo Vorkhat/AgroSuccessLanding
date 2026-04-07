@@ -1,0 +1,244 @@
+.block-works {
+  background: #fff;
+  padding: var(--section-pad-y) 0;
+}
+
+.block-works__inner {
+  box-sizing: border-box;
+  width: 100%;
+  /* без max-width — блок полностью fluid */
+  margin-inline: 0;
+  padding-inline: var(--layout-inline);
+}
+
+.block-works__head {
+  margin-bottom: 0;
+}
+
+.block-works__head-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+.block-works__head-main {
+  min-width: 0;
+}
+
+.block-works__title {
+  margin: 0;
+  width: 100%;
+  font-family: "Roboto", var(--font), system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(26px, 2.6vw, 36px);
+  line-height: 1.15;
+  color: #252529;
+}
+
+.block-works__split {
+  display: grid;
+  /* Как в Figma: слева колонка до 504px, справа — схема; высота ряда = левой колонке */
+  grid-template-columns: minmax(0, 504px) minmax(0, 1fr);
+  gap: clamp(20px, 2.2vw, 32px);
+  align-items: stretch;
+  margin-top: 0;
+}
+
+.block-works__col--content {
+  width: 100%;
+  max-width: 504px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* Зазор заголовок → карточки (большой, как в макете) */
+  gap: clamp(96px, 14vw, 220px);
+}
+
+/* Frame 2131330171 — flex-wrap: 161+161+161, затем 333+161, gap 10px, ширина 504px */
+.block-works__steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 10px;
+  width: 100%;
+  max-width: 504px;
+  box-sizing: border-box;
+}
+
+.block-works__step {
+  box-sizing: border-box;
+  flex: none;
+  width: 161px;
+  height: 156px;
+  min-height: 156px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  background: #f0f2f2;
+  border: none;
+}
+
+.block-works__step:nth-child(4) {
+  width: 333px;
+}
+
+/* Номер в угловой рамке «скобки», как в макете (не сплошной прямоугольник) */
+.block-works__step-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  border: none;
+  font-family: "Roboto", var(--font), system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 23px;
+  color: #513172;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%23513172' stroke-width='1.05' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 25L7 7L25 7'/%3E%3Cpath d='M75 7L93 7L93 25'/%3E%3Cpath d='M7 75L7 93L25 93'/%3E%3Cpath d='M93 75L93 93L75 93'/%3E%3C/svg%3E")
+    center / 100% 100% no-repeat;
+}
+
+.block-works__step-text {
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  font-family: "Roboto", var(--font), system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  color: #252529;
+}
+
+.block-works__col--media {
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  align-self: stretch;
+}
+
+.block-works__scheme {
+  position: relative;
+  flex: 1 1 auto;
+  order: 1;
+  width: 100%;
+  max-width: 90%;
+  min-height: 0;
+  align-self: center;
+  margin-inline: auto;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+/* «06» сверху, схема с order: 1 ниже */
+.block-works__col--media > .block-works__index {
+  flex: 0 0 auto;
+  align-self: flex-end;
+  margin-bottom: clamp(12px, 2vw, 28px);
+}
+
+.block-works__scheme-image {
+  display: block;
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center top;
+}
+
+/* Схема с подписями читается только в достаточной ширине; уже ~1024px две колонки дают узкий рендер */
+@media (max-width: 1024px) {
+  .block-works__split {
+    grid-template-columns: 1fr;
+    gap: clamp(20px, 4vw, 32px);
+  }
+
+  .block-works__col--content {
+    max-width: none;
+    gap: clamp(48px, 10vw, 120px);
+  }
+
+  .block-works__col--media {
+    flex: none;
+  }
+
+  .block-works__scheme {
+    flex: none;
+    min-height: 0;
+    width: 100%;
+    max-width: 100%;
+    align-self: stretch;
+    margin-inline: 0;
+    display: block;
+  }
+
+  .block-works__scheme-image {
+    flex: none;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    margin: 0;
+  }
+
+  .block-works__steps {
+    max-width: none;
+  }
+
+  .block-works__step {
+    flex: 1 1 calc((100% - 10px) / 2);
+    width: auto;
+    min-width: 0;
+    height: auto;
+    min-height: 156px;
+  }
+
+  .block-works__step:nth-child(4) {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .block-works__head-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .block-works__index {
+    align-self: flex-end;
+  }
+
+  .block-works__steps {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    max-width: none;
+  }
+
+  .block-works__step,
+  .block-works__step:nth-child(4) {
+    width: 100%;
+    height: auto;
+    min-height: 156px;
+  }
+}

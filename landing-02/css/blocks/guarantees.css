@@ -1,0 +1,196 @@
+/* 14. Гарантии — по макету Figma (Frame 2131330140 / 2131330152) */
+
+.block-guarantees {
+  box-sizing: border-box;
+  background: #fff;
+  padding: var(--section-pad-y) 0;
+}
+
+.block-guarantees__inner {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  padding-inline: var(--layout-inline);
+}
+
+.block-guarantees__head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--section-label-to-title);
+  width: 100%;
+  margin-bottom: var(--section-head-gap);
+}
+
+.block-guarantees__head-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: clamp(16px, 3vw, 32px);
+  width: 100%;
+}
+
+.block-guarantees__head .block-guarantees__label {
+  margin: 0;
+  text-transform: none;
+}
+
+.block-guarantees__title {
+  margin: 0;
+  max-width: 38rem;
+  font-family: "Ubuntu", var(--font), system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: clamp(1.5rem, 4vw, 36px);
+  line-height: 1;
+  color: #252529;
+}
+
+/* Сетка карточек: row, wrap, gap 10px */
+.block-guarantees__grid {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+}
+
+.block-guarantees__card {
+  box-sizing: border-box;
+  position: relative;
+  flex: 1 1 calc((100% - 10px) / 2);
+  min-width: min(100%, 280px);
+  max-width: calc((100% - 10px) / 2);
+  height: 140px;
+  min-height: 140px;
+  background: rgba(122, 83, 140, 0.2);
+}
+
+.block-guarantees__icon-wrap {
+  box-sizing: border-box;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.block-guarantees__icon-corners {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.block-guarantees__icon-corner {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border: solid #513172;
+}
+
+.block-guarantees__icon-corner--tl {
+  top: 0;
+  left: 0;
+  border-width: 1px 0 0 1px;
+}
+
+.block-guarantees__icon-corner--tr {
+  top: 0;
+  right: 0;
+  border-width: 1px 1px 0 0;
+}
+
+.block-guarantees__icon-corner--bl {
+  bottom: 0;
+  left: 0;
+  border-width: 0 0 1px 1px;
+}
+
+.block-guarantees__icon-corner--br {
+  bottom: 0;
+  right: 0;
+  border-width: 0 1px 1px 0;
+}
+
+.block-guarantees__icon {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  color: #513172;
+  width: 26px;
+  height: 26px;
+}
+
+.block-guarantees__icon--28 {
+  width: 28px;
+  height: 28px;
+}
+
+.block-guarantees__icon--32 {
+  width: 32px;
+  height: 32px;
+}
+
+.block-guarantees__text {
+  position: absolute;
+  left: 20px;
+  top: 99px;
+  right: 20px;
+  margin: 0;
+  font-family: "Roboto", var(--font), system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  color: #252529;
+  text-align: left;
+}
+
+@media (max-width: 720px) {
+  .block-guarantees__card {
+    flex: 1 1 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 140px;
+    padding: 20px 20px 24px;
+  }
+
+  .block-guarantees__icon-wrap {
+    left: 20px;
+    top: 20px;
+  }
+
+  .block-guarantees__text {
+    position: static;
+    margin: 79px 0 0 0;
+    max-width: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .block-guarantees__head-row {
+    flex-wrap: wrap;
+  }
+
+  .block-guarantees__index {
+    margin-left: auto;
+  }
+
+  .block-guarantees__text {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}

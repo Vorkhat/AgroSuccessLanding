@@ -1,0 +1,281 @@
+/* 12. Этапы работы — сетка как у преимуществ (block 07) */
+
+.block-stages {
+  background: #fff;
+  padding: var(--section-pad-y) 0;
+}
+
+.block-stages__inner {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  padding-inline: var(--layout-inline);
+}
+
+.block-stages__head {
+  margin-bottom: var(--section-head-gap);
+}
+
+.block-stages__head-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: clamp(16px, 3vw, 32px);
+}
+
+.block-stages__head-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.block-stages__head .block-stages__label {
+  text-transform: none;
+}
+
+.block-stages__title {
+  margin: 0;
+  max-width: 46rem;
+  font-size: clamp(1.1rem, 2.2vw, 1.65rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #1a1a1a;
+}
+
+.block-stages__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: auto auto;
+  gap: 10px;
+  grid-template-areas:
+    "c1 c2 . c3"
+    "c4 . c5 c6";
+  width: 100%;
+  align-items: stretch;
+}
+
+.block-stages__card {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  min-height: clamp(280px, 36vw, 360px);
+  border: 16px solid #f0f2f2;
+  background: #f0f2f2;
+  overflow: hidden;
+  padding-bottom: 100px;
+}
+
+.block-stages__card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: 118% auto;
+  background-position: center;
+}
+
+.block-stages__num {
+  box-sizing: border-box;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  aspect-ratio: 1;
+  margin: 0;
+}
+
+.block-stages__num-corners {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.block-stages__num-corner {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border: solid #513172;
+}
+
+.block-stages__num-corner--tl {
+  top: 0;
+  left: 0;
+  border-width: 1px 0 0 1px;
+}
+
+.block-stages__num-corner--tr {
+  top: 0;
+  right: 0;
+  border-width: 1px 1px 0 0;
+}
+
+.block-stages__num-corner--bl {
+  bottom: 0;
+  left: 0;
+  border-width: 0 0 1px 1px;
+}
+
+.block-stages__num-corner--br {
+  bottom: 0;
+  right: 0;
+  border-width: 0 1px 1px 0;
+}
+
+.block-stages__num-text {
+  position: relative;
+  z-index: 1;
+  font-family: "Roboto", var(--font), system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  color: #513172;
+}
+
+.block-stages__card-copy {
+  box-sizing: border-box;
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  top: auto;
+  width: 293px;
+  max-width: calc(100% - 40px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 8px;
+  z-index: 2;
+}
+
+.block-stages__card-title {
+  margin: 0;
+  flex: none;
+  align-self: stretch;
+  font-family: "Roboto", var(--font), system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: #513172;
+}
+
+.block-stages__card-text {
+  margin: 0;
+  flex: none;
+  align-self: stretch;
+  font-family: "Roboto", var(--font), system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #252529;
+}
+
+.block-stages__card--1 {
+  grid-area: c1;
+}
+
+.block-stages__card--1::before {
+  background-image: url("../../assets/advantage-pattern-01.png");
+  background-position: 88% 12%;
+}
+
+.block-stages__card--2 {
+  grid-area: c2;
+}
+
+.block-stages__card--2::before {
+  background-image: url("../../assets/advantage-pattern-02.png");
+  background-position: 8% 35%;
+  background-size: 132% auto;
+}
+
+.block-stages__card--3 {
+  grid-area: c3;
+}
+
+.block-stages__card--3::before {
+  background-image: url("../../assets/advantage-pattern-03.png");
+  background-position: 50% 8%;
+  background-size: 105% auto;
+}
+
+.block-stages__card--4 {
+  grid-area: c4;
+}
+
+.block-stages__card--4::before {
+  background-image: url("../../assets/advantage-pattern-04.png");
+  background-position: 12% 78%;
+  background-size: 125% auto;
+}
+
+.block-stages__card--5 {
+  grid-area: c5;
+}
+
+.block-stages__card--5::before {
+  background-image: url("../../assets/advantage-pattern-05.png");
+  background-position: 92% 55%;
+  background-size: 112% auto;
+}
+
+.block-stages__card--6 {
+  grid-area: c6;
+}
+
+.block-stages__card--6::before {
+  background-image: url("../../assets/advantage-pattern-06.png");
+  background-position: 42% 42%;
+  background-size: 140% auto;
+}
+
+@media (max-width: 1100px) {
+  .block-stages__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "c1 c2"
+      "c3 c4"
+      "c5 c6";
+  }
+}
+
+@media (max-width: 520px) {
+  .block-stages__head-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .block-stages__index {
+    align-self: flex-end;
+  }
+
+  .block-stages__grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "c1"
+      "c2"
+      "c3"
+      "c4"
+      "c5"
+      "c6";
+  }
+
+  .block-stages__card {
+    padding-bottom: clamp(100px, 28vw, 130px);
+  }
+}

@@ -1,0 +1,245 @@
+
+/* 9. Культуры — макет 1440×871, позиции в процентах артборда */
+
+.block-crops {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  background: #fff;
+  padding: var(--section-pad-y) 0;
+}
+
+.block-crops__inner {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  padding-inline: var(--layout-inline);
+}
+
+.block-crops__intro {
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: var(--section-head-gap);
+}
+
+.block-crops__artboard {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  margin-inline: auto;
+  aspect-ratio: 1440 / 871;
+  min-height: 520px;
+}
+
+/* Пятна #F0F2F2 — упрощённо по макету (Group 9 / Vector) */
+.block-crops__deco {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background:
+             radial-gradient(ellipse 26% 52% at 65% 28%, #f0f2f2 0%, transparent 72%),
+             radial-gradient(ellipse 28% 50% at 38% 48%, #f0f2f2 0%, transparent 70%),
+             radial-gradient(ellipse 24% 42% at 62% 72%, #f0f2f2 0%, transparent 68%),
+             radial-gradient(ellipse 18% 44% at 44% 16%, #f0f2f2 0%, transparent 74%),
+             radial-gradient(ellipse 26% 36% at 36% 82%, #f0f2f2 0%, transparent 72%);
+  opacity: 0.95;
+}
+
+.block-crops__head {
+  margin: 0;
+  padding: 0;
+}
+
+.block-crops__head-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+/* По центру кольца карточек (десктоп); на мобильных — над сеткой */
+.block-crops__title {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  box-sizing: border-box;
+  width: min(calc(648 / 1440 * 100%), 94%);
+  max-width: 42rem;
+  margin: 0;
+  padding: 0.25em 0.5em;
+  font-family: "Ubuntu", var(--font), system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: clamp(1.25rem, 2.5vw, 2.25rem);
+  line-height: 1.12;
+  text-align: center;
+  color: #252529;
+  pointer-events: none;
+}
+
+.block-crops__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.block-crops__item {
+  position: absolute;
+  box-sizing: border-box;
+  left: calc(var(--c-left) * 100% / 1440);
+  top: calc(var(--c-top) * 100% / 871);
+  width: calc(var(--c-w) * 100% / 1440);
+  height: calc(var(--c-h) * 100% / 871);
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+.block-crops__card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 8px 6px 6px;
+  gap: 6px;
+  background: rgba(240, 242, 242, 0.2);
+  border: 1px solid #c1c3c4;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  overflow: visible;
+  min-height: 0;
+}
+
+.block-crops__thumb {
+  box-sizing: border-box;
+  flex: 0 1 auto;
+  order: 0;
+  align-self: stretch;
+  width: 100%;
+  max-width: min(128px, 100%);
+  margin-inline: auto;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 2px;
+  background: #e4e4e8;
+}
+
+.block-crops__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.block-crops__name {
+  flex: 1 1 auto;
+  order: 1;
+  align-self: stretch;
+  margin: 0;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  font-family: "Roboto", var(--font), system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(12px, 1.15vw, 17px);
+  line-height: 1.2;
+  text-align: center;
+  color: #59595b;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+@media (max-width: 900px) {
+  .block-crops__artboard {
+    aspect-ratio: unset;
+    min-height: 0;
+    padding-bottom: 24px;
+  }
+
+  .block-crops__deco {
+    display: none;
+  }
+
+  .block-crops__title {
+    position: static;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: 100%;
+    max-width: none;
+    margin: 0 0 var(--section-head-gap);
+    padding: 0;
+    text-align: center;
+    pointer-events: auto;
+  }
+
+  .block-crops__list {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 12px;
+  }
+
+  .block-crops__item {
+    position: static;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+  }
+
+  .block-crops__card {
+    height: auto;
+    min-height: 188px;
+    justify-content: flex-start;
+    padding: 10px 8px 12px;
+    gap: 8px;
+  }
+
+  .block-crops__thumb {
+    max-width: min(140px, 100%);
+    margin-inline: auto;
+    flex-shrink: 0;
+  }
+
+  /* Оставшееся место под фото — подпись по центру по вертикали */
+  .block-crops__name {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
+    font-size: clamp(15px, 4vw, 18px);
+    line-height: 1.25;
+    font-weight: 700;
+  }
+}
+
+@media (max-width: 520px) {
+  .block-crops__head-row {
+    flex-wrap: wrap;
+  }
+
+  .block-crops__index {
+    margin-left: auto;
+  }
+}

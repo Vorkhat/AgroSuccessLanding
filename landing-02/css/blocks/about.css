@@ -1,0 +1,214 @@
+.block-about {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #fff;
+  background-image: url("../../assets/about-section-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: var(--section-pad-y) 0;
+  overflow: hidden;
+}
+
+.block-about__index {
+  position: absolute;
+  top: clamp(40px, 6.5vh, 88px);
+  right: var(--layout-inline);
+  z-index: 2;
+}
+
+.block-about__inner {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 920px;
+  margin-inline: auto;
+  padding-inline: var(--layout-inline);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.block-about__logo {
+  margin: 0 0 clamp(20px, 3.5vw, 32px);
+  flex-shrink: 0;
+}
+
+.block-about__logo-svg {
+  display: block;
+  width: clamp(72px, 14vw, 88px);
+  height: clamp(72px, 14vw, 88px);
+}
+
+.block-about__title {
+  margin: 0 0 clamp(32px, 5vw, 48px);
+  width: 100%;
+  max-width: 930px;
+  box-sizing: border-box;
+  font-family: "Ubuntu", var(--font), system-ui, sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.6rem, 2.7vw + 0.35rem, 36px);
+  line-height: 1.08;
+  text-align: center;
+  color: #252529;
+}
+
+.block-about__title span {
+  color: #6a4d95;
+}
+
+.block-about__result-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 162px 14px 162px 14px minmax(280px, 1fr);
+  gap: 0;
+  align-items: stretch;
+  justify-content: center;
+  margin: 0 0 clamp(36px, 5vw, 52px);
+}
+
+.block-about__result-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 162px;
+  min-height: 97px;
+  padding: 20px 14px;
+  gap: 20px;
+  background: rgba(122, 83, 140, 0.2);
+  border: 1px solid #c1c3c4;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  text-align: left;
+}
+
+.block-about__result-card--total {
+  align-items: flex-start;
+  width: 100%;
+  min-width: 0;
+  padding-inline: 18px;
+}
+
+.block-about__result-value {
+  width: auto;
+  margin: 0;
+  font-family: "Roboto", var(--font), system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 21px;
+  color: #513172;
+}
+
+.block-about__result-value--total {
+  font-family: "Ubuntu", var(--font), system-ui, sans-serif;
+  font-size: clamp(2.3rem, 3.4vw, 3.3rem);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.block-about__result-text {
+  width: 134px;
+  margin: 0;
+  font-family: "Roboto", var(--font), system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #252529;
+}
+
+.block-about__result-text--total {
+  width: auto;
+  font-size: clamp(1rem, 1.45vw, 1.15rem);
+}
+
+.block-about__math {
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  width: 26px;
+  height: 26px;
+  padding: 6px;
+  margin-inline: -6px;
+  background: #eab300;
+  font-size: 0;
+  z-index: 3;
+  overflow: hidden;
+}
+
+.block-about__math::before,
+.block-about__math::after {
+  content: "";
+  position: absolute;
+  background: #fcfefe;
+}
+
+.block-about__math--plus::before,
+.block-about__math--equal::before {
+  width: 14px;
+  height: 2px;
+  left: 6px;
+  top: 12px;
+}
+
+.block-about__math--plus::after {
+  width: 2px;
+  height: 14px;
+  left: 12px;
+  top: 6px;
+}
+
+.block-about__math--equal::after {
+  width: 14px;
+  height: 2px;
+  left: 6px;
+  top: 16px;
+}
+
+.block-about__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(12px, 2vw, 20px);
+  justify-content: center;
+  width: 100%;
+  max-width: 840px;
+}
+
+.block-about__actions .hero-banner-btn {
+  flex: 1 1 220px;
+  max-width: none;
+  min-height: clamp(48px, 9vw, 60px);
+}
+
+@media (max-width: 900px) {
+  .block-about__result-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .block-about__math {
+    justify-self: center;
+  }
+
+  .block-about__result-card {
+    width: 100%;
+  }
+
+  .block-about__result-text {
+    width: auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .block-about__actions .hero-banner-btn {
+    flex: 1 1 100%;
+  }
+}
