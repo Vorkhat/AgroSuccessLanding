@@ -6,8 +6,8 @@
   }
 
   .block-hero__badge {
-    font-size: clamp(0.9rem, 2.4vw, 1rem);
-    line-height: 1.35;
+    font-size: clamp(0.96rem, 2.55vw, 1.06rem);
+    line-height: 1.38;
     padding: 11px 14px;
   }
 
@@ -22,15 +22,16 @@
   }
 
   .block-problems__card-title {
-    font-size: clamp(19px, 4.2vw, 24px);
-    line-height: 1.3;
+    font-size: clamp(20px, 3.2vw, 26px);
+    line-height: 1.28;
+    font-weight: 700;
   }
 
   .block-problems__card-lead {
     width: min(280px, 100%);
     max-width: 280px;
-    font-size: clamp(14px, 3.8vw, 16px);
-    line-height: 1.19;
+    font-size: clamp(14px, 3.6vw, 16px);
+    line-height: 1.42;
   }
 
   .block-solution__lead {
@@ -44,28 +45,31 @@
   }
 
   .block-solution__feature-title {
-    font-size: clamp(0.92rem, 3.4vw, 1.04rem);
-    line-height: 1.3;
+    font-size: clamp(20px, 3.2vw, 26px);
+    line-height: 1.28;
+    font-weight: 700;
   }
 
   .block-solution__feature-lead {
-    font-size: clamp(0.88rem, 3.2vw, 0.98rem);
+    font-size: clamp(14px, 3.6vw, 16px);
     line-height: 1.42;
+    font-weight: 400;
   }
 
   .block-advantages__card-title {
-    font-size: clamp(17px, 4vw, 21px);
+    font-size: clamp(20px, 3.2vw, 26px);
     line-height: 1.28;
   }
 
   .block-advantages__card-text {
-    font-size: clamp(13px, 3.5vw, 15px);
-    line-height: 1.4;
+    font-size: clamp(14px, 3.6vw, 16px);
+    line-height: 1.42;
   }
 
   .block-benefit__card-title {
-    font-size: 26px;
-    line-height: 1.3;
+    font-size: clamp(20px, 3.2vw, 26px);
+    line-height: 1.28;
+    font-weight: 700;
   }
 
   .block-benefit__list li {
@@ -115,13 +119,15 @@
   }
 
   .block-trust__card-title {
-    font-size: 17px;
+    font-size: clamp(1rem, 3.5vw, 1.12rem);
     line-height: 1.4;
+    font-weight: 700;
   }
 
   .block-trust__card-text {
-    font-size: clamp(15px, 3.5vw, 17px);
-    line-height: 1.45;
+    font-size: clamp(14px, 3.6vw, 16px);
+    line-height: 1.42;
+    font-weight: 400;
   }
 
   .block-cta__eyebrow {
@@ -182,5 +188,12 @@
   .policy-modal__content {
     font-size: clamp(1.02rem, 3.5vw, 1.12rem);
     line-height: 1.45;
+  }
+}
+
+@media (max-width: 520px) {
+  .block-trust__card-title {
+    font-size: 16px;
+    line-height: 20px;
   }
 }

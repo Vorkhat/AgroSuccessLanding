@@ -187,8 +187,8 @@
 .block-market-problems__item-title {
   margin: 0;
   font-family: "Roboto", var(--font), system-ui, sans-serif;
-  font-size: 18px;
-  line-height: 21px;
+  font-size: clamp(21px, 2.75vw, 27px);
+  line-height: 1.2;
   font-weight: 700;
   color: #513172;
 }
@@ -196,8 +196,8 @@
 .block-market-problems__item-text {
   margin: 0;
   font-family: "Roboto", var(--font), system-ui, sans-serif;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: clamp(16px, 1.65vw, 18px);
+  line-height: 1.22;
   font-weight: 400;
   color: #252529;
 }

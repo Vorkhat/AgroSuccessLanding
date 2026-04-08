@@ -560,7 +560,7 @@
     flex-wrap: wrap;
   }
 
-  /* чипы как у подписей/номеров секций (--section-* из base.css) */
+  /* моб. чипы: размеры из --section-*; визуал — полупрозрачный фон и типографика макета */
   .block-cta__media .block-cta__label {
     padding: var(--section-eyebrow-pad-y) var(--section-eyebrow-pad-x);
     gap: var(--section-eyebrow-gap);
@@ -568,11 +568,11 @@
     height: auto;
     width: fit-content;
     max-width: 100%;
-    font-size: var(--section-eyebrow-font-size);
-    line-height: var(--section-eyebrow-line-height);
+    font-size: 10px;
+    line-height: 12px;
     font-weight: 500;
-    color: var(--cta-chip-text);
-    background: var(--cta-chip-bg);
+    color: #c1c3c4;
+    background: rgba(193, 195, 196, 0.2);
   }
 
   .block-cta__label-row .block-cta__index--inline {
@@ -584,11 +584,11 @@
     height: var(--section-index-height);
     min-height: var(--section-index-height);
     max-height: var(--section-index-height);
-    font-size: var(--section-eyebrow-font-size);
-    line-height: var(--section-eyebrow-line-height);
+    font-size: 10px;
+    line-height: 12px;
     font-weight: 500;
-    color: var(--cta-chip-text);
-    background: var(--cta-chip-bg);
+    color: #c1c3c4;
+    background: rgba(193, 195, 196, 0.2);
   }
 
   .block-cta__form-card {

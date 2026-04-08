@@ -28,29 +28,34 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
+  align-items: stretch;
 }
 
 .block-trust__card {
+  box-sizing: border-box;
   min-width: 0;
-  padding: 22px 20px 18px;
-  background: #ede7f6;
-  border-radius: 2px;
-  border: 1px solid rgba(81, 49, 114, 0.06);
+  min-height: 140px;
+  height: auto;
+  padding: 20px;
+  background: rgba(122, 83, 140, 0.2);
+  border-radius: 0;
+  border: none;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: flex-start;
 }
 
 .block-trust__icon-wrap {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
   min-width: 0;
-  width: clamp(38px, 5.8vw, 46px);
-  height: clamp(38px, 5.8vw, 46px);
-  margin: 0 0 14px;
+  width: 50px;
+  height: 50px;
+  margin: 0;
   padding: 0;
-  flex: none;
+  flex: 0 0 auto;
   order: 0;
   align-self: flex-start;
   font-family: "Roboto", var(--font);
@@ -67,34 +72,47 @@
 }
 
 .block-trust__icon-svg {
-  width: clamp(20px, 3.2vw, 24px);
-  height: clamp(20px, 3.2vw, 24px);
+  width: clamp(20px, 3.2vw, 26px);
+  height: clamp(20px, 3.2vw, 26px);
   flex: none;
 }
 
 .block-trust__card-title {
   box-sizing: border-box;
   margin: 0;
-  width: 240px;
+  margin-top: auto;
+  width: 80%;
   max-width: 100%;
-  min-height: 38px;
   font-family: "Roboto", var(--font);
   font-style: normal;
   font-weight: 700;
-  font-size: 16px;
-  line-height: 19px;
+  font-size: 18px;
+  line-height: 21px;
   color: #252529;
-  flex: none;
+  flex: 0 1 auto;
   order: 1;
-  align-self: stretch;
-  flex-grow: 0;
+  align-self: flex-start;
+  text-align: left;
 }
 
 .block-trust__card-text {
   margin: 0;
   max-width: 34rem;
   font-family: "Roboto", var(--font);
+  font-size: clamp(16px, 1.65vw, 18px);
+  font-weight: 400;
+  line-height: 1.22;
   color: #575757;
+}
+
+@media (max-width: 720px) {
+  .block-trust__card-title {
+    width: 100%;
+  }
+
+  .block-trust__card {
+    padding-bottom: 24px;
+  }
 }
 
 @media (max-width: 520px) {
@@ -107,10 +125,6 @@
   }
 
   .block-trust__card {
-    padding: 18px 16px 16px;
-  }
-
-  .block-trust__icon-wrap {
-    margin-bottom: 12px;
+    padding: 20px 20px 24px;
   }
 }

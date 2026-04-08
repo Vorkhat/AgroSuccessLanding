@@ -81,11 +81,20 @@
         <div class="block-hero__media-top">
           <a class="block-hero__brand" href="#block-hero">
             <img
-              class="block-hero__brand-img"
+              class="block-hero__brand-img block-hero__brand-img--hero"
               src="assets/logo.webp"
               width="180"
               height="40"
               alt="Завод АгроУспех"
+              decoding="async"
+            />
+            <img
+              class="block-hero__brand-img block-hero__brand-img--bar"
+              src="assets/logo-black.webp"
+              width="180"
+              height="40"
+              alt=""
+              aria-hidden="true"
               decoding="async"
             />
           </a>
@@ -107,7 +116,7 @@
             </a>
           </div>
         </div>
-        
+
         <button
           type="button"
           class="block-hero__video-widget"
@@ -1053,9 +1062,7 @@
 
       <div class="site-footer__col site-footer__col--meta">
         <div class="site-footer__meta-tail">
-          <div class="site-footer__info-grid">
-            <div class="site-footer__info-cell site-footer__info-cell--requisites">
-              <div class="site-footer__social-block site-footer__social--desktop-only">
+          <div class="site-footer__social-block site-footer__social--desktop-only site-footer__social--above-grid">
               <p class="site-footer__social-title">Мы в социальных сетях:</p>
               <div class="site-footer__social-row">
                 <a class="site-footer__social-link" href="https://t.me/AgroUspehZavod" aria-label="Telegram" target="_blank" rel="noopener noreferrer">
@@ -1109,29 +1116,37 @@
                   </svg>
                 </a>
               </div>
+          </div>
+          <div class="site-footer__info-stack">
+            <div class="site-footer__info-grid">
+              <div class="site-footer__info-cell site-footer__info-cell--requisites">
+                <h3>Реквизиты</h3>
+                <p>ООО Завод «АгроУспех»<br />ОГРН: 1192225010207<br />ИНН: 2224197188</p>
               </div>
-              <h3>Реквизиты</h3>
-              <p>ООО Завод «АгроУспех»<br />ОГРН 1234567890123<br />ИНН 1234567890</p>
+              <div class="site-footer__info-cell site-footer__info-cell--address">
+                <h3>Адрес</h3>
+                <p>656012, Алтайский край, г.&nbsp;Барнаул,<br />ул.&nbsp;Рубцовская, 10А</p>
+              </div>
             </div>
-            <div class="site-footer__info-cell">
-              <h3>Адрес</h3>
-              <p>656000, г.&nbsp;Барнаул,<br />ул.&nbsp;Рубцовская, д.&nbsp;—</p>
-            </div>
-            <div class="site-footer__info-cell site-footer__info-cell--contact">
-              <h3>Телефон</h3>
-              <p>
-                <a href="tel:+78000000000">8&nbsp;800&nbsp;000-00-00</a><br />
-                <a href="tel:+73852500000">+7&nbsp;(3852)&nbsp;50-00-00</a>
-              </p>
-            </div>
-            <div class="site-footer__info-cell site-footer__info-cell--contact">
-              <h3>Почта</h3>
-              <p><a href="mailto:sales@agrouspeh.ru">sales@agrouspeh.ru</a></p>
+            <div class="site-footer__info-grid">
+              <div class="site-footer__info-cell site-footer__info-cell--contact">
+                <h3>Телефон</h3>
+                <p>
+                  <a href="tel:+73852998199">+7&nbsp;(3852)&nbsp;99&nbsp;81&nbsp;99</a><br />
+                  <a href="tel:+79640868199">+7&nbsp;964&nbsp;086&nbsp;81&nbsp;99</a>
+                </p>
+              </div>
+              <div class="site-footer__info-cell site-footer__info-cell--contact site-footer__info-cell--with-credit">
+                <div class="site-footer__info-cell-main">
+                  <h3>Почта</h3>
+                  <p><a href="mailto:sales@agrouspeh.ru">sales@agrouspeh.ru</a></p>
+                </div>
+                <p class="site-footer__credit site-footer__credit--inline">
+                  <a href="https://one-sol.ru/" target="_blank" rel="noopener noreferrer">Разработка и продвижение - OneSolution</a>
+                </p>
+              </div>
             </div>
           </div>
-          <p class="site-footer__credit">
-            <a href="https://one-sol.ru/" target="_blank" rel="noopener noreferrer">Разработка и продвижение - OneSolution</a>
-          </p>
         </div>
       </div>
 
@@ -1422,6 +1437,37 @@
         if (prevScrollBehavior) htmlEl.style.scrollBehavior = prevScrollBehavior;
         else htmlEl.style.removeProperty("scroll-behavior");
       };
+    })();
+
+    (function () {
+      var mql = window.matchMedia("(min-width: 901px)");
+      function syncHeroHeaderSolid() {
+        if (!mql.matches) {
+          document.body.classList.remove("hero-header-scrolled");
+          return;
+        }
+        var y =
+          window.pageYOffset ||
+          document.documentElement.scrollTop ||
+          document.body.scrollTop ||
+          0;
+        document.body.classList.toggle("hero-header-scrolled", y > 2);
+      }
+      function onMqlChange() {
+        syncHeroHeaderSolid();
+      }
+      if (mql.addEventListener) {
+        mql.addEventListener("change", onMqlChange);
+      } else if (mql.addListener) {
+        mql.addListener(onMqlChange);
+      }
+      window.addEventListener("scroll", syncHeroHeaderSolid, { passive: true });
+      window.addEventListener("resize", syncHeroHeaderSolid);
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", syncHeroHeaderSolid);
+      } else {
+        syncHeroHeaderSolid();
+      }
     })();
 
     (function () {

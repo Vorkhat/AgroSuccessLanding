@@ -305,14 +305,12 @@ button.hero-banner-btn {
     color: #252529;
     font-size: clamp(17px, 2.35vw, 22px);
     line-height: 1.35;
-  }
-
-  .banner-list li:first-child {
     font-weight: 400;
   }
 
+  /* перебить базовое li:not(:first-child){700} — та же специфичность, порядок в файле */
   .banner-list li:not(:first-child) {
-    font-weight: 700;
+    font-weight: 400;
   }
 
   .banner-list strong {

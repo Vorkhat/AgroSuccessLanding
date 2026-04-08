@@ -86,17 +86,19 @@
 .block-diff__sub {
   box-sizing: border-box;
   margin: 0;
-  padding: 12px 0;
+  padding: 0;
   width: 100%;
-  max-width: none;
+  max-width: 675px;
   flex: none;
+  flex-grow: 0;
   align-self: stretch;
+  order: 0;
   font-family: "Roboto", var(--font), system-ui, sans-serif;
   font-style: normal;
-  font-size: clamp(17px, 2.35vw, 22px);
-  font-weight: 700;
-  line-height: 1.35;
-  color: #252529;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 28px;
+  color: #59595b;
 }
 
 .block-diff__features {
@@ -155,8 +157,8 @@
 .block-diff__feature-title {
   margin: 0 0 4px;
   font-family: "Roboto", var(--font), system-ui, sans-serif;
-  font-size: 18px;
-  line-height: 21px;
+  font-size: clamp(21px, 2.75vw, 27px);
+  line-height: 1.2;
   font-weight: 700;
   color: #513172;
 }
@@ -164,8 +166,8 @@
 .block-diff__feature-text {
   margin: 0;
   font-family: "Roboto", var(--font), system-ui, sans-serif;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: clamp(16px, 1.65vw, 18px);
+  line-height: 1.22;
   font-weight: 400;
   color: #252529;
 }
@@ -293,8 +295,4 @@
     min-width: 64px;
   }
 
-  .block-diff__sub {
-    padding-left: 0;
-    padding-right: 0;
-  }
 }

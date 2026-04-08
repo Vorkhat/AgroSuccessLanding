@@ -98,20 +98,12 @@
   font-size: clamp(17px, 2.35vw, 22px);
   line-height: 1.35;
   color: #252529;
-}
-
-.banner-list li:nth-child(1) {
-  font-weight: 700;
-}
-
-.banner-list li:nth-child(2) {
   font-weight: 400;
 }
 
-.banner-list li:nth-child(3) {
+.banner-list li strong {
   font-weight: 700;
 }
-
 
 .banner-col--cta {
   justify-content: center;

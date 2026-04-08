@@ -87,9 +87,7 @@
   gap: 4px;
   min-width: 0;
   flex: 1 1 auto;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
+  overflow: visible;
 }
 
 .block-kit__num {
@@ -160,7 +158,8 @@
   font-weight: 700;
   line-height: 21px;
   color: #513172;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 
 .block-kit__card-text {
@@ -256,11 +255,11 @@
   top: 20px;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   padding: 0;
   gap: 20px;
   width: min(324px, calc(100% - 40px));
-  height: 40px;
+  height: auto;
   min-height: 40px;
   box-sizing: border-box;
   min-width: 0;
@@ -270,11 +269,13 @@
   flex: 1 1 auto;
   min-width: 0;
   gap: 4px;
+  overflow: visible;
 }
 
 .block-kit__feature-header .block-kit__card-title {
   margin: 0;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: break-word;
   font-weight: 700;
   font-size: 18px;
   line-height: 21px;
@@ -389,10 +390,6 @@
 @media (max-width: 767px) {
   .block-kit__grid {
     grid-template-columns: 1fr;
-  }
-
-  .block-kit__card-intro {
-    overflow-x: visible;
   }
 
   .block-kit__card--feature {

@@ -94,9 +94,9 @@
   margin: 0;
   font-family: "Roboto", sans-serif;
   font-style: normal;
-  font-weight: 500;
-  font-size: clamp(17px, 2vw, 22px);
-  line-height: 1.25;
+  font-weight: 700;
+  font-size: clamp(21px, 2.75vw, 27px);
+  line-height: 1.2;
   color: #513172;
   align-self: stretch;
 }
@@ -106,8 +106,8 @@
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: clamp(12px, 1.1vw, 14px);
-  line-height: 1.35;
+  font-size: clamp(16px, 1.65vw, 18px);
+  line-height: 1.22;
   color: #252529;
   align-self: stretch;
 }

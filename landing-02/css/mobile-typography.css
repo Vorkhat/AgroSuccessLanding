@@ -6,8 +6,8 @@
   }
 
   .block-hero__badge {
-    font-size: clamp(0.9rem, 2.4vw, 1rem);
-    line-height: 1.35;
+    font-size: clamp(0.96rem, 2.55vw, 1.06rem);
+    line-height: 1.38;
     padding: 11px 14px;
   }
 
@@ -21,21 +21,16 @@
     line-height: 1.35;
   }
 
-  .block-diff__sub {
-    font-size: clamp(1.02rem, 3.6vw, 1.14rem);
-    line-height: 1.35;
-  }
-
   .block-diff__feature-title {
-    font-size: 19px;
-    line-height: 23px;
+    font-size: clamp(20px, 3.2vw, 26px);
+    line-height: 1.28;
     font-weight: 700;
     color: #513172;
   }
 
   .block-diff__feature-text {
-    font-size: 15px;
-    line-height: 18px;
+    font-size: clamp(14px, 3.6vw, 16px);
+    line-height: 1.42;
     font-weight: 400;
     color: #252529;
   }
@@ -62,27 +57,27 @@
   }
 
   .block-market-problems__item-title {
-    font-size: 19px;
-    line-height: 23px;
+    font-size: clamp(20px, 3.2vw, 26px);
+    line-height: 1.28;
     font-weight: 700;
     color: #513172;
   }
 
   .block-market-problems__item-text {
-    font-size: 15px;
-    line-height: 18px;
+    font-size: clamp(14px, 3.6vw, 16px);
+    line-height: 1.42;
     font-weight: 400;
     color: #252529;
   }
 
   .block-advantages__card-title {
-    font-size: clamp(24px, 3vw, 30px);
-    line-height: 1.32;
+    font-size: clamp(20px, 3.2vw, 26px);
+    line-height: 1.28;
   }
 
   .block-advantages__card-text {
-    font-size: clamp(16px, 4vw, 17px);
-    line-height: 1.45;
+    font-size: clamp(14px, 3.6vw, 16px);
+    line-height: 1.42;
   }
 
   .block-benefit__example {
@@ -91,13 +86,20 @@
   }
 
   .block-benefit__card-title {
-    font-size: 26px;
-    line-height: 1.3;
+    font-size: clamp(20px, 3.2vw, 26px);
+    line-height: 1.28;
+    font-weight: 700;
   }
 
   .block-benefit__list li {
     font-size: 16px;
     line-height: 1.4;
+  }
+
+  .block-benefit__card--before .block-benefit__list li,
+  .block-benefit__card--before .block-benefit__list li:first-child,
+  .block-benefit__card--before .block-benefit__list li:last-child {
+    font-weight: 400;
   }
 
   .block-benefit__result-eyebrow {
@@ -161,16 +163,16 @@
   }
 
   .block-kit__card-title {
-    font-size: 19px;
-    line-height: 23px;
+    font-size: clamp(20px, 3.2vw, 26px);
+    line-height: 1.28;
     font-weight: 700;
     color: #513172;
     white-space: normal;
   }
 
   .block-kit__card-text {
-    font-size: 15px;
-    line-height: 18px;
+    font-size: clamp(14px, 3.6vw, 16px);
+    line-height: 1.42;
     font-weight: 400;
     color: #252529;
   }
@@ -186,20 +188,20 @@
     line-height: 1.35;
   }
 
-  .block-placement__card-intro,
   .block-placement__card-title {
-    font-size: clamp(1.05rem, 3.8vw, 1.15rem);
-    line-height: 1.38;
+    font-size: clamp(20px, 3.2vw, 26px);
+    line-height: 1.28;
+    font-weight: 700;
   }
 
   .block-stages__card-title {
-    font-size: clamp(24px, 3vw, 30px);
-    line-height: 1.32;
+    font-size: clamp(20px, 3.2vw, 26px);
+    line-height: 1.28;
   }
 
   .block-stages__card-text {
-    font-size: clamp(16px, 4vw, 17px);
-    line-height: 1.45;
+    font-size: clamp(14px, 3.6vw, 16px);
+    line-height: 1.42;
   }
 
   .block-guarantees__text {
