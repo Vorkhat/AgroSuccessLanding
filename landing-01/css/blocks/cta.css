@@ -476,24 +476,29 @@
 }
 
 @media (max-width: 900px) {
+  .block-cta__inner {
+    padding-inline: 0;
+  }
+
   .block-cta__panel {
     --cta-pad-y: clamp(28px, 5vw, 40px);
-    --cta-pad-x: clamp(20px, 4vw, 28px);
+    --cta-pad-x: 0;
     grid-template-columns: 1fr;
     min-height: 0;
     align-items: start;
-    padding: var(--cta-pad-y) var(--cta-pad-x);
+    padding: var(--cta-pad-y) 0;
   }
 
   .block-cta__media {
     min-height: auto;
+    padding-inline: var(--layout-inline);
+    box-sizing: border-box;
   }
 
   .block-cta__label-row {
     flex-wrap: wrap;
   }
 
-  /* моб. чипы: размеры из --section-*; визуал — полупрозрачный фон и типографика макета */
   .block-cta__media .block-cta__label {
     padding: var(--section-eyebrow-pad-y) var(--section-eyebrow-pad-x);
     gap: var(--section-eyebrow-gap);
@@ -539,7 +544,9 @@
 
   .block-cta__form-card {
     margin-right: 0;
-    width: min(100%, 455px);
+    width: 100%;
+    max-width: none;
+    align-self: stretch;
     padding-top: 0;
     padding-bottom: 0;
     gap: clamp(28px, 5vw, 36px);
@@ -548,9 +555,38 @@
   .block-cta__form-head {
     display: block;
     padding-right: 0;
+    padding-inline: var(--layout-inline);
+    box-sizing: border-box;
   }
 
   .block-cta__form-head-top {
     gap: clamp(8px, 2vw, 16px);
+  }
+
+  .block-cta__form {
+    max-width: none;
+    width: 100%;
+    padding-inline: var(--layout-inline);
+    box-sizing: border-box;
+  }
+
+  .block-cta__field-row {
+    max-width: none;
+    padding: 14px clamp(16px, 4vw, 22px);
+    min-height: 52px;
+    height: auto;
+  }
+
+  .block-cta__consent {
+    max-width: none;
+    box-sizing: border-box;
+  }
+
+  .block-cta__consent-text {
+    max-width: none;
+  }
+
+  .block-cta__submit {
+    max-width: none;
   }
 }

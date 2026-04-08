@@ -16,7 +16,6 @@
   
   --section-label-to-title: clamp(12px, 2vh, 16px);
 
-  /* Плашки подписей секций */
   --section-eyebrow-pad-y: clamp(6px, 1.2vw, 12px);
   --section-eyebrow-pad-x: clamp(8px, 2.1vw, 20px);
   --section-eyebrow-gap: clamp(6px, 1.2vw, 10px);
@@ -24,12 +23,10 @@
   --section-eyebrow-line-height: clamp(12px, 2.5vw, 16px);
   --section-chip-gap: var(--section-eyebrow-gap);
 
-  /* Номера справа в заголовке секции (серый чип) */
   --section-index-width: clamp(32px, 9.2vw, 56px);
   --section-index-height: clamp(28px, 7.1vw, 40px);
   --section-chip-height: var(--section-index-height);
 
-  /* Рамка-«уголки» только для шагов, иконок карточек и т.п. — не для номеров в шапке */
   --section-framed-bg: #f0f2f2;
   --section-framed-corners: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%23513172' stroke-width='1.15' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 25L7 7L25 7'/%3E%3Cpath d='M75 7L93 7L93 25'/%3E%3Cpath d='M7 75L7 93L25 93'/%3E%3Cpath d='M93 75L93 93L75 93'/%3E%3C/svg%3E");
   --section-index-size: clamp(40px, 9vw, 52px);

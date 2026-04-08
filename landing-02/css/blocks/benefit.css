@@ -131,7 +131,7 @@
 .block-benefit__list li {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   font-size: 14px;
   font-weight: 400;
@@ -139,12 +139,17 @@
   color: #252529;
 }
 
+.block-benefit__list-body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
 .block-benefit__list li::before {
   content: "";
-  flex-shrink: 0;
+  flex: none;
   width: 24px;
   height: 2px;
-  margin: 0;
+  margin: 7px 0 0;
   background: #7b61a1;
   border: none;
 }
@@ -165,6 +170,10 @@
   min-height: 32px;
 }
 
+.block-benefit__card--before .block-benefit__list-em {
+  font-weight: inherit;
+}
+
 .block-benefit__card--after .block-benefit__list {
   gap: 10px;
   width: 292px;
@@ -173,7 +182,7 @@
 }
 
 .block-benefit__card--after .block-benefit__list li {
-  align-items: center;
+  align-items: flex-start;
   width: 292px;
   max-width: 100%;
   min-height: 16px;
@@ -380,14 +389,66 @@
 }
 
 @media (max-width: 900px) {
+  .block-benefit__example {
+    display: none;
+  }
+
   .block-benefit__layout {
     grid-template-columns: 1fr;
+  }
+
+  .block-benefit__card--before .block-benefit__card-title {
+    box-sizing: border-box;
+    width: 240px;
+    max-width: 100%;
+    min-height: 46px;
+    height: auto;
+    font-family: "Roboto", var(--font), system-ui, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    color: #252529;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+
+  .block-benefit__card--before .block-benefit__card-title strong {
+    color: inherit;
+    font-weight: 500;
+  }
+
+  .block-benefit__card--after .block-benefit__card-title {
+    box-sizing: border-box;
+    width: 240px;
+    max-width: 100%;
+    min-height: 46px;
+    height: auto;
+    font-family: "Roboto", var(--font), system-ui, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    color: #252529;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+
+  .block-benefit__card--after .block-benefit__card-title strong {
+    color: inherit;
+    font-weight: 500;
   }
 
   .block-benefit__card--before .block-benefit__list li,
   .block-benefit__card--before .block-benefit__list li:first-child,
   .block-benefit__card--before .block-benefit__list li:last-child {
     font-weight: 400;
+  }
+
+  .block-benefit__card--before .block-benefit__list-em {
+    font-weight: 700;
   }
 
   .block-benefit__card {
@@ -410,9 +471,10 @@
   .block-benefit__result-panel {
     width: calc(100% - 32px);
     min-height: 0;
+    margin-top: 12px;
     margin-left: 16px;
     margin-bottom: 16px;
-    padding: 90px 16px 16px;
+    padding: 16px;
   }
 
   .block-benefit__footnote {

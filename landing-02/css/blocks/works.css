@@ -218,7 +218,6 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
-    /* Сброс flex-start с базового правила: в grid иначе карточки не растягиваются на высоту ряда */
     align-items: stretch;
     justify-items: stretch;
   }

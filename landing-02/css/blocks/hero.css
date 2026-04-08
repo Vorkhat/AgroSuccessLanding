@@ -336,7 +336,6 @@ header.block-hero,
 }
 
 @media (min-width: 901px) {
-  /* После базового position:absolute — иначе перебивается и «уезжает» при скролле */
   .block-hero__media-top {
     position: fixed;
     top: 0;
@@ -347,7 +346,6 @@ header.block-hero,
     z-index: 200;
     min-height: var(--hero-fixed-head-h, 72px);
     align-items: center;
-    /* Как у .block-hero__topbar — иначе правая колонка «прилипает» выше */
     padding: 16px clamp(18px, 2vw, 32px) 14px;
     background-color: transparent;
     background-image: none;

@@ -308,7 +308,6 @@ button.hero-banner-btn {
     font-weight: 400;
   }
 
-  /* перебить базовое li:not(:first-child){700} — та же специфичность, порядок в файле */
   .banner-list li:not(:first-child) {
     font-weight: 400;
   }

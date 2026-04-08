@@ -14,14 +14,12 @@
 .block-cta__panel {
   --cta-pad-y: clamp(36px, 4.5vw, 52px);
   --cta-pad-x: clamp(24px, 3vw, 40px);
-  /* непрозрачный чип: на тёмном фото CTA rgba(…, 0.2) выглядит как стекло */
   --cta-chip-bg: #c1c3c4;
   --cta-chip-text: #59595b;
   --cta-index-size: var(--section-index-width);
   --cta-media-stack-gap: 12px;
   --cta-form-head-offset: 0;
 
-  /* запас под абсолютный .block-cta__index--inline в правом верхнем углу панели */
   --cta-form-margin-from-index: calc(max(var(--cta-index-size), 3.25rem) + 0.75rem);
   position: relative;
   width: 100%;
@@ -539,20 +537,25 @@
 }
 
 @media (max-width: 900px) {
+  .block-cta__inner {
+    padding-inline: 0;
+  }
+
   .block-cta__panel {
     --cta-pad-y: clamp(28px, 5vw, 40px);
-    --cta-pad-x: clamp(20px, 4vw, 28px);
+    --cta-pad-x: 0;
     grid-template-columns: 1fr;
     min-height: 0;
     align-items: start;
     column-gap: 0;
-    padding: var(--cta-pad-y) var(--cta-pad-x);
+    padding: var(--cta-pad-y) 0;
     row-gap: clamp(24px, 3vw, 32px);
   }
 
   .block-cta__media {
     min-height: auto;
     padding-right: 0;
+    padding-inline: var(--layout-inline);
     justify-content: flex-start;
   }
 
@@ -560,7 +563,6 @@
     flex-wrap: wrap;
   }
 
-  /* моб. чипы: размеры из --section-*; визуал — полупрозрачный фон и типографика макета */
   .block-cta__media .block-cta__label {
     padding: var(--section-eyebrow-pad-y) var(--section-eyebrow-pad-x);
     gap: var(--section-eyebrow-gap);
@@ -593,8 +595,9 @@
 
   .block-cta__form-card {
     margin-right: 0;
-    width: min(100%, 455px);
-    max-width: 455px;
+    width: 100%;
+    max-width: none;
+    align-self: stretch;
     padding-top: 0;
     padding-left: 0;
     padding-bottom: 0;
@@ -608,9 +611,36 @@
   .block-cta__form-head {
     display: block;
     padding-right: 0;
+    padding-inline: var(--layout-inline);
+    box-sizing: border-box;
   }
 
   .block-cta__form-head-top {
     gap: clamp(8px, 2vw, 16px);
+  }
+
+  .block-cta__form {
+    max-width: none;
+    width: 100%;
+    padding-inline: var(--layout-inline);
+    box-sizing: border-box;
+  }
+
+  .block-cta__field-row {
+    max-width: none;
+    padding: 12px clamp(14px, 4vw, 20px);
+  }
+
+  .block-cta__consent {
+    max-width: none;
+    box-sizing: border-box;
+  }
+
+  .block-cta__consent-text {
+    max-width: none;
+  }
+
+  .block-cta__submit {
+    max-width: none;
   }
 }
