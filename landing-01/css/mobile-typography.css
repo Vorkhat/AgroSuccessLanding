@@ -134,6 +134,11 @@
     line-height: 1.35;
   }
 
+  .block-cta__media .block-cta__subtitle {
+    font-size: clamp(14px, 3.2vw, 16px);
+    line-height: 1.42;
+  }
+
   .block-cta__form input:not([type="checkbox"]),
   .block-cta__consent-text,
   .block-cta__consent-label {

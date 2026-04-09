@@ -109,6 +109,17 @@
   max-width: none;
 }
 
+.block-cta__media .block-cta__subtitle {
+  margin: 0;
+  max-width: 34rem;
+  font-family: "Roboto", var(--font);
+  font-size: clamp(0.875rem, 1.1vw + 0.65rem, 1.0625rem);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.45;
+  color: rgba(252, 254, 254, 0.92);
+}
+
 .block-cta__form-card {
   position: static;
   z-index: auto;
