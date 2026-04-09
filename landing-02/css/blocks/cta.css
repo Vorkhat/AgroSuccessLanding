@@ -304,11 +304,11 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 10px 14px;
+  padding: 14px 20px;
   gap: 16px;
   width: 100%;
   max-width: 455px;
-  min-height: 0;
+  height: 58px;
   flex: none;
   border: 1px solid #59595b;
   border-radius: 0;
@@ -329,14 +329,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
   color: #eab300;
 }
 
 .block-cta__field-icon svg {
-  width: 24px;
-  height: 24px;
+  width: 30px;
+  height: 30px;
 }
 
 .block-cta__field input {
@@ -353,7 +353,7 @@
   font-size: 16px;
   font-weight: 400;
   font-style: normal;
-  line-height: normal;
+  line-height: 19px;
   color: #fcfefe;
   min-height: 0;
   outline: none;
@@ -384,7 +384,7 @@
   font-style: italic;
   font-weight: 300;
   font-size: 16px;
-  line-height: normal;
+  line-height: 19px;
   color: #fcfefe;
   opacity: 1;
 }
@@ -407,12 +407,11 @@
 .block-cta__consent-text {
   flex: 1;
   min-width: 0;
-  max-width: 406px;
   font-family: "Roboto", var(--font);
   font-size: 12px;
   font-weight: 300;
   font-style: normal;
-  line-height: normal;
+  line-height: 14px;
   color: #fcfefe;
 }
 
@@ -469,12 +468,12 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 20px 30px;
+  padding: clamp(14px, 2.2vw, 20px) clamp(18px, 2.8vw, 30px);
   gap: 10px;
   width: 100%;
-  max-width: 455px;
-  height: 60px;
-  min-height: 60px;
+  max-width: min(455px, 100%);
+  height: auto;
+  min-height: clamp(48px, 9vw, 60px);
   flex: none;
   align-self: stretch;
   margin: 0;
@@ -495,15 +494,15 @@
 
 .block-cta__submit-corners {
   position: absolute;
-  inset: 6px;
+  inset: clamp(5px, 1.1vw, 6px);
   pointer-events: none;
   z-index: 1;
 }
 
 .block-cta__submit-corner {
   position: absolute;
-  width: 11px;
-  height: 11px;
+  width: clamp(10px, 1.4vw, 13px);
+  height: clamp(10px, 1.4vw, 13px);
   border-style: solid;
   border-color: #fcfefe;
 }
@@ -628,7 +627,9 @@
 
   .block-cta__field-row {
     max-width: none;
-    padding: 12px clamp(14px, 4vw, 20px);
+    padding: 14px clamp(16px, 4vw, 22px);
+    min-height: 52px;
+    height: auto;
   }
 
   .block-cta__consent {

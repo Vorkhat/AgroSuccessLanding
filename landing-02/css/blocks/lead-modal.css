@@ -107,27 +107,37 @@
   position: relative;
   flex: 1;
   min-height: clamp(20rem, 58vh, 32rem);
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
 }
 
 .lead-modal__bg {
   position: absolute;
   inset: 0;
+  z-index: 0;
+  pointer-events: none;
   background: url("../../assets/cta-bg.webp") center / cover no-repeat;
 }
 
 .lead-modal__split {
   position: relative;
   z-index: 1;
+  flex: 1;
+  min-height: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  min-height: 100%;
+  grid-template-rows: minmax(min(16rem, 40vh), 1fr);
 }
 
 .lead-modal__visual {
+  box-sizing: border-box;
+  position: relative;
   padding: 48px 24px 32px 30px;
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
+  gap: 12px;
   border-right: 1px solid #c1c3c4;
 }
 
@@ -171,11 +181,13 @@
 .lead-modal__field-row {
   box-sizing: border-box;
   display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 16px;
+  padding: clamp(10px, 2.5vw, 14px) clamp(14px, 3.5vw, 20px);
+  gap: clamp(12px, 3vw, 16px);
   width: 100%;
-  min-height: 58px;
-  padding: 14px 20px;
+  min-height: clamp(50px, 12vw, 58px);
+  height: auto;
   border: 1px solid #59595b;
   border-radius: 0;
   background: rgba(19, 19, 20, 0.4);
@@ -191,6 +203,10 @@
 }
 
 .lead-modal__field-icon {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 30px;
   height: 30px;
   color: #eab300;
@@ -241,19 +257,28 @@
 .lead-modal__field input::placeholder {
   font-style: italic;
   font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
   color: #fcfefe;
   opacity: 1;
 }
 
 .lead-modal__consent {
   display: flex;
+  flex-direction: row;
   align-items: flex-start;
   gap: 10px;
+  margin: 0;
+  width: 100%;
   max-width: min(455px, 100%);
+  min-height: 24px;
 }
 
 .lead-modal__consent-text {
+  flex: 1;
+  min-width: 0;
   font-family: "Roboto", var(--font), system-ui, sans-serif;
+  font-style: normal;
   font-weight: 300;
   font-size: 12px;
   line-height: 14px;
@@ -309,6 +334,7 @@
 .lead-modal__submit.hero-banner-btn {
   width: 100%;
   max-width: min(455px, 100%);
+  margin: 0;
 }
 
 #lead-modal-submit-label {
@@ -476,11 +502,61 @@
     text-align: center;
   }
 
+  .lead-modal__fields {
+    max-width: 100%;
+    width: 100%;
+    align-self: stretch;
+    gap: 10px;
+  }
+
+  .lead-modal__field {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .lead-modal__field-row {
+    width: 100%;
+    max-width: 100%;
+    min-height: clamp(48px, 12vw, 54px);
+    height: auto;
+    padding: clamp(8px, 2.5vw, 12px) clamp(10px, 3vw, 14px);
+    gap: clamp(12px, 3vw, 16px);
+    box-sizing: border-box;
+  }
+
+  .lead-modal__consent {
+    max-width: 100%;
+    width: 100%;
+    min-height: auto;
+    align-self: stretch;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .lead-modal__consent-text {
+    flex: 1;
+    flex-grow: 1;
+    order: 1;
+    min-width: 0;
+    max-width: none;
+    font-size: clamp(11px, 3.2vw, 12px);
+    line-height: clamp(13px, 3.6vw, 14px);
+  }
+
+  .lead-modal__consent input[type="checkbox"] {
+    order: 0;
+  }
+
   .lead-modal__form,
   .lead-modal__fields,
   .lead-modal__consent,
   .lead-modal__submit.hero-banner-btn {
     max-width: 100%;
     width: 100%;
+  }
+
+  .lead-modal__submit.hero-banner-btn {
+    align-self: stretch;
   }
 }
