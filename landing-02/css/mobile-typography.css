@@ -190,7 +190,7 @@
   .block-placement__card-title {
     font-size: clamp(20px, 3.2vw, 26px);
     line-height: 1.28;
-    font-weight: 700;
+    font-weight: 600;
   }
 
   .block-stages__card-title {

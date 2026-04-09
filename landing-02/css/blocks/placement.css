@@ -85,7 +85,7 @@
 .block-placement__card-title {
   margin: 0;
   font-size: clamp(21px, 2.75vw, 27px);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.2;
   color: #513172;
 }
