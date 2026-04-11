@@ -15,10 +15,19 @@
   --diff-icon-frame: var(--section-index-size);
   --diff-icon-glyph: clamp(20px, 4.2vw, 24px);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.block-diff__body {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
 }
 
 @media (min-width: 901px) {
-  .block-diff__inner {
+  .block-diff__body {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     grid-template-rows: auto 1fr;
@@ -45,8 +54,10 @@
   justify-content: space-between;
   gap: clamp(12px, 2.5vw, 24px);
   width: 100%;
+  max-width: none;
   margin-bottom: var(--section-label-to-title);
   flex-shrink: 0;
+  box-sizing: border-box;
 }
 
 .block-diff__head-top .block-diff__label {
@@ -247,7 +258,7 @@
 }
 
 @media (max-width: 900px) {
-  .block-diff__inner {
+  .block-diff__body {
     display: flex;
     flex-direction: column;
     gap: clamp(24px, 4vw, 36px);

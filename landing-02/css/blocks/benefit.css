@@ -389,10 +389,6 @@
 }
 
 @media (max-width: 900px) {
-  .block-benefit__example {
-    display: none;
-  }
-
   .block-benefit__layout {
     grid-template-columns: 1fr;
   }
